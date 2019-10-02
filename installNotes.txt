@@ -6,5 +6,6 @@ How to install my vim config for Windows.
 3. VIM Compatibility issues:
     > Install xorg-xmodmap. 
         Need it to be able to remap <ESC> to <CAPSLOCK>
-4. copy vimrc 
+    > Install tmux-focus-events plugin (just copy tmux-focus-events.vim in ~/.vim/.vimrc)
+4. copy vimrc (use ~/.vim/vimrc, not ~/.vimrc to ensure plugins work) 
 

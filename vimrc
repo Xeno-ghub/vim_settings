@@ -101,6 +101,9 @@ set number
 " Vim has its own clipboards. Go figure. Use <SHFIT>p to paste from clipboard
 noremap <S-p> "+p
 
+" Set ctrl+i to jump to beginning of file, akin to ctrl+home in other editors
+noremap <C-i> gg
+
 " Reverse 0 & ^ functionality to be akin to regex
 noremap 0 ^
 noremap ^ 0
@@ -241,3 +244,5 @@ set hlsearch      " highlight matches
 " see more at https://github.com/miriamtocino/dotfiles/blob/master/vimrc
 " vimtips: 
 "    http://springest.io/vim-motions-and-command-language
+" tmux minimalist introduction:
+"   https://medium.com/actualize-network/a-minimalist-guide-to-tmux-13675fb160fa
