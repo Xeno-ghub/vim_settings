@@ -1,0 +1,195 @@
+Where's the scroll tab scrollbar position in VIM?
+    ruler shows current line & percentage
+    > There's a setting you can set in the .vimrc.
+
+arrow edits (/w modifiers shift/ctrl) - No direct comparison to vim?
+    Not... exactly
+
+Macros
+    ?!
+
+Lesson 1 -> stupid movement things, stupid commands to exit & save,
+                i & a for insert & seemingly pointless append
+            x delete command. What's the diff between x & d ?
+            
+Lesson 2 -> modifiers for movement $, ^, 0, o, w, e
+         -> dd
+         -> undo/redo
+
+
+Lesson 3 -> 
+    Put command (p) - Actually PASTE. idk why they call it "put" just to be special
+    Replace command (r) - This seems useless. 
+        Who the hell wants to replace a single character
+        Why do you need a special command for this
+        Sheesh
+        THIS RIDICULOUS COMMAND IS WHY THEY BROKE SYMMETRY FOR UNDO/REDO KEYS? (u / ctrl+r)
+    Change command (c)
+    ciw, p
+    
+    
+Lesson 4 ->
+    ctrl+G status bar
+    G, gg, GG, 492G - jump to end of file, beginning, line 492
+    search:
+        / -> Down direction
+        ? -> Up Direction
+        <c-o> -> go back... Why do you need this?
+    :%s/replacethis/intothis/
+
+Lesson 5 ->
+    :! to execute any bash command
+    :r <NAME> to replace any text found in <NAME> right below the cursor
+        <NAME> can be a file
+        <NAME> can be a command result (like ls)
+        it's a sort of pipe I guess
+
+Lesson 6 ->
+    :o :O -> Start typing below/above line 
+        (like a sort of insert I guess idk why the fuck you need this)
+    :a pointless append
+    :r can't-see-the-use-case single replace
+    :R "replace mode". More commonly known as 
+        "insert mode" for every other text editor other than VIM
+        i.e. typing in the middle of text will overwrite whatever follows
+    y - "Yank". More commonly known as "copy" in the human world
+
+Lesson 7 ->
+    <c-w> <c-W> - jump between windows
+    type <c-D> after writing something in console (:). 
+        It will recommend commands.
+        Kind of like TAB?
+        TAB also works
+        
+    
+Weird VIM behaviour:
+    if you type a command wrong. Let's say you want to delete 10 characters.
+        That would be d10. 
+        
+    Vim doesn't really have the concept of modifier hotkeys. At least not
+        how they're used by modern programs. 
+            (CTRL+KEY -> do something, CTRL+SHIFT+KEY -> reverse behaviour)
+        However... They kinda did this unwittingly. For example:
+            GG - Go to line, gg go to beginning of file (SHIFT reverse, see?)
+            n  - Go to next, N go to previous (SHIFT reverse, see?)
+    
+<SUMMARY> Basically what I think is actually useful:
+#################################
+    Command (number) (motion)
+        number - any integer?
+    EX:
+        combo | number | command | motion | desc
+              |        |         |text obj| desc
+        -----------------------------------------
+        ciw   |        |   c     |   iw   | change inside word
+              |        |         |        | 
+        10k   |   10   |         |    k   | go 10 lines down.
+              |        |         |        | (if you're also couldn't
+              |        |         |        | bear hjkl and remapped to 
+              |        |         |        | ijkl, as in wasd)
+              |        |         |        |
+        10w   |   10   |         |    w   | go 10 lines forward
+              |        |         |        |
+        c     |        |   c     |    e   | change to the end of the word
+              |        |         |        |
+        d     |        |         |  d $   | delete to the end of the line
+              |        |         |        |
+        d     |        |         |  d 0   | delete to the beg of the line
+              |        |         |        |
+        d     |        |         |  d ^   | delete to the beg of the line
+              |        |         |        | (excluding tabs)
+              |        |         |        |
+        p     |        |         |    p   | put/pasteplace deleted text after cursor
+              |        |         |        |
+        10p   |   10   |         |    p   | put/pasteplace deleted text 10 times
+              |        |         |        |
+        c10w  |   10   |    c    |    w   | changes 10 words (wraps after /r/n)
+              |        |         |        |
+              |        |         |        |
+        10G   |   10   |         |    G   | Go to line 10
+              |        |         |        |
+         GG   |        |         |   GG   | Go to end of file
+              |        |         |        |
+         gg   |        |         |   gg   | Go to beginning of file
+              |        |         |        |
+              |        |         |        |
+         yiw  |        |    y    |   iw   | yank inside word - copy word 
+              |        |         |        | under cursor
+              |        |         |        |
+              |        |         |        |
+                                    #################################
+         
+#################################         
+    % - Jump between brackets/parentheses/ellipses
+                                    #################################
+
+#################################         
+    /findthis - searches for "findthis"
+    
+    :ic       - ignore case. Sets ignore case
+                disable with :noic
+    
+    :set hls ls - highlight search results. 
+        Hmph... they stay highlighted forever.
+        Wonder if this is better?
+            You can turn them off with :nohls or :nohlsearch
+
+    :s/old/new       - STUPID replace first occurence  in line
+    :s/old/new/g     - STUPID replace all   occurences in line
+    :#,#s/old/new/g  - replace        all   occurences in between lines #,#
+    :%s/old/new/g    - replace        all   occurences in file
+    :%s/old/new/gc   - replace        all   occurences in file and prompt user
+    
+    WHERE IS         - replace        all   occurences in all files
+    WHERE IS         - replace        all   occurences in all files (filter by file type)
+    - Jump between brackets/parentheses/ellipses
+                                    #################################
+         
+              
+Things that are totally stupid and I want to change them:
+
+    hjkl - Change it to ijkl (almost a wasd)
+        
+    esc -> Change to CAPS lock
+
+    ctrl+g -> Show status. I don't need this hotkey. 
+        Because I want the status to always be displayed
+    
+    G - > Jump to line. It's fucking ctrl+g in every single editor in existence
+        But how do I change it to ctrl+G. G is a motion
+    
+    undo/redo. Change from u/<c-r> to u/r or to <c-z>/<c-y>. Haven't decided yet
+    
+    Change <c-w> <c-W> - jump between windows to <c-tab> ?
+        Also there's a very annoying lag to <c-w>. 
+            Could this be because of the virtual machine?
+    
+    I want insert mode to be marked with RED
+    
+    cut? -> Apparently it's "d". D = "delete", but also "cut".
+    
+    navigation (ctrl/ ctrl+shift & arrows). Totally replaced by vim-like navigation
+    
+    multiple cursors - I think we're giving up on this
+    
+    navigation_programming (tomato alt-g, ctrl+shift+r)
+    
+    auto-complete
+    
+    replace in all files (filter by file type)
+    
+              
+              
+Wealth of vim knowledge that you may have to re-read after gaining some experience with it:
+
+https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db
+
+> Should I use those weird defaults which I don't even remember how I added automatically to my vimrc?
+
+https://medium.com/in-the-weeds/my-2-5-year-journey-with-vim-and-why-i-switched-back-to-sublime-text-4afcc303741e
+        
+
+        
+        
+        
+        

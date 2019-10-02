@@ -1,0 +1,13 @@
+maine:
+    Check Markdown
+    Multiple tabs (should you use multiple terminals, multiple 
+        term tabs or multiple vim tabs)
+    
+    set hotkey to display relative line numbers
+    
+        
+Fuzzy file finder stuff:
+
+Fzf / CtrlP / NERD Tree - Fuzzy file searchers
+
+Ag - search quickly (multithreaded, optimized out the wazoo)
