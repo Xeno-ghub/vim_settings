@@ -21,7 +21,7 @@
 
 
 " TODOs
-" use a hotkey to show relative line numbers while holding it down (or toggle w/e)
+" use a hotkey to show relative line numbers while holding it down (or toggle)
 
 " EXISTENTIAL QUESTIONS: (Just to make it a bit closer to normal keys)
 " should I change
@@ -35,14 +35,14 @@
 " Most important part
 " ======================================
 
-" Remap "H" to <insert>, and use i,j,k,l for arrow-like behaviour like a normie.
+" Remap "H" to <insert>, and use i,j,k,l for arrow-like behaviour like a normie
 "
 noremap h <insert>
 noremap i <Up>
 noremap j <Left>
 noremap k <Down>
 noremap l <Right>
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""normality_resumed
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""normality_resumed
 
 " ======================================
 " Because I remapped ijkl we broke text objects... Let's fix those
@@ -68,7 +68,7 @@ onoremap o' i'
 onoremap o" i"
 onoremap ot it "t for HTML tag
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""normality_fixed
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""normality_fixed
 
 " Make vim stop creating those "~FILE" backup files all over your projects
 set nobackup
@@ -82,15 +82,15 @@ set expandtab
 set ignorecase  " Searches ignore case
 set smartcase   " Searches don't ignore case if they contain upper case
 
-" Make navigation wrap around lines ... like any other text editor ... C'MON VIM
+" Make navigation wrap around lines ... like any other editor ... C'MON VIM
 set whichwrap=b,s,<,>,h,l
 
-" Change Vim's <ESC> key to <CAPS LOCK> (just because it's much easier to reach)
+" Change Vim's <ESC> key to <CAPS> (just because it's much easier to reach)
 " FOR THIS YOU NEED TO GET xorg-xmodmap package!
 if has('unix')
     au VimEnter * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
     "   (command says: When entering vim, use xmodmap to 
-    "            clear caps & remap <CAPS> to <ESC>. Also use the "silent!" key 
+    "            clear caps & remap <CAPS> to <ESC>. Also use "silent!"  
     "            to avoid the prompt when launching vim
     au VimLeave * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
 endif
@@ -98,12 +98,16 @@ endif
 " Display line numbers
 set number
 
-" Vim has its own clipboards. Go figure. Use <SHFIT>p to paste from system clipboard
+" Vim has its own clipboards. Go figure. Use <SHFIT>p to paste from clipboard
 noremap <S-p> "+p
 
 " Reverse 0 & ^ functionality to be akin to regex
 noremap 0 ^
 noremap ^ 0
+
+" Notify user of characters exceeding the 80 column mark
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
 
 " bind K to search word under cursor
 nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
@@ -138,14 +142,14 @@ set ttyfast
 " ======================================
 "
 set backspace=2   " Backspace deletes like most programs in insert mode
-"set nocompatible  " Use Vim settings, rather then Vi settings. IDK if I need it.
+"set nocompatible  " Use Vim settings, rather then Vi settings. IDK if needed 
 set history=500
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set hlsearch      " highlight matches
 " Optional sets below:
-"set noantialias " on OS X, supposedly it helps to disable. Found in some other guy's vimrc
+"set noantialias "   helps to disable AA for OS X supposedly
 "set laststatus=2  " Always display the status line
 "set autowrite     " Automatically :write before running commands
 
