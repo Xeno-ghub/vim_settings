@@ -127,6 +127,9 @@ call matchadd('ColorColumn', '\%81v', 100)
 " bind K to search word under cursor
 nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
 
+" Add some extensions for GLSL syntax highlighting support
+autocmd! BufNewFile,BufRead *.vs,*.fs,*.psh,*.vsh,*.v,*.f set ft=glsl
+
 
 " set encoding=utf-8
 
