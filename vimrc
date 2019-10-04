@@ -75,11 +75,11 @@ set nobackup
 
 " Place swap files in a central directory instead of polluting projects
 if has('unix')
-    silent !mkdir -p ~/.vim/vimswap > /dev/null 2>&1
-    set directory^=~/.vim/vimswap/
+    silent !mkdir -p ~/.vim/swap > /dev/null 2>&1
+    set directory^=~/.vim/swap/
 elseif has('win64')
-    mkdir C:\vimswap
-    set directory^=C:\vimswap   
+    mkdir C:\swap
+    set directory^=C:\swap   
 endif
 
 " Softtabs, 4 spaces
