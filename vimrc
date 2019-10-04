@@ -73,6 +73,15 @@ onoremap ot it "t for HTML tag
 " Make vim stop creating those "~FILE" backup files all over your projects
 set nobackup
 
+" Place swap files in a central directory instead of polluting projects
+if has('unix')
+    silent !mkdir -p ~/.vim/vimswap > /dev/null 2>&1
+    set directory^=~/.vim/vimswap/
+elseif has('win64')
+    mkdir C:\vimswap
+    set directory^=C:\vimswap   
+endif
+
 " Softtabs, 4 spaces
 set tabstop=4
 set shiftwidth=4
@@ -97,6 +106,9 @@ endif
 
 " Display line numbers
 set number
+
+" Make vim check for any changes from outside to your file.
+set autoread
 
 " Vim has its own clipboards. Go figure. Use <SHFIT>p to paste from clipboard
 noremap <S-p> "+p
