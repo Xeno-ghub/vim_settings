@@ -70,6 +70,12 @@ onoremap ot it "t for HTML tag
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""normality_fixed
 
+"And we also broke <C-w> hjkl, I mean we didn't. It's stil not working. Me Fix
+noremap <C-i> <C-w>k
+noremap <C-j> <C-w>h
+noremap <C-k> <C-w>j
+noremap <C-l> <C-w>l
+
 " Make vim stop creating those "~FILE" backup files all over your projects
 set nobackup
 
@@ -125,7 +131,7 @@ highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 
 " bind K to search word under cursor
-nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
+"nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " Add some extensions for GLSL syntax highlighting support
 autocmd! BufNewFile,BufRead *.vs,*.fs,*.psh,*.vsh,*.v,*.f set ft=glsl
