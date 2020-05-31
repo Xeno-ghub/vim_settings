@@ -22,6 +22,8 @@
 
 " TODOs
 " use a hotkey to show relative line numbers while holding it down (or toggle)
+"   actually.... use the hotkey toggle to switch to absolute. Keep relative
+"   always
 
 " EXISTENTIAL QUESTIONS: (Just to make it a bit closer to normal keys)
 " should I change
@@ -120,6 +122,7 @@ set autoread
 noremap <S-p> "+p
 
 " Set ctrl+i to jump to beginning of file, akin to ctrl+home in other editors
+" TODO maybe don't use this? or just switch it to <C-home>...
 noremap <C-i> gg
 
 " Reverse 0 & ^ functionality to be akin to regex
@@ -131,9 +134,12 @@ highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%81v', 100)
 
 " bind K to search word under cursor
+" TODO this
 "nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " Add some extensions for GLSL syntax highlighting support
+" TODO. This is language specific. I think we shouldn't pollute the vimrc 
+" with this
 autocmd! BufNewFile,BufRead *.vs,*.fs,*.psh,*.vsh,*.v,*.f set ft=glsl
 
 
