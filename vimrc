@@ -46,13 +46,14 @@ else
 endif
 
 " Windowsify the insert-mode. I think my plan is to not ever go to visual mode
+" The "vim way" it is not
 " This part is done in the windowsComponent4vimrc file
 
 " ======================================
 " Most important part
 " ======================================
 
-" Remap "H" to <insert>, and use i,j,k,l for arrow-like behaviour (like a normie)
+" Remap "H" to <insert>, and use i,j,k,l for an inverted-T layout (normie)
 "
 noremap h <insert>
 noremap i <Up>
@@ -85,7 +86,7 @@ onoremap o' i'
 onoremap o" i"
 onoremap ot it "t for HTML tag
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""normality_fixed
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""broken normality_fixed
 
 "And we also broke <C-w> hjkl, I mean we didn't. It's stil not working. Me Fix
 noremap <C-i> <C-w>k
@@ -93,7 +94,7 @@ noremap <C-j> <C-w>h
 noremap <C-k> <C-w>j
 noremap <C-l> <C-w>l
 
-" Place swap files in a central directory instead of polluting projects
+" Place swap files in a central directory instead of polluting your projects
 call CentralizeSwapFiles()
 
 " Make vim stop creating those "~FILE" backup files all over your projects
@@ -101,7 +102,7 @@ set nobackup
 
 " Search settings
 set incsearch     " do incremental searching
-set hlsearch      " highlight matches
+set hlsearch      " highlight all matches (like Chrome or IE)
 set ignorecase    " Searches ignore case
 set smartcase     " Searches don't ignore case if they contain upper case
 
@@ -133,12 +134,11 @@ noremap 0 ^
 noremap ^ 0
 
 " Have a keybinding for inserting a timestamp
-" nnoremap <A-D> a<C-R>=strftime("%Y%m%d_%H%M%S")<CR><Esc>
 inoremap <C-F> <Esc>a <C-R>=strftime("%Y%m%d_%H%M%S")<CR>
 nnoremap <C-F> a <C-R>=strftime("%Y%m%d_%H%M%S")<CR><Esc>
 
 " ======================================
-" Performance settings that should be on by default, but whatever
+" Performance settings that should be on by default
 " ======================================
 "
 " Make vim smoother in modern consoles/terminals
