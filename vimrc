@@ -119,7 +119,7 @@ set shiftwidth=4
 
 " Change Vim's <ESC> key to <CAPS> (just because it's much easier to reach)
 " FOR THIS YOU NEED TO GET xorg-xmodmap package!
-call BindESCtoCAPS()
+" call BindESCtoCAPS()
 
 " Display line numbers
 set number
