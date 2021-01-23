@@ -1,6 +1,0 @@
-[submodule "pack/foo/start/ultisnips"]
-	path = pack/foo/start/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
-[submodule "pack/foo/start/vim-snippets"]
-	path = pack/foo/start/vim-snippets
-	url = https://github.com/honza/vim-snippets.git
