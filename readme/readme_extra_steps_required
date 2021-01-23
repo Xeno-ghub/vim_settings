@@ -1,0 +1,12 @@
+Stuff in here is just extra steps that're required to do in order to get 
+    wanted functionality.
+
+####### SORTED BY OS ##########
+
+
+########## LINUSX #############
+To get Ctrl+Backspace functionality you want to sadly edit INPUTRC
+a   f   aa  a
+    ( https://superuser.com/questions/402246/bash-can-i-set-ctrl-backspace-to-delete-the-word-backward )
+
+    fdsakjfksa
