@@ -19,5 +19,5 @@ noremap <C-i> gg
 nnoremap ! :set relativenumber!<CR>
 
 " set CTRL+BACKSPACE to delete previous word
-nnoremap <C-BS> <C-w>
-inoremap <C-BS> <C-\><C-o>db
+"simply does not work nnoremap <C-BS> <C-w>
+"simply does not work inoremap <C-BS> <C-\><C-o>db
