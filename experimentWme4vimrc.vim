@@ -14,6 +14,7 @@
 " <C-Home> is already remapped to "go to beginning" from "behave mswin" command
 noremap <C-i> gg
 
+<<<<<<< HEAD
 " set "!" to toggle between hybrid line numbers & absolute line numbers
 " to my knowledge, "!" isn't really bound to anything in normal/visual/insert
 nnoremap ! :set relativenumber!<CR>
@@ -21,3 +22,6 @@ nnoremap ! :set relativenumber!<CR>
 " set CTRL+BACKSPACE to delete previous word
 "simply does not work nnoremap <C-BS> <C-w>
 "simply does not work inoremap <C-BS> <C-\><C-o>db
+=======
+
+>>>>>>> dfee83bfe82a2988f9521bfab65f824725895000

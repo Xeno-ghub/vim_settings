@@ -1,0 +1,11 @@
+How to install my vim config for Windows.
+
+1. Ran Virtualbox + Ubuntu guest where I would run VIM.
+2. Had a shared folder between my host & guest.
+    2a. Setup shared clipboard in virtualbox ( vm settings -> General -> Adv -> Shared clipboard )
+3. VIM Compatibility issues:
+    > Install xorg-xmodmap. (might already be installed under x11-xserver-utils)
+        Need it to be able to remap <ESC> to <CAPSLOCK>
+    > Install tmux-focus-events plugin (just copy tmux-focus-events.vim in ~/.vim/.vimrc)
+4. copy vimrc (use ~/.vim/vimrc, not ~/.vimrc to ensure plugins work) 
+

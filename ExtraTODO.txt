@@ -1,0 +1,52 @@
+Reorder vim customizations based on
+
+Things that should be available by default:
+
+....
+
+
+Things I customized:
+
+...
+
+
+
+
+
+
+Make <insert mode> behave like normal modern text editors?
+    No. I have to resist this I guess. I should also resist putting cut, copy, paste to x,c,v
+
+How about normal UNDO in insert mode? You undo everything you've written that's bonkers
+
+Hmmmmm... New Idea. Actually it might be best if I leave these things "as vim as possible" for
+a long while until I get a hold of them. Then, make it so it behaves like a normal text editor 
+inside insert mode as well. And then let more long time pass. Then I'll know whether I'll prefer 
+one mode or the other. Like what about ctrl+backspace... I always use that, I can't imagine it being
+better on any vim config.
+
+
+
+
+https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
+
+
+initrc for linux for tab autocomplete & tab autocomplete first result, not just stop like a piece of shit
+    also add in github
+    
+    
+Vim tab autocomplete
+
+
+update my .vimrc with vim-sensible
+
+
+change Host hotkey
+
+make it move faster it's so sl
+
+
+fuzzy search
+    ag search, or whatever it was called
+
+search in all files -> Then open file from results
