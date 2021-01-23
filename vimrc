@@ -27,13 +27,8 @@ endfunction
 
 " A bunch of function definitions here. 
 " If these files don't exist, then this vimrc's a no-go
-<<<<<<< HEAD
 let g:preambleFname='~/.vim/preamble4vimrc.vim'
 if !filereadable(expand(g:preambleFname))
-=======
-let g:preambleFname="preamble4vimrc.vim"
-if !filereadable(g:preambleFname)
->>>>>>> dfee83bfe82a2988f9521bfab65f824725895000
     echo "File " g:preambleFname " does not exist! This VIMRC needs it."
     call MyQuit()
 else
@@ -51,15 +46,11 @@ else
 endif
 
 " Windowsify the insert-mode. I think my plan is to not ever go to visual mode
-<<<<<<< HEAD
 "
 " ....... I know ... I know ......
 "      The "vim way" this is not
 " ................................
 "
-=======
-" The "vim way" it is not
->>>>>>> dfee83bfe82a2988f9521bfab65f824725895000
 " This part is done in the windowsComponent4vimrc file
 
 " ======================================
@@ -120,7 +111,6 @@ set ignorecase    " Searches ignore case
 set smartcase     " Searches don't ignore case if they contain upper case
 
 " Softtabs, 4 spaces
-<<<<<<< HEAD
 set expandtab     " ALWAYS EXPAND TAB TO SPACES
 set tabstop=4     " How many whitespaces a TAB is displayed/printed. Who knows
 set softtabstop=4
@@ -130,21 +120,11 @@ set shiftwidth=4
 " Change Vim's <ESC> key to <CAPS> (just because it's much easier to reach)
 " FOR THIS YOU NEED TO GET xorg-xmodmap package!
 " call BindESCtoCAPS()
-=======
-set tabstop=4
-set shiftwidth=4
-set expandtab
-
-" Change Vim's <ESC> key to <CAPS> (just because it's much easier to reach)
-" FOR THIS YOU NEED TO GET xorg-xmodmap package!
-call BindESCtoCAPS()
->>>>>>> dfee83bfe82a2988f9521bfab65f824725895000
 
 " Display line numbers
 set number
 set relativenumber
 
-<<<<<<< HEAD
 " CTRL-Tab is next tab
 " noremap  <C-Tab> :<C-U>tabnext<CR>
 " inoremap <C-Tab> <C-\><C-N>:tabnext<CR>
@@ -161,8 +141,6 @@ inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 
-=======
->>>>>>> dfee83bfe82a2988f9521bfab65f824725895000
 " Make vim check for any changes from outside to your file.
 " The idea with this is that if anyone modifies your files, vim should become
 " aware.
