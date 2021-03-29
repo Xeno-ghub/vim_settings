@@ -114,7 +114,7 @@ set shiftwidth=4
 
 " Change Vim's <ESC> key to <CAPS> (just because it's much easier to reach)
 " FOR THIS YOU NEED TO GET xorg-xmodmap package!
-" call BindESCtoCAPS()
+"disabling it since it makes vim sluggish, maybe reenable call BindESCtoCAPS()
 
 " Display line numbers
 set number
@@ -172,20 +172,11 @@ inoremap <C-l> <Esc><C-w>l
 "TODO CURRENTLY DON'T KNOW HOW TO GET IT TO WORK inoremap <C-T> <Esc>:vs<Enter>
 
 
-" Close split/window with control-w. Just "call" :q
+" Close split/window with control-w.
 " You know, like a normal editor
 vnoremap <C-w> <Esc>:q<Enter>
 nnoremap <C-w> <Esc>:q<Enter>
 inoremap <C-w> <Esc>:q<Enter>
-
-" Close split/window with control-W (WITHOUT SAVING). Just "call" :q!
-"TODO CURRENTLY DON'T KNOW HOW TO GET IT TO WORK vnoremap <C-W> <Esc>:q!<Enter>
-"DANGEROUS THOUGH
-"TODO CURRENTLY DON'T KNOW HOW TO GET IT TO WORK nnoremap <C-W> <Esc>:q!<Enter>
-"DANGEROUS THOUGH
-"TODO CURRENTLY DON'T KNOW HOW TO GET IT TO WORK inoremap <C-W> <Esc>:q!<Enter>
-"DANGEROUS THOUGH
-
 
 " Make vim check for any changes from outside to your file.
 " The idea with this is that if anyone modifies your files, vim should become
