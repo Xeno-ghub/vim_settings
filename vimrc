@@ -140,6 +140,16 @@ set relativenumber
 noremap <C-t> :vnew<CR>
 inoremap <C-t> <Esc>:vnew<CR>
 
+" Open a new split horizontally with Control-4 as if opening a tab
+" The "4" hotkey is kinda wonky, but idk what I can set it to...
+" Yes... <C-\> actually means <C-4> .... 
+
+" "Normally Ctrl-Number produce a different key code. You can check like this"
+" "Open Vim and change to insert mode. Then hit Ctrl-V followed by Ctrl-4"
+" https://vi.stackexchange.com/questions/19358/cannot-map-ctrl-number-except-6-or
+noremap <C-\> :new<CR>
+inoremap <C-\> <Esc>:new<CR>
+
 " Navigate between splits directly
 " And we also broke <C-w> hjkl, I mean we didn't. It's stil not working. Me Fix
 
