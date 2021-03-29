@@ -92,12 +92,6 @@ onoremap ot it "t for HTML tag
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""broken normality_fixed
 
-"And we also broke <C-w> hjkl, I mean we didn't. It's stil not working. Me Fix
-"ACTUALLY I DON'T WANT TO FIX IT noremap <C-i> <C-w>k
-"ACTUALLY I DON'T WANT TO FIX IT noremap <C-j> <C-w>h
-"ACTUALLY I DON'T WANT TO FIX IT noremap <C-k> <C-w>j
-"ACTUALLY I DON'T WANT TO FIX IT noremap <C-l> <C-w>l
-
 " Place swap files in a central directory instead of polluting your projects
 call CentralizeSwapFiles()
 
@@ -143,12 +137,22 @@ set relativenumber
 
 " Open a new split vertically with Control-t as if opening a tab
 " You know, like a normal editor
-vnoremap <C-t> <Esc>:vnew<Enter>
-nnoremap <C-t> <Esc>:vnew<Enter>
-inoremap <C-t> <Esc>:vnew<Enter>
-" vnoremap <C-t> <Esc>:vs<Enter>
-" nnoremap <C-t> <Esc>:vs<Enter>
-" inoremap <C-t> <Esc>:vs<Enter>
+noremap <C-t> :vnew<CR>
+inoremap <C-t> <Esc>:vnew<CR>
+
+" Navigate between splits directly
+" And we also broke <C-w> hjkl, I mean we didn't. It's stil not working. Me Fix
+
+" Also shortcircuit VIM's way of entering 'split mode' with <C-w> then moving to
+" desired split /w hjkl. What?...
+noremap <C-i> <C-w>k
+noremap <C-j> <C-w>h
+noremap <C-k> <C-w>j
+noremap <C-l> <C-w>l
+inoremap <C-i> <Esc><C-w>k
+inoremap <C-j> <Esc><C-w>h
+inoremap <C-k> <Esc><C-w>j
+inoremap <C-l> <Esc><C-w>l
 
 " Open a new split horizontally with Control-T as if opening a tab
 " You know, like a normal editor

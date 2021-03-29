@@ -4,6 +4,8 @@
 " FZF
 " Ultisnips
 
+" Tabs hotkeys / Should I even Use Tabs at all?
+
 " Make the damned tab always insert 4 spaces. FIXED WIDTH. Fucking Vim man.
 
 " How to make Meta/Alt hotkeys work:
