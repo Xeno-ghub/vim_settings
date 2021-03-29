@@ -120,22 +120,6 @@ set shiftwidth=4
 set number
 set relativenumber
 
-" CTRL-Tab is next tab
-"DOESN'T WORK noremap  <C-Tab> :<C-U>tabnext<CR>
-"DOESN'T WORK inoremap <C-Tab> <C-\><C-N>:tabnext<CR>
-"DOESN'T WORK cnoremap <C-Tab> <C-C>:tabnext<CR>
-"DOESN'T WORK CTRL-SHIFT-Tab is previous tab
-"DOESN'T WORK noremap  <C-S-Tab> :<C-U>tabprevious<CR>
-"DOESN'T WORK inoremap <C-S-Tab> <C-\><C-N>:tabprevious<CR>
-"DOESN'T WORK cnoremap <C-S-Tab> <C-C>:tabprevious<CR>
-"DOESN'T WORK Tab navigation like Firefox.
-"DOESN'T WORK nnoremap <C-S-tab> :tabprevious<CR>
-"DOESN'T WORK nnoremap <C-tab>   :tabnext<CR>
-"DOESN'T WORK nnoremap <C-t>     :tabnew<CR>
-"DOESN'T WORK inoremap <C-S-tab> <Esc>:tabprevious<CR>i
-"DOESN'T WORK inoremap <C-tab>   <Esc>:tabnext<CR>i
-"DOESN'T WORK inoremap <C-t>     <Esc>:tabnew<CR>
-
 " Open a new split vertically with Control-t as if opening a tab
 " You know, like a normal editor
 noremap <C-t> :vnew<CR>
