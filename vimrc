@@ -149,6 +149,15 @@ inoremap <C-j> <Esc><C-w>h
 inoremap <C-k> <Esc><C-w>j
 inoremap <C-l> <Esc><C-w>l
 
+" New tab
+" Yes ... Control+2 is actually Control+@
+noremap <C-@> :tabnew<CR>
+inoremap <C-@> <Esc>:tabnew<CR>
+
+" Switch tabs. For now just use gT as Ctrl+Q
+noremap <C-e> gT
+"inoremap <C-@> <Esc>:tabnew<CR>
+
 " Open a new split horizontally with Control-T as if opening a tab
 " You know, like a normal editor
 "TODO CURRENTLY DON'T KNOW HOW TO GET IT TO WORK vnoremap <C-T> <Esc>:vs<Enter>
