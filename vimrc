@@ -144,7 +144,8 @@ noremap <C-i> <C-w>k
 noremap <C-j> <C-w>h
 noremap <C-k> <C-w>j
 noremap <C-l> <C-w>l
-inoremap <C-i> <Esc><C-w>k
+" I cannot map this as <C-i> is literally the tab character in Terminals...TODO
+"inoremap <C-i> <Esc><C-w>k
 inoremap <C-j> <Esc><C-w>h
 inoremap <C-k> <Esc><C-w>j
 inoremap <C-l> <Esc><C-w>l
