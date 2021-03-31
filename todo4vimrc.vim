@@ -17,3 +17,7 @@
 " It doesn't seem hard you just have to edit .bashrc
 
 "  ( https://stackoverflow.com/questions/21806168/vim-use-ctrl-q-for-visual-block-mode-in-vim-gnome )
+
+" Make Control-Backspace delete previous word
+"noremap <C-U> <Esc>dwdb<insert>
+"Maybe with metakey? Apparently it worksi n NEOVIM inoremap <a-BS> <Esc>dwdb<insert>

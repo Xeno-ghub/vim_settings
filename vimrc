@@ -155,8 +155,9 @@ noremap <C-@> :tabnew<CR>
 inoremap <C-@> <Esc>:tabnew<CR>
 
 " Switch tabs. For now just use gT as Ctrl+Q
-noremap <C-e> gT
-"inoremap <C-@> <Esc>:tabnew<CR>
+noremap  <C-e> gT
+inoremap <C-e> <Esc>gT
+inoremap <C-@> <Esc>:tabnew<CR>
 
 " Open a new split horizontally with Control-T as if opening a tab
 " You know, like a normal editor
@@ -186,8 +187,8 @@ noremap 0 ^
 noremap ^ 0
 
 " Have a keybinding for inserting a timestamp
-inoremap <C-D> <Esc>a <C-R>=strftime("%Y%m%d_%H%M%S")<CR>
-nnoremap <C-D> a <C-R>=strftime("%Y%m%d_%H%M%S")<CR><Esc>
+inoremap <C-D> <Esc>a<C-R>=strftime("%Y%m%d_%H%M%S")<CR>
+nnoremap <C-D> a<C-R>=strftime("%Y%m%d_%H%M%S")<CR><Esc>
 
 " Most important part of this VIMRC I guess
 " My beloved search mechanics
