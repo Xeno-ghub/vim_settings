@@ -194,6 +194,12 @@ nnoremap <C-D> a<C-R>=strftime("%Y%m%d_%H%M%S")<CR><Esc>
 " Most important part of this VIMRC I guess
 " My beloved search mechanics
 call MySearchRemaps()
+" Duplicate n/N search functionality on f/F. I search with ctrl+f.
+" Might as well keep searching with f/F
+nnoremap f n
+vnoremap f n
+nnoremap F N
+vnoremap F N
 
 " ======================================
 " Performance settings that should be on by default
