@@ -189,6 +189,7 @@ noremap ^ 0
 
 " Have a keybinding for inserting a timestamp
 inoremap <C-D> <Esc>a<C-R>=strftime("%Y%m%d_%H%M%S")<CR>
+vnoremap <C-D> <del>i<C-R>=strftime("%Y%m%d_%H%M%S")<CR>
 nnoremap <C-D> a<C-R>=strftime("%Y%m%d_%H%M%S")<CR><Esc>
 
 " Most important part of this VIMRC I guess
