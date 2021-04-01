@@ -28,7 +28,7 @@ call CheckMyFileExists(g:functionsFname, 1)
 
 " Windowsify vim. 
 " \"behave mswin"
-" and accompanying logic is in this file
+" and accompanying logic is in this file.
 let g:mswinFname="~/.vim/windowsComponent4vimrc.vim"
 if has('clipboard')
     if has('xterm_clipboard')
