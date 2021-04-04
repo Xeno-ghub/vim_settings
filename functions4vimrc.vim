@@ -35,12 +35,23 @@ endfunction
 
 
 " I expect two words separated by spaces, and I'll insert ".*?" inbetween them
-" More precisely "[\r\n]*?" in std. regex, or "[ ,\.]\{-}" in vim parlance
+" More precisely "[^\r\n]*?" in std. regex, or "[^\r\n]\{-}" in vim parlance
 
 function! s:modifySearchQuery(searchQueryStr)
     " Looking for the first two words separated by space comma
     let oldSearchQry = matchlist(a:searchQueryStr, 
-                            \'\v([^ ,\.\r\n]+)[ ,\.]*([^ ,\.\r\n]+)')
+                            \'\v([^ ,\.\r\n]+)[^\r\n]+[^ ,\.\r\n]+[ ,.]+([^ ,\.\r\n]+)')
+                             "\v = very magic mode in vim
+
+                             " Explanation of above regex: a bit complicated
+                             " ([^ ,\.\r\n]+) - Capture first word-like thing
+
+                             " [^\r\n]+[^ ,\.\r\n]+[ ,.]+
+                             "
+                             " gobble up words/spaces everything til you find a
+                             " nonword followed by final space-like characters
+                             "
+                             " ([^ ,\.\r\n]+) - Finally capture final word
 
     " len always >3 since matchlist always returns list /w 10elem
     " still check it though
@@ -51,7 +62,7 @@ function! s:modifySearchQuery(searchQueryStr)
             \&& !empty(oldSearchQry[2])
 
             " return this regex into our function body
-            let regexRet = oldSearchQry[1] . '[ ,.]\{-}' . oldSearchQry[2]
+            let regexRet = oldSearchQry[1] . '[^\r\n]\{-}' . oldSearchQry[2]
             return regexRet
 
         endif
