@@ -198,9 +198,13 @@ call MySearchRemaps()
 " Duplicate n/N search functionality on f/F. I search with ctrl+f.
 " Might as well keep searching with f/F
 nnoremap f n
-vnoremap f n
 nnoremap F N
-vnoremap F N
+" In visual-select I just want to overwrite, like a normal text editor
+vnoremap f <del>if
+vnoremap F <del>iF
+
+
+
 
 " ======================================
 " Performance settings that should be on by default
@@ -252,4 +256,5 @@ if pesteringMessages
     :echom 'You can turn off these annoying messages by deleting
     \ the last lines from this vimrc'
 endif
+
 
