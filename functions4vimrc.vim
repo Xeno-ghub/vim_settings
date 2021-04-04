@@ -34,39 +34,54 @@ function BindESCtoCAPS()
 endfunction
 
 
-" I expect two words separated by spaces, and I'll insert ".*?" inbetween them
+" I expect two/more words separated by spaces, and I'll insert ".*?" inbetween
 " More precisely "[^\r\n]*?" in std. regex, or "[^\r\n]\{-}" in vim parlance
-
 function! s:modifySearchQuery(searchQueryStr)
-    " Looking for the first two words separated by space comma
-    let oldSearchQry = matchlist(a:searchQueryStr, 
-                            \'\v([^ ,\.\r\n]+)[^\r\n]+[^ ,\.\r\n]+[ ,.]+([^ ,\.\r\n]+)')
+
+    let matchdOldQry = matchlist(a:searchQueryStr, 
+                            \'\v([^ ,\.\r\n]+)([ ,\.]*[^ ,\.\r\n]*)+[ ,.]+([^ ,\.\r\n]+)')
+                            "\'\v([^ ,\.\r\n]+)[^\r\n]+[^ ,\.\r\n]+[ ,.]*([^ ,\.\r\n]+)')
                              "\v = very magic mode in vim
 
-                             " Explanation of above regex: a bit complicated
+                             " Explanation of above regex:
+                             "(\w+)( *\w*)+ +(\w+) <- Does almost exactly this
                              " ([^ ,\.\r\n]+) - Capture first word-like thing
 
-                             " [^\r\n]+[^ ,\.\r\n]+[ ,.]+
+                             " [^\r\n]+[^ ,\.\r\n]+[ ,.]*
                              "
                              " gobble up words/spaces everything til you find a
                              " nonword followed by final space-like characters
                              "
                              " ([^ ,\.\r\n]+) - Finally capture final word
 
+    " Backup search for a single word
+    let matchdOldQry2 = matchlist(a:searchQueryStr, '\v([^ ,\.\r\n]+)')
+
     " len always >3 since matchlist always returns list /w 10elem
     " still check it though
-    if len(oldSearchQry) >= 3
+    if len(matchdOldQry) >= 3
         " Make sure we matched the whole regex & the two capture groups
-        if !empty(oldSearchQry[0]) 
-            \&& !empty(oldSearchQry[1]) 
-            \&& !empty(oldSearchQry[2])
+        if !empty(matchdOldQry[0]) 
+            \&& !empty(matchdOldQry[1])
+            \&&  empty(matchdOldQry[2])
+            \&& !empty(matchdOldQry[3])
+            " !!! I don't know why capture group matchdOldQry[2] comes out 
+            "     empty in this regex. But it does. On other platforms too
 
             " return this regex into our function body
-            let regexRet = oldSearchQry[1] . '[^\r\n]\{-}' . oldSearchQry[2]
+            let regexRet = matchdOldQry[1] . '[^\r\n]\{-}' . matchdOldQry[3]
             return regexRet
-
         endif
     endif
+    " Otherwise maybe there is only 1 word selected
+    if len(matchdOldQry2) >= 3
+        if !empty(matchdOldQry2[0]) 
+            \&& !empty(matchdOldQry2[1])
+            " return the word
+            return matchdOldQry2[1]
+         endif
+    endif
+    
     return 'errorInMyVimscript'
 endfunction
 
