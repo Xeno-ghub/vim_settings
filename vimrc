@@ -233,3 +233,23 @@ set showcmd       " display incomplete commands
 " Highlight line number of where cursor currently is
 " hi CursorLineNr guifg=#050505
 
+"" ADD-ONs
+
+let pesteringMessages = 0
+if !executable('ag')
+    :echom "Your vim is incomplete. Ag not installed."
+    let pesteringMessages = 1
+endif 
+if !executable('fzf')
+    :echom "Your vim is incomplete. FZF not installed."
+    let pesteringMessages = 1
+else
+    " add FZF to runtimepath
+    set rtp+=~/fzf
+endif 
+
+if pesteringMessages
+    :echom 'You can turn off these annoying messages by deleting
+    \ the last lines from this vimrc'
+endif
+

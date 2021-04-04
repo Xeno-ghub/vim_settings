@@ -3,9 +3,43 @@ How to install my vim config for Windows.
 1. Ran Virtualbox + Ubuntu guest where I would run VIM.
 2. Had a shared folder between my host & guest.
     2a. Setup shared clipboard in virtualbox ( vm settings -> General -> Adv -> Shared clipboard )
-3. VIM Compatibility issues:
+
+3. copy my vim stuff (use ~/.vim/vimrc, not ~/.vimrc to ensure plugins work) 
+
+    # SETUP BASE VIM
+
+    $> git clone https://github.com/Xeno-ghub/vim_settings.git
+    $> mv vim_settings .vim
+
+    # we don't want to use plugin managers if now it's native
+    $> mkdir pack
+    $> cd pack
+    $> mkdir mypluginz
+    $> cd mypluginz
+    $> mkdir start
+
+    ## # SETUP ADD-ONs
+
+    # FZF
+
+    $> git clone https://github.com/junegunn/fzf.vim.git
+    # copy confusingly named plugin...
+    $> mv -r fzf.vim ~/.vim/pack/mypluginz/start/fzf.vim
+
+    # There's a second/first part to FZF...
+    $> git clone https://github.com/junegunn/fzf.git
+    $> cd fzf
+    $> ./install
+    $> cp -r fzf ~/.vim/pack/mypluginz/start/fzf.vim 
+
+    # AG
+    apt-get install silversearcher-ag
+    
+
+
+
+5. VIM Compatibility issues:
+    [OPTIONAL]
     > Install xorg-xmodmap. (might already be installed under x11-xserver-utils)
         Need it to be able to remap <ESC> to <CAPSLOCK>
-    ### NO LONGER USED? > Install tmux-focus-events plugin (just copy tmux-focus-events.vim in ~/.vim/.vimrc)
-4. copy vimrc (use ~/.vim/vimrc, not ~/.vimrc to ensure plugins work) 
 
