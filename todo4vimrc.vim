@@ -21,6 +21,16 @@
 " $ stty -ixon
 " ( https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_2) )
 
+
+
+" Learn the Jumping stuff more
+" "https://stackoverflow.com/questions/11018713/vim-go-to-previous-location"
+" <C-o> and <C-i> allow you to go down and up the jumplist. They work with "jump" commands but not with jjjjjjjjjjj.
+
+" To take advantage of this feature — and save a lot of time and keypresses in the process — I'd advise you to get into the habit of using better ways to navigate through your code : /?^$fFtTbBeEwW{} and so on.
+
+
+
 " Make Control-Backspace delete previous word
 "noremap <C-U> <Esc>dwdb<insert>
 "Maybe with metakey? Apparently it worksi n NEOVIM inoremap <a-BS> <Esc>dwdb<insert>
