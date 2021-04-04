@@ -29,6 +29,8 @@
 
 " To take advantage of this feature — and save a lot of time and keypresses in the process — I'd advise you to get into the habit of using better ways to navigate through your code : /?^$fFtTbBeEwW{} and so on.
 
+" Bonus - zz recenters screen
+
 
 
 " Make Control-Backspace delete previous word
