@@ -6,7 +6,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-function! CheckMyFileExists(fname, DIE)
+function! TryToSourceFile(fname, DIE)
     if !filereadable(expand(a:fname))
         if a:DIE
             echo "File " a:fname "does not exist! This vimrc needs it!"
@@ -23,7 +23,7 @@ endfunction
 " A bunch of function definitions here.  
 " If this file doesn't exist, then this vimrc's a no-go 
 let g:functionsFname="~/.vim/functions4vimrc.vim" 
-call CheckMyFileExists(g:functionsFname, 1)
+call TryToSourceFile(g:functionsFname, 1)
 
 
 " Windowsify vim. 
@@ -32,7 +32,7 @@ call CheckMyFileExists(g:functionsFname, 1)
 let g:mswinFname="~/.vim/windowsComponent4vimrc.vim"
 if has('clipboard')
     if has('xterm_clipboard')
-        call CheckMyFileExists(g:mswinFname, 1)
+        call TryToSourceFile(g:mswinFname, 1)
     else
         echo "Your VIM doesn't have the clipboard component."
         echo "\"behave mswin\" behaves weirdly without it."
@@ -46,18 +46,18 @@ endif
 
 " Try out new vim commands here to see if you like them
 let g:experimentalVIMRC="~/.vim/experimentWme4vimrc.vim"
-call CheckMyFileExists(g:experimentalVIMRC, 0)
+call TryToSourceFile(g:experimentalVIMRC, 0)
 
 " A bunch of legacy vim stuff here
 " This file is optional
 let g:superfluousFname="~/.vim/superfluousDeprecated4vimrc.vim" 
-call CheckMyFileExists(g:superfluousFname, 0)
+call TryToSourceFile(g:superfluousFname, 0)
 
 
 " A bunch of function definitions here.  
 " This file is optional
 let g:todoFname="~/.vim/todo4vimrc.vim" 
-call CheckMyFileExists(g:todoFname, 0)
+call TryToSourceFile(g:todoFname, 0)
 
 
 
