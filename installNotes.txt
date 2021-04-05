@@ -24,13 +24,13 @@ How to install my vim config for Windows.
 
     $> git clone https://github.com/junegunn/fzf.vim.git
     # copy confusingly named plugin...
-    $> mv -r fzf.vim ~/.vim/pack/mypluginz/start/fzf.vim
+    $> mv fzf.vim ~/.vim/pack/mypluginz/start
 
     # There's a second/first part to FZF...
     $> git clone https://github.com/junegunn/fzf.git
     $> cd fzf
     $> ./install
-    $> cp -r fzf ~/.vim/pack/mypluginz/start/fzf.vim 
+    $> cp -r fzf ~/.vim/pack/mypluginz/start/fzf
 
     # AG
     apt-get install silversearcher-ag
