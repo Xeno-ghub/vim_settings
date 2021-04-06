@@ -159,6 +159,9 @@ inoremap <C-]> <Esc>:tabnew<CR>
 noremap  <C-e> gT
 inoremap <C-e> <Esc>gT
 
+" We broke ctrl+i (jump forward), remap to c-u
+noremap <c-u> <c-i>
+
 " Open a new split horizontally with Control-T as if opening a tab
 " You know, like a normal editor
 "TODO CURRENTLY DON'T KNOW HOW TO GET IT TO WORK vnoremap <C-T> <Esc>:vs<Enter>
