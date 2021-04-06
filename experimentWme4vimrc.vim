@@ -23,6 +23,25 @@ nnoremap ! :set relativenumber!<CR>
 noremap <C-@> i
 inoremap <C-@> <Esc>
 
+" Maybe sometimes I want that column line to display?
+" I'm hiding it for fear of OLED burn-in anwyay
+noremap # :call ToggleColumn()<CR>
+
+
+function! ToggleColumn()
+   if &colorcolumn==0
+        :set colorcolumn=80
+        execute 'highlight ColorColumn ctermbg=LightGray'
+        execute 'highlight ColorColumn ctermbg=Grey'
+        let g:hiddenColorColumnToggle=0
+    else
+        :set colorcolumn=0
+        execute 'highlight ColorColumn ctermbg=magenta'
+        let g:hiddenColorColumnToggle=1
+    endif
+endfunction
+
+
 
 " set CTRL+BACKSPACE to delete previous word
 "DELME NOT WORKING nnoremap <C-BS> <C-w>
