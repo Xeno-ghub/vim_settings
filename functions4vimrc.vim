@@ -161,10 +161,14 @@ function! MySearchFun(mode, alsoReplace)
 
     elseif a:mode == "normalmode" || (a:mode == "insertmode")
         let wordundercursor = expand("<cword>")
+        let whitespaceUnderCursor =  getline('.')[col('.')-1]
 
-        if len(wordundercursor) == 0
+  
+        " If we're over some whitespace-like just open an empty search diag
+        if whitespaceUnderCursor =~ "[^a-zA-Z0-9]"
             " If there's no word under cursor just open search dialogue
             :call feedkeys("/")
+            return
         endif
 
         if a:alsoReplace == 'justSearch'
