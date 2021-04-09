@@ -144,7 +144,7 @@ noremap <C-i> <C-w>k
 noremap <C-j> <C-w>h
 noremap <C-k> <C-w>j
 noremap <C-l> <C-w>l
-" I cannot map this as <C-i> is literally the tab character in Terminals...TODO
+" I cannot map <C-i> as it's literally the tab character in Terminals...TODO
 "inoremap <C-i> <Esc><C-w>k
 inoremap <C-j> <Esc><C-w>h
 inoremap <C-k> <Esc><C-w>j
@@ -248,5 +248,37 @@ if pesteringMessages
     :echom 'You can turn off these annoying messages by deleting
     \ the last lines from this vimrc'
 endif
+
+
+" Hello
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'ycm-core/YouCompleteMe'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 
 
