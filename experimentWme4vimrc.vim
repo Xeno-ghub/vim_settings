@@ -41,6 +41,15 @@ function! ToggleColumn()
     endif
 endfunction
 
+" Experiment with changing the color of insert mode.
+" see :help termcap-cursor-shape
+" !!! NEED XTERM 
+if &term =~ "xterm"
+	let &t_SI = "\<Esc>]12;green\x7"
+	let &t_SR = "\<Esc>]12;red\x7"
+	let &t_EI = "\<Esc>]12;white\x7"
+endif
+
 
 
 " set CTRL+BACKSPACE to delete previous word
