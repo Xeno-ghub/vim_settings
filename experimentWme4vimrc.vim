@@ -42,13 +42,17 @@ function! ToggleColumn()
 endfunction
 
 " Adding another toggle to test.
-:set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+" extends & precedes are just characters that would indicate line
+"    > continuation for when nowrap is set. I don't even need em,
+"    but w/e
+"    > trail is trailing whitespace. Simply a space @ end of line
+:set listchars=eol:¬,tab:>·,trail:█,extends:>,precedes:<,space:␣
 nnoremap # :set list!<CR>
 
 
 " Experiment with changing the color of insert mode.
 " see :help termcap-cursor-shape
-" !!! NEED XTERM 
+" !!! NEED XTERM
 if &term =~ "xterm"
 	let &t_SI = "\<Esc>]12;green\x7"
 	let &t_SR = "\<Esc>]12;red\x7"
