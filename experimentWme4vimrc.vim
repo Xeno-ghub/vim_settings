@@ -51,6 +51,11 @@ if &term =~ "xterm"
 endif
 
 
+" Try to switch up fF & tT. I know it's not ideal :( but fF are taken
+nnoremap t f
+nnoremap T F
+
+
 
 " set CTRL+BACKSPACE to delete previous word
 "DELME NOT WORKING nnoremap <C-BS> <C-w>
