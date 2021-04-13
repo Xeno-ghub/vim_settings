@@ -25,7 +25,7 @@ inoremap <C-@> <Esc>
 
 " Maybe sometimes I want that column line to display?
 " I'm hiding it for fear of OLED burn-in anwyay
-noremap # :call ToggleColumn()<CR>
+noremap & :call ToggleColumn()<CR>
 
 
 function! ToggleColumn()
