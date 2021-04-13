@@ -41,6 +41,11 @@ function! ToggleColumn()
     endif
 endfunction
 
+" Adding another toggle to test.
+:set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+nnoremap # :set list!<CR>
+
+
 " Experiment with changing the color of insert mode.
 " see :help termcap-cursor-shape
 " !!! NEED XTERM 
