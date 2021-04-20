@@ -161,8 +161,15 @@ function! MySearchFun(mode, alsoReplace)
 
     elseif a:mode == "normalmode" || (a:mode == "insertmode")
         let wordundercursor = expand("<cword>")
-        let whitespaceUnderCursor =  getline('.')[col('.')-1]
 
+        " In append mode the cursor is placed 1 step forward...
+        let whitespaceUnderCursor = " "
+
+        if a:mode == "normalmode"
+            let whitespaceUnderCursor = getline('.')[col('.')-1]
+        elseif a:mode == "insertmode"
+            let whitespaceUnderCursor = getline('.')[col('.')]
+        endif
   
         " If we're over some whitespace-like just open an empty search diag
         if whitespaceUnderCursor =~ "[^a-zA-Z0-9]"
