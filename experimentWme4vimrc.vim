@@ -64,6 +64,10 @@ endif
 nnoremap t f
 nnoremap T F
 
+nnoremap <C-H> db
+inoremap <C-H> <Esc>db
+
+
 
 
 " set CTRL+BACKSPACE to delete previous word

@@ -197,19 +197,19 @@ endfunction
 function! MySearchRemaps()
     nnoremap <C-F> :call MySearchFun("normalmode","justSearch")<CR>
     " go left 4 times to position cursor correctly
-    nnoremap <C-H> :call MySearchFun("normalmode","alsoReplace")
+    nnoremap <C-b> :call MySearchFun("normalmode","alsoReplace")
         \<CR><left><left><left><left>
 
     vnoremap <C-F> :call MySearchFun("visualmode","justSearch")<CR>
     " go left 4 times to position cursor correctly
-    vnoremap <C-H> :call MySearchFun("visualmode","alsoReplace")
+    vnoremap <C-b> :call MySearchFun("visualmode","alsoReplace")
         \<CR><left><left><left><left>
 
     " Manually exiting insert mode as I can't get this function to work
     " in insert mode for the life of me
     inoremap <C-F> <Esc>:call MySearchFun("insertmode","justSearch")<CR>
     " go left 4 times to position cursor correctly
-    inoremap <C-H> <Esc>:call MySearchFun("insertmode","alsoReplace")
+    inoremap <C-b> <Esc>:call MySearchFun("insertmode","alsoReplace")
         \<CR><left><left><left><left>
 
     " Duplicate n/N search functionality on f/F. I search with ctrl+f.

@@ -34,8 +34,16 @@ How to install my vim config for Windows.
 
     # AG
     apt-get install silversearcher-ag
-    
 
+    
+4. Modify .bashrc to allow bindable Ctrl-Q & Ctrl-S
+    GOTO ~/.bashrc:q
+    insert following lines:
+# I wanna have access to CTRL+Q & CTRL+S so disable their innate functionality
+stty stop ''
+stty start ''
+stty -ixon
+stty -ixof
 
 
 5. VIM Compatibility issues:
