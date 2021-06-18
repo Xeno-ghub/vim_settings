@@ -99,6 +99,13 @@ call CentralizeSwapFiles()
 " Make vim stop creating those "~FILE" backup files all over your projects
 set nobackup
 
+" Mouse compatibility ... how is this not default
+set mouse=a       " Set mouse support for all modes
+
+  " Also set vim to go into insert mode upon clicking somewhere. Most likely
+  " You want to edit where you click
+nnoremap <LeftMouse> <LeftMouse>i
+
 " Search settings
 set incsearch     " do incremental searching
 set hlsearch      " highlight all matches (like Chrome or IE)
