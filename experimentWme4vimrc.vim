@@ -64,8 +64,11 @@ endif
 nnoremap t f
 nnoremap T F
 
+" Delete previous word (like any normal text editor...)
 nnoremap <C-H> db
-inoremap <C-H> <Esc>db
+    " In insert mode the cursor is a bit behind what is shown
+    " so go right one step
+inoremap <C-H> <Esc><Right>dbi
 
 
 
