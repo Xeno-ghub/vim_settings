@@ -20,7 +20,8 @@ nnoremap ! :set relativenumber!<CR>
 
 " Trying to see what having <Esc> on <Ctrl+Spacebar> feels like
 nnoremap <C-@> <Esc>
-vnoremap <C-@> <Esc>
+snoremap <C-@> <Esc>
+xnoremap <C-@> <Esc>
 inoremap <C-@> <Esc>
 " Map just spacebar for insert mode.
 nnoremap <Space> i
