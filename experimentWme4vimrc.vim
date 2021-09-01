@@ -65,14 +65,16 @@ nnoremap t f
 nnoremap T F
 
 " Delete previous word (like any normal text editor...)
+" CTRL + BACKSPACE deletes previous word
 nnoremap <C-H> db
     " In insert mode the cursor is a bit behind what is shown
     " so go right one step
 inoremap <C-H> <Esc><Right>dbi
+"NOT LIKE THIS nnoremap <C-BS> <C-w>
+"NOT LIKE THIS inoremap <C-BS> <C-\><C-o>db
 
 
 
 
-" set CTRL+BACKSPACE to delete previous word
-"DELME NOT WORKING nnoremap <C-BS> <C-w>
-"DELME NOT WORKING inoremap <C-BS> <C-\><C-o>db
+
+
