@@ -10,6 +10,12 @@
 
 " How to make Meta/Alt hotkeys work:
 "    https://tex.stackexchange.com/questions/53692/m-i-mapping-not-working-in-vim-latexsuite-on-linux/53748
+" Set <M-q> and <M-e> to jump to next, prev text locations
+" Set <Alt-q> and <Alt-e> to jump to next, prev text locations
+" https://vi.stackexchange.com/questions/2350/how-to-map-alt-key
+" NOT YET WORKING
+" execute "set <M-q>=^[q"
+" nnoremap <M-q> <C-o>>
 
 " Make part of install notes:
 " Remove stupid terminal keybinding hoarding for C-Q & C-S. In bash if you hit
