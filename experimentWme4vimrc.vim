@@ -19,9 +19,11 @@
 nnoremap ! :set relativenumber!<CR>
 
 " Trying to see what having <Esc> on <Ctrl+Spacebar> feels like
-" "Basically a toggle"
-noremap <C-@> i
+nnoremap <C-@> <Esc>
+vnoremap <C-@> <Esc>
 inoremap <C-@> <Esc>
+" Map just spacebar for insert mode.
+noremap  <@> i
 
 " Maybe sometimes I want that column line to display?
 " I'm hiding it for fear of OLED burn-in anwyay
@@ -72,6 +74,8 @@ nnoremap <C-H> db
 inoremap <C-H> <Esc><Right>dbi
 "NOT LIKE THIS nnoremap <C-BS> <C-w>
 "NOT LIKE THIS inoremap <C-BS> <C-\><C-o>db
+
+
 
 
 
