@@ -112,7 +112,7 @@ snoremap <RightMouse> <RightMouse><Esc>
 set incsearch     " do incremental searching
 set hlsearch      " highlight all matches (like Chrome or IE)
 set ignorecase    " Searches ignore case
-set smartcase     " Searches don't ignore case if they contain upper case
+"Actually Disable This set smartcase     " Searches don't ignore case if they contain upper case
 
 " Softtabs, 4 spaces
 set expandtab     " ALWAYS EXPAND TAB TO SPACES
