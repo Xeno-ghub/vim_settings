@@ -32,14 +32,13 @@ call TryToSourceFile(g:functionsFname, 1)
 let g:mswinFname="~/.vim/windowsComponent4vimrc.vim"
 if has('clipboard')
     if has('xterm_clipboard')
-        call TryToSourceFile(g:mswinFname, 1)
+        " Do nothing
     else
-        echo "Your VIM doesn't have the clipboard component."
-        echo "\"behave mswin\" behaves weirdly without it."
-        call MyQuit()
+        echo "Your VIM doesn't have xterm_clipboard component. Nobody cares"
     endif
+    call TryToSourceFile(g:mswinFname, 1)
 else
-    echo "Your VIM doesn't have the xterm_clipboard component."
+    echo "Your VIM doesn't have the clipboard component."
     echo "\"behave mswin\" behaves weirdly without it."
     call MyQuit()
 endif
