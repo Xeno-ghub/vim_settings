@@ -178,13 +178,13 @@ inoremap <M-z> <Esc>:echom "Testing Meta Character Shortcut (pressed key Z)"<CR>
 " DEPRECATED noremap <c-u> <c-i>
 noremap <c-u> <c-i>
 
-" Jump forward
-nnoremap <M-e> <C-i>
-inoremap <M-e> <Esc><C-i>i
+" Jump forward & also after jumping center the screen wtf 
+nnoremap <M-e> <C-i>zz
+inoremap <M-e> <Esc><C-i>zzi
 
 " Jump backward
-nnoremap <M-q> <C-o>
-inoremap <M-q> <Esc><C-o>i
+nnoremap <M-q> <C-o>zz
+inoremap <M-q> <Esc><C-o>zzi
 
 
 
