@@ -121,7 +121,7 @@ nnoremap <M-a> :echom "Testing Meta Character Shortcut (pressed key A)"<CR>
 nnoremap <M-b> :echom "Testing Meta Character Shortcut (pressed key B)"<CR>
 nnoremap <M-c> :echom "Testing Meta Character Shortcut (pressed key C)"<CR>
 nnoremap <M-d> :echom "Testing Meta Character Shortcut (pressed key D)"<CR>
-nnoremap <M-e> :echom "Testing Meta Character Shortcut (pressed key E)"<CR>
+"nnoremap <M-e> :echom "Testing Meta Character Shortcut (pressed key E)"<CR>
 nnoremap <M-f> :echom "Testing Meta Character Shortcut (pressed key F)"<CR>
 nnoremap <M-g> :echom "Testing Meta Character Shortcut (pressed key G)"<CR>
 nnoremap <M-h> :echom "Testing Meta Character Shortcut (pressed key H)"<CR>
@@ -133,7 +133,7 @@ nnoremap <M-m> :echom "Testing Meta Character Shortcut (pressed key M)"<CR>
 nnoremap <M-n> :echom "Testing Meta Character Shortcut (pressed key N)"<CR>
 nnoremap <M-o> :echom "Testing Meta Character Shortcut (pressed key O)"<CR>
 nnoremap <M-p> :echom "Testing Meta Character Shortcut (pressed key P)"<CR>
-nnoremap <M-q> :echom "Testing Meta Character Shortcut (pressed key Q)"<CR>
+"nnoremap <M-q> :echom "Testing Meta Character Shortcut (pressed key Q)"<CR>
 nnoremap <M-r> :echom "Testing Meta Character Shortcut (pressed key R)"<CR>
 nnoremap <M-s> :echom "Testing Meta Character Shortcut (pressed key S)"<CR>
 nnoremap <M-t> :echom "Testing Meta Character Shortcut (pressed key T)"<CR>
@@ -149,7 +149,7 @@ inoremap <M-a> <Esc>:echom "Testing Meta Character Shortcut (pressed key A)"<CR>
 inoremap <M-b> <Esc>:echom "Testing Meta Character Shortcut (pressed key B)"<CR>
 inoremap <M-c> <Esc>:echom "Testing Meta Character Shortcut (pressed key C)"<CR>
 inoremap <M-d> <Esc>:echom "Testing Meta Character Shortcut (pressed key D)"<CR>
-inoremap <M-e> <Esc>:echom "Testing Meta Character Shortcut (pressed key E)"<CR>
+"inoremap <M-e> <Esc>:echom "Testing Meta Character Shortcut (pressed key E)"<CR>
 inoremap <M-f> <Esc>:echom "Testing Meta Character Shortcut (pressed key F)"<CR>
 inoremap <M-g> <Esc>:echom "Testing Meta Character Shortcut (pressed key G)"<CR>
 inoremap <M-h> <Esc>:echom "Testing Meta Character Shortcut (pressed key H)"<CR>
@@ -161,7 +161,7 @@ inoremap <M-m> <Esc>:echom "Testing Meta Character Shortcut (pressed key M)"<CR>
 inoremap <M-n> <Esc>:echom "Testing Meta Character Shortcut (pressed key N)"<CR>
 inoremap <M-o> <Esc>:echom "Testing Meta Character Shortcut (pressed key O)"<CR>
 inoremap <M-p> <Esc>:echom "Testing Meta Character Shortcut (pressed key P)"<CR>
-inoremap <M-q> <Esc>:echom "Testing Meta Character Shortcut (pressed key Q)"<CR>
+"inoremap <M-q> <Esc>:echom "Testing Meta Character Shortcut (pressed key Q)"<CR>
 inoremap <M-r> <Esc>:echom "Testing Meta Character Shortcut (pressed key R)"<CR>
 inoremap <M-s> <Esc>:echom "Testing Meta Character Shortcut (pressed key S)"<CR>
 inoremap <M-t> <Esc>:echom "Testing Meta Character Shortcut (pressed key T)"<CR>
@@ -171,6 +171,24 @@ inoremap <M-w> <Esc>:echom "Testing Meta Character Shortcut (pressed key W)"<CR>
 inoremap <M-x> <Esc>:echom "Testing Meta Character Shortcut (pressed key X)"<CR>
 inoremap <M-y> <Esc>:echom "Testing Meta Character Shortcut (pressed key Y)"<CR>
 inoremap <M-z> <Esc>:echom "Testing Meta Character Shortcut (pressed key Z)"<CR>
+
+
+" First meta keys experiment. Remap jumping between locations.
+" DEPRECATED We broke ctrl+i (jump forward), remap to c-u
+" DEPRECATED noremap <c-u> <c-i>
+noremap <c-u> <c-i>
+
+" Jump forward
+nnoremap <M-e> <C-i>
+inoremap <M-e> <Esc><C-i>i
+
+" Jump backward
+nnoremap <M-q> <C-o>
+inoremap <M-q> <Esc><C-o>i
+
+
+
+
 
 
 

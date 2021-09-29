@@ -21,6 +21,37 @@
 "       ░                           ░           
 
 
+" What this?
+" This VIMRC 'completely' changes the way VIM behaves, makes it act like....
+" ....
+" .... Windows Notepad!
+
+
+" Why the hell do this?
+" I grew up in Windows 95, and there if you press ctrl+backspace => delete word
+"                              there if you press ctrl+arrow     => jump   word
+"                              there if you highlight and write  => overwrite
+" 
+" The thing is it's not just me that grew up like this.
+" Every. Single. Text. Editor. Except for VIM follows those basic rules.
+" Any IDE
+" Any online coding tool
+" Any webform
+" Any standard text editor (even GEdit)
+"
+" So this is my way to ruin VIM and make it into this Frankenstein modern-old
+" editor which's supposed to work everywhere the same way 
+" (Linux/OSX/Android/Windows/w/e) 
+" That way, as long as you have a keyboard in front of you, 
+"      you're just 1 git pull away from your favorite text editor
+"
+" This is by no means finished. Enjoy
+"
+" So far tested on Linux & Android. More to come.
+"
+" Xeno
+
+
 function! MyQuit()
     echo 'I quit.'
     q
@@ -52,13 +83,13 @@ endif
 "      The "vim way" this is not
 " ................................
 "
-" This part is done in the windowsComponent4vimrc file
+" This is done in the windowsComponent4vimrc file
 
 " ======================================
 " Most important part
 " ======================================
 
-" Remap "H" to <insert>, and use i,j,k,l for an inverted-T layout (normie)
+" Remap "H" to <insert>, and use 'ijkl' for an inverted-T layout. Like shooters
 "
 noremap h <insert>
 noremap i <Up>
@@ -102,8 +133,8 @@ set nobackup
 " Mouse compatibility ... how is this not default
 set mouse=a       " Set mouse support for all modes
 
-  " Also set vim to go into insert mode upon clicking somewhere. Most likely
-  " You want to edit where you click
+" Also set vim to go into insert mode upon clicking somewhere. Most likely
+" You want to edit where you click
 nnoremap <LeftMouse> <LeftMouse>i
 inoremap <RightMouse> <RightMouse><Esc>
 snoremap <RightMouse> <RightMouse><Esc>
@@ -168,9 +199,6 @@ inoremap <C-]> <Esc>:tabnew<CR>
 " Switch tabs. For now just use gT as Ctrl+Q
 noremap  <C-e> gT
 inoremap <C-e> <Esc>gT
-
-" We broke ctrl+i (jump forward), remap to c-u
-noremap <c-u> <c-i>
 
 " Open a new split horizontally with Control-T as if opening a tab
 " You know, like a normal editor
