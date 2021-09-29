@@ -45,6 +45,12 @@
 " That way, as long as you have a keyboard in front of you, 
 "      you're just 1 git pull away from your favorite text editor
 "
+" Why is it ruining VIM?
+" > Fpr VIM there's this core rule: "Never take your hands off the keyboard"
+" > My mod has a different rule   : "Only need your left hand on the keyboard"
+
+" > Other than this I tried keeping VIM as unchanged as possible.
+"
 " This is by no means finished. Enjoy
 "
 " So far tested on Linux & Android. More to come.
