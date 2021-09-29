@@ -89,6 +89,89 @@ snoremap 0 <del>i0
 snoremap $ <del>io
 
 
+" Enable meta key shortcuts. This would open a new bunch of hotkeys for me
+" which would be very important, cuz rn I only have the ctrl ones active.
+execute "set <M-a>=\ea"
+execute "set <M-b>=\eb"
+execute "set <M-c>=\ec"
+execute "set <M-d>=\ed"
+execute "set <M-e>=\ee"
+execute "set <M-f>=\ef"
+execute "set <M-g>=\eg"
+execute "set <M-h>=\eh"
+execute "set <M-i>=\ei"
+execute "set <M-j>=\ej"
+execute "set <M-k>=\ek"
+execute "set <M-l>=\el"
+execute "set <M-m>=\em"
+execute "set <M-n>=\en"
+execute "set <M-o>=\eo"
+execute "set <M-p>=\ep"
+execute "set <M-q>=\eq"
+execute "set <M-r>=\er"
+execute "set <M-s>=\es"
+execute "set <M-t>=\et"
+execute "set <M-u>=\eu"
+execute "set <M-v>=\ev"
+execute "set <M-w>=\ew"
+execute "set <M-x>=\ex"
+execute "set <M-y>=\ey"
+execute "set <M-z>=\ez"
+nnoremap <M-a> :echom "Testing Meta Character Shortcut (pressed key A)"<CR>
+nnoremap <M-b> :echom "Testing Meta Character Shortcut (pressed key B)"<CR>
+nnoremap <M-c> :echom "Testing Meta Character Shortcut (pressed key C)"<CR>
+nnoremap <M-d> :echom "Testing Meta Character Shortcut (pressed key D)"<CR>
+nnoremap <M-e> :echom "Testing Meta Character Shortcut (pressed key E)"<CR>
+nnoremap <M-f> :echom "Testing Meta Character Shortcut (pressed key F)"<CR>
+nnoremap <M-g> :echom "Testing Meta Character Shortcut (pressed key G)"<CR>
+nnoremap <M-h> :echom "Testing Meta Character Shortcut (pressed key H)"<CR>
+nnoremap <M-i> :echom "Testing Meta Character Shortcut (pressed key I)"<CR>
+nnoremap <M-j> :echom "Testing Meta Character Shortcut (pressed key J)"<CR>
+nnoremap <M-k> :echom "Testing Meta Character Shortcut (pressed key K)"<CR>
+nnoremap <M-l> :echom "Testing Meta Character Shortcut (pressed key L)"<CR>
+nnoremap <M-m> :echom "Testing Meta Character Shortcut (pressed key M)"<CR>
+nnoremap <M-n> :echom "Testing Meta Character Shortcut (pressed key N)"<CR>
+nnoremap <M-o> :echom "Testing Meta Character Shortcut (pressed key O)"<CR>
+nnoremap <M-p> :echom "Testing Meta Character Shortcut (pressed key P)"<CR>
+nnoremap <M-q> :echom "Testing Meta Character Shortcut (pressed key Q)"<CR>
+nnoremap <M-r> :echom "Testing Meta Character Shortcut (pressed key R)"<CR>
+nnoremap <M-s> :echom "Testing Meta Character Shortcut (pressed key S)"<CR>
+nnoremap <M-t> :echom "Testing Meta Character Shortcut (pressed key T)"<CR>
+nnoremap <M-u> :echom "Testing Meta Character Shortcut (pressed key U)"<CR>
+nnoremap <M-v> :echom "Testing Meta Character Shortcut (pressed key V)"<CR>
+nnoremap <M-w> :echom "Testing Meta Character Shortcut (pressed key W)"<CR>
+nnoremap <M-x> :echom "Testing Meta Character Shortcut (pressed key X)"<CR>
+nnoremap <M-y> :echom "Testing Meta Character Shortcut (pressed key Y)"<CR>
+nnoremap <M-z> :echom "Testing Meta Character Shortcut (pressed key Z)"<CR>
+
+
+inoremap <M-a> <Esc>:echom "Testing Meta Character Shortcut (pressed key A)"<CR>
+inoremap <M-b> <Esc>:echom "Testing Meta Character Shortcut (pressed key B)"<CR>
+inoremap <M-c> <Esc>:echom "Testing Meta Character Shortcut (pressed key C)"<CR>
+inoremap <M-d> <Esc>:echom "Testing Meta Character Shortcut (pressed key D)"<CR>
+inoremap <M-e> <Esc>:echom "Testing Meta Character Shortcut (pressed key E)"<CR>
+inoremap <M-f> <Esc>:echom "Testing Meta Character Shortcut (pressed key F)"<CR>
+inoremap <M-g> <Esc>:echom "Testing Meta Character Shortcut (pressed key G)"<CR>
+inoremap <M-h> <Esc>:echom "Testing Meta Character Shortcut (pressed key H)"<CR>
+inoremap <M-i> <Esc>:echom "Testing Meta Character Shortcut (pressed key I)"<CR>
+inoremap <M-j> <Esc>:echom "Testing Meta Character Shortcut (pressed key J)"<CR>
+inoremap <M-k> <Esc>:echom "Testing Meta Character Shortcut (pressed key K)"<CR>
+inoremap <M-l> <Esc>:echom "Testing Meta Character Shortcut (pressed key L)"<CR>
+inoremap <M-m> <Esc>:echom "Testing Meta Character Shortcut (pressed key M)"<CR>
+inoremap <M-n> <Esc>:echom "Testing Meta Character Shortcut (pressed key N)"<CR>
+inoremap <M-o> <Esc>:echom "Testing Meta Character Shortcut (pressed key O)"<CR>
+inoremap <M-p> <Esc>:echom "Testing Meta Character Shortcut (pressed key P)"<CR>
+inoremap <M-q> <Esc>:echom "Testing Meta Character Shortcut (pressed key Q)"<CR>
+inoremap <M-r> <Esc>:echom "Testing Meta Character Shortcut (pressed key R)"<CR>
+inoremap <M-s> <Esc>:echom "Testing Meta Character Shortcut (pressed key S)"<CR>
+inoremap <M-t> <Esc>:echom "Testing Meta Character Shortcut (pressed key T)"<CR>
+inoremap <M-u> <Esc>:echom "Testing Meta Character Shortcut (pressed key U)"<CR>
+inoremap <M-v> <Esc>:echom "Testing Meta Character Shortcut (pressed key V)"<CR>
+inoremap <M-w> <Esc>:echom "Testing Meta Character Shortcut (pressed key W)"<CR>
+inoremap <M-x> <Esc>:echom "Testing Meta Character Shortcut (pressed key X)"<CR>
+inoremap <M-y> <Esc>:echom "Testing Meta Character Shortcut (pressed key Y)"<CR>
+inoremap <M-z> <Esc>:echom "Testing Meta Character Shortcut (pressed key Z)"<CR>
+
 
 
 
