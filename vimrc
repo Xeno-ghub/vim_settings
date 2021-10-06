@@ -153,11 +153,19 @@ set ignorecase    " Searches ignore case
                                          " has some capitalized letters
 
 " Softtabs, 4 spaces
+" If you change the setup below (et, tb=4, sts=0, sw=4 ) you'll probably ruin
+    " the backspace / tab behaviour
+    " I want tab to always be spaces
+    " I want tab to always be 4 spaces
+    " I want backspace to always delete 1 character (not whole column...)
+    " It's still not working perfectly as inline tab still works weirdly
+" --------------------
 set expandtab     " ALWAYS EXPAND TAB TO SPACES
 set tabstop=4     " How many whitespaces a TAB is displayed/printed. Who knows
-set softtabstop=4
-set shiftwidth=4
-
+set softtabstop=0 " Sets the number of columns for a TAB.
+                  " VERY IMPORTANT. USE THIS TO DELETE 1 SPACE @ A TIME WITH BS
+set shiftwidth=4  " Indents will have a width of 4.
+" --------------------
 
 " Change Vim's <ESC> key to <CAPS> (just because it's much easier to reach)
 " FOR THIS YOU NEED TO GET xorg-xmodmap package!

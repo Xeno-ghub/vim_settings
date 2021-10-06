@@ -18,7 +18,9 @@ set cpo&vim
 behave mswin
 
 " backspace and cursor keys wrap to previous/next line
+" make the backspace work like in most other programs
 set backspace=indent,eol,start whichwrap+=<,>,[,]
+
 
 " backspace in Visual mode deletes selection
 vnoremap <BS> d
