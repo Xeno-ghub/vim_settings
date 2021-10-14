@@ -81,6 +81,11 @@ inoremap <C-H> <Esc>dgei
 "NOT LIKE THIS inoremap <C-BS> <C-\><C-o>db
 
 
+" add "_" to the set of word delimiters. This is the single most important 
+" reason I switched to Vim for. This sort of customizability 🥲
+set iskeyword-=_
+
+
 " Stop visual selections from ruining my day when I press:
 " o, 0, i, h, j, k, l, $
 snoremap o <del>io
