@@ -69,10 +69,14 @@ nnoremap T F
 
 " Delete previous word (like any normal text editor...)
 " CTRL + BACKSPACE deletes previous word
-nnoremap <C-H> db
+" nnoremap <C-H> db "DEPRECATED, using ge instead, this way you can 
+"   sort of delete tailend spaces
+nnoremap <C-H> dge
     " In insert mode the cursor is a bit behind what is shown
     " so go right one step
-inoremap <C-H> <Esc><Right>dbi
+" inoremap <C-H> <Esc><Right>dbi "DEPRECATED, using ge instead, this way you can 
+"   sort of delete tailend spaces
+inoremap <C-H> <Esc>dgei
 "NOT LIKE THIS nnoremap <C-BS> <C-w>
 "NOT LIKE THIS inoremap <C-BS> <C-\><C-o>db
 
