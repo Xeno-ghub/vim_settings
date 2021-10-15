@@ -76,7 +76,7 @@ nnoremap <C-H> dge
     " so go right one step
 " inoremap <C-H> <Esc><Right>dbi "DEPRECATED, using ge instead, this way you can 
 "   sort of delete tailend spaces
-inoremap <C-H> <Esc>dgei
+inoremap <C-H> <Esc>dgei<Right>
 "NOT LIKE THIS nnoremap <C-BS> <C-w>
 "NOT LIKE THIS inoremap <C-BS> <C-\><C-o>db
 
