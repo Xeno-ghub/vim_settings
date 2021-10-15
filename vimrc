@@ -199,6 +199,8 @@ noremap <C-i> <C-w>k
 noremap <C-j> <C-w>h
 noremap <C-k> <C-w>j
 noremap <C-l> <C-w>l
+" Also added the possiblity to switch with Meta-Arrows (check experiments)
+
 " I cannot map <C-i> as it's literally the tab character in Terminals...TODO
 "inoremap <C-i> <Esc><C-w>k
 inoremap <C-j> <Esc><C-w>h
@@ -300,5 +302,9 @@ if pesteringMessages
     :echom 'You can turn off these annoying messages by deleting
     \ the last lines from this vimrc'
 endif
+
+
+
+
 
 
