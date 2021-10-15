@@ -1,5 +1,5 @@
 
-" I'm using <C-Space> for my own stuff imap <c-space> <Plug>(asyncomplete_force_refresh)
+" I'm using this for my own stuff!!!! DON'T STEAL MA KEYS imap <c-space> <Plug>(asyncomplete_force_refresh)
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
@@ -29,8 +29,8 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> [g <plug>(lsp-previous-diagnostic)
     nmap <buffer> ]g <plug>(lsp-next-diagnostic)
     nmap <buffer> K <plug>(lsp-hover)
-    inoremap <buffer> <expr><c-f> lsp#scroll(+4)
-    inoremap <buffer> <expr><c-d> lsp#scroll(-4)
+    " I'm using this for my own stuff!!!! DON'T STEAL MA KEYSinoremap <buffer> <expr><c-f> lsp#scroll(+4)
+    " I'm using this for my own stuff!!!! DON'T STEAL MA KEYSinoremap <buffer> <expr><c-d> lsp#scroll(-4)
 
     let g:lsp_format_sync_timeout = 1000
     autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
