@@ -60,6 +60,7 @@
 
 function! MyQuit()
     echo 'I quit.'
+    sleep 5000m
     q
 endfunction
 
@@ -302,6 +303,27 @@ if pesteringMessages
     :echom 'You can turn off these annoying messages by deleting
     \ the last lines from this vimrc'
 endif
+
+
+" Experimenting with language support (none of that YouCompletemeWhatever)
+" If these files don't exist, then this vimrc's a no-go
+let g:lspfname='~/.vim/lsp_vim-lsp_init.vim'
+if !filereadable(expand(g:lspfname))
+    echo "File " g:lspfname " does not exist! This VIMRC needs it."
+    call MyQuit()
+else
+    " source a bunch of files -------------------------
+    execute "source " . g:lspfname
+    " Here ye shall find:
+    " function bodies (functions4vimrc.vim)
+    " ruin vanilla VIM and bend it to my will (windowsComponent4vimrc.vim)
+    " learning zone (experimentWme4vimrc.vim)
+    " future plans (todo4vimrc.vim)
+    " useless stuff (superfluousDeprecated4vimrc.vim)
+    "
+    "-----------------finished sourcing a bunch of files
+endif
+
 
 
 

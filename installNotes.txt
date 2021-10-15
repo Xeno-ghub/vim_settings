@@ -35,6 +35,24 @@ How to install my vim config for Windows.
     # AG
     apt-get install silversearcher-ag
 
+    # vim-lsp
+    git clone https://github.com/prabirshrestha/vim-lsp
+    cp -r vim-lsp ~/.vim/pack/mypluginz/start/vim-lsp
+
+    git clone https://github.com/prabirshrestha/asyncomplete.vim
+    cp -r asyncomplete.vim ~/.vim/pack/mypluginz/start/asyncomplete.vim
+
+    git clone https://github.com/prabirshrestha/asyncomplete-lsp.vim
+    cp -r asyncomplete-lsp.vim ~/.vim/pack/mypluginz/start/asyncomplete-lsp.vim
+
+    Put that crap in my vimrc (from minimal install)
+    Put the rest of the crap from github
+
+    git clone https://github.com/mattn/vim-lsp-settings
+    cp -r vim-lsp-settings ~/.vim/pack/mypluginz/start/vim-lsp-settings
+
+    hit :LspInstallServer in some source you want to use it
+
     
 4. Modify .bashrc to allow bindable Ctrl-Q & Ctrl-S
     GOTO ~/.bashrc:q
