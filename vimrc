@@ -168,6 +168,10 @@ set softtabstop=0 " Sets the number of columns for a TAB.
 set shiftwidth=4  " Indents will have a width of 4.
 " --------------------
 
+" Allow placing the cursor after last character in normal mode
+" YOu know, like every normal editor
+set virtualedit+=onemore
+
 " Change Vim's <ESC> key to <CAPS> (just because it's much easier to reach)
 " FOR THIS YOU NEED TO GET xorg-xmodmap package!
 "disabling it since it makes vim sluggish, maybe reenable call BindESCtoCAPS()
