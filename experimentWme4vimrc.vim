@@ -85,7 +85,6 @@ inoremap <C-H> <Esc>dgei<Right>
 " reason I switched to Vim for. This sort of customizability 🥲
 set iskeyword-=_
 
-
 " Stop visual selections from ruining my day when I press:
 " o, 0, i, h, j, k, l, $
 snoremap o <del>io
