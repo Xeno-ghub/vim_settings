@@ -316,16 +316,7 @@ if !filereadable(expand(g:lspfname))
     echo "File " g:lspfname " does not exist! This VIMRC needs it."
     call MyQuit()
 else
-    " source a bunch of files -------------------------
     execute "source " . g:lspfname
-    " Here ye shall find:
-    " function bodies (functions4vimrc.vim)
-    " ruin vanilla VIM and bend it to my will (windowsComponent4vimrc.vim)
-    " learning zone (experimentWme4vimrc.vim)
-    " future plans (todo4vimrc.vim)
-    " useless stuff (superfluousDeprecated4vimrc.vim)
-    "
-    "-----------------finished sourcing a bunch of files
 endif
 
 
