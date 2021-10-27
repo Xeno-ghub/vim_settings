@@ -105,6 +105,21 @@ noremap k <Down>
 noremap l <Right>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""normality_resumed
 
+" Reverse 0 & ^ functionality to be akin to regex
+noremap 0 ^
+noremap ^ 0
+
+" Stop visual selections from ruining my day when I press:
+" o, 0, i, h, j, k, l, $
+snoremap o <del>io
+snoremap 0 <del>i0
+snoremap i <del>ii
+snoremap h <del>ih
+snoremap j <del>ij
+snoremap k <del>ik
+snoremap l <del>il
+snoremap $ <del>i$
+
 " ======================================
 " Because I remapped ijkl we broke text objects... Let's fix those
 " From now on instead of "ciw" use "cow", instead of "dip" use "dop" etc.
@@ -243,10 +258,6 @@ set autoread
 " Vim has its own clipboards. Go figure.
 " Set VIM to use the same clilpboard as the system
 set clipboard=unnamed
-
-" Reverse 0 & ^ functionality to be akin to regex
-noremap 0 ^
-noremap ^ 0
 
 " Have a keybinding for inserting a timestamp
 inoremap <C-D> <Esc>a<C-R>=strftime("%Y%m%d_%H%M%S")<CR>

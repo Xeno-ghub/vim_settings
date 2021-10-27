@@ -84,18 +84,6 @@ inoremap <C-H> <Esc><Right>dbi
 " reason I switched to Vim for. This sort of customizability 🥲
 set iskeyword-=_
 
-" Stop visual selections from ruining my day when I press:
-" o, 0, i, h, j, k, l, $
-snoremap o <del>io
-snoremap 0 <del>i0
-"still doesn't work. tinker more sometime snoremap i <del>ii
-"still doesn't work. tinker more sometime snoremap h <del>ih
-"still doesn't work. tinker more sometime snoremap j <del>ij
-"still doesn't work. tinker more sometime snoremap k <del>ik
-"still doesn't work. tinker more sometime snoremap l <del>il
-snoremap $ <del>io
-
-
 " Enable meta key shortcuts. This would open a new bunch of hotkeys for me
 " which would be very important, cuz rn I only have the ctrl ones active.
 execute "set <M-a>=\ea"
