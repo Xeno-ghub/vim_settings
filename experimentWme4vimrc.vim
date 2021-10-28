@@ -233,7 +233,7 @@ function ToggleWrap()
 endfunction
 
 
-setlocal nowrap
+set nowrap
 silent! nunmap <buffer> <Up>
 silent! nunmap <buffer> <Down>
 silent! nunmap <buffer> <Home>
