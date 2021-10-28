@@ -45,12 +45,25 @@ function! ToggleColumn()
 endfunction
 
 " Adding another toggle to test.
-" extends & precedes are just characters that would indicate line
-"    > continuation for when nowrap is set. I don't even need em,
-"    but w/e
+" extends & precedes are characters that would indicate line
+"    > continuation for when nowrap is set. 
 "    > trail is trailing whitespace. Simply a space @ end of line
-:set listchars=eol:¬,tab:>·,trail:█,extends:>,precedes:<,space:␣
-nnoremap # :set list!<CR>
+nnoremap # :call ToggleListChars()<CR>
+"nnoremap <silent> # :call ToggleListChars()<CR>
+
+function! ToggleListChars()
+        if &listchars=="extends:→,precedes:←"
+        " CAN'T GET THIS COOL SET OF CHARACTERS TO WORK IN-FUNCTION 😭😭😭
+        " and Tab & Space don't work either 😭😭😭
+        ":set listchars=eol:¬,tab:>·,trail:█,extends:🔜,precedes:🔙,space:
+        :set listchars=eol:¬,trail:█,extends:→,precedes:←
+        :set list
+    else
+        :set listchars=extends:→,precedes:←
+        :set list
+   endif
+endfunction
+:call ToggleListChars()
 
 
 " Experiment with changing the color of insert mode.
@@ -188,11 +201,47 @@ inoremap <M-e> <Esc><C-i>zzi
 nnoremap <M-q> <C-o>zz
 inoremap <M-q> <Esc><C-o>zzi
 
+" Test out always being nowrapped, see how it goes. We can toggle between them
+" using <Leader>w (or maybe I should change that Leader W to something else)
+
+" When WRAP is set on, we can navigate on "display lines" not just source lines
+noremap <silent> <Leader>w :call ToggleWrap()<CR>
+function ToggleWrap()
+  if &wrap
+    echo "Wrap OFF"
+    setlocal nowrap 
+    silent! nunmap <buffer> <Up>
+    silent! nunmap <buffer> <Down>
+    silent! nunmap <buffer> <Home>
+    silent! nunmap <buffer> <End>
+    silent! iunmap <buffer> <Up>
+    silent! iunmap <buffer> <Down>
+    silent! iunmap <buffer> <Home>
+    silent! iunmap <buffer> <End>
+  else
+    echo "Wrap ON"
+    setlocal wrap linebreak nolist
+    noremap  <buffer> <silent> <Up>   gk
+    noremap  <buffer> <silent> <Down> gj
+    noremap  <buffer> <silent> <Home> g<Home>
+    noremap  <buffer> <silent> <End>  g<End>
+    inoremap <buffer> <silent> <Up>   <C-o>gk
+    inoremap <buffer> <silent> <Down> <C-o>gj
+    inoremap <buffer> <silent> <Home> <C-o>g<Home>
+    inoremap <buffer> <silent> <End>  <C-o>g<End>
+  endif
+endfunction
 
 
-
-
-
+setlocal nowrap
+silent! nunmap <buffer> <Up>
+silent! nunmap <buffer> <Down>
+silent! nunmap <buffer> <Home>
+silent! nunmap <buffer> <End>
+silent! iunmap <buffer> <Up>
+silent! iunmap <buffer> <Down>
+silent! iunmap <buffer> <Home>
+silent! iunmap <buffer> <End>
 
 
 

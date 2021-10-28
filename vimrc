@@ -58,6 +58,14 @@
 " Xeno
 
 
+" Unicode support
+
+" The internal representation.
+set encoding=utf-8
+"scriptencoding utf-8
+" The representation that will be used when the file is written
+" set fileencoding=utf-8
+
 function! MyQuit()
     echo 'I quit.'
     sleep 5000m
@@ -184,8 +192,23 @@ set shiftwidth=4  " Indents will have a width of 4.
 " --------------------
 
 " Allow placing the cursor after last character in normal mode
-" YOu know, like every normal editor
+" YOu know, like every normal editor. So you can select the whole line
 set virtualedit+=onemore
+
+" [FOR WRAP ON]
+" Make it so wrapped lines start with indentation
+set breakindent
+
+" [FOR WRAP ON]
+" Display symbol for wrapped lines
+set showbreak=___↩️_____
+
+" [FOR WRAP ON]
+" Don't interrupt words when wrapping lines
+set linebreak
+
+" [FOR WRAP ON]
+set display+=lastline
 
 " Change Vim's <ESC> key to <CAPS> (just because it's much easier to reach)
 " FOR THIS YOU NEED TO GET xorg-xmodmap package!
@@ -289,7 +312,6 @@ call matchadd('ColorColumn', '\%81v', 100)
 set history=500   " history length
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
-" set encoding=utf-8
 
 " Color scheme
 " colorscheme solarized
