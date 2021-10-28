@@ -52,14 +52,14 @@ nnoremap # :call ToggleListChars()<CR>
 "nnoremap <silent> # :call ToggleListChars()<CR>
 
 function! ToggleListChars()
-        if &listchars=="extends:→,precedes:←"
+        if &listchars=="extends:◪,precedes:◩"
         " CAN'T GET THIS COOL SET OF CHARACTERS TO WORK IN-FUNCTION 😭😭😭
         " and Tab & Space don't work either 😭😭😭
         ":set listchars=eol:¬,tab:>·,trail:█,extends:🔜,precedes:🔙,space:
-        :set listchars=eol:¬,trail:█,extends:→,precedes:←
+        :set listchars=eol:¬,trail:█,extends:◪,precedes:◩
         :set list
     else
-        :set listchars=extends:→,precedes:←
+        :set listchars=extends:◪,precedes:◩
         :set list
    endif
 endfunction
@@ -209,7 +209,7 @@ noremap <silent> <Leader>w :call ToggleWrap()<CR>
 function ToggleWrap()
   if &wrap
     echo "Wrap OFF"
-    setlocal nowrap 
+    set nowrap 
     silent! nunmap <buffer> <Up>
     silent! nunmap <buffer> <Down>
     silent! nunmap <buffer> <Home>
@@ -220,7 +220,7 @@ function ToggleWrap()
     silent! iunmap <buffer> <End>
   else
     echo "Wrap ON"
-    setlocal wrap linebreak nolist
+    set wrap
     noremap  <buffer> <silent> <Up>   gk
     noremap  <buffer> <silent> <Down> gj
     noremap  <buffer> <silent> <Home> g<Home>
