@@ -244,4 +244,12 @@ silent! iunmap <buffer> <Home>
 silent! iunmap <buffer> <End>
 
 
+" testing
+
+" see :help i_CTRL-R
+nnoremap <C-R> itagubaltagu<Esc>
+inoremap <C-R> tagubaltagu
+
+
+
 
