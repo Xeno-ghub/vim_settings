@@ -210,38 +210,39 @@ function ToggleWrap()
   if &wrap
     echo "Wrap OFF"
     set nowrap 
-    silent! nunmap <buffer> <Up>
-    silent! nunmap <buffer> <Down>
-    silent! nunmap <buffer> <Home>
-    silent! nunmap <buffer> <End>
-    silent! iunmap <buffer> <Up>
-    silent! iunmap <buffer> <Down>
-    silent! iunmap <buffer> <Home>
-    silent! iunmap <buffer> <End>
+"    silent! noremap  <Up>   k
+"    silent! noremap  <Down> j
+"    silent! noremap  <Home> <Home>
+"    silent! noremap  <End>  <End>
+"    silent! inoremap <Up>   <C-o>k
+"    silent! inoremap <Down> <C-o>j
+"    silent! inoremap <Home> <C-o><Home>
+"    silent! inoremap <End>  <C-o><End>
   else
     echo "Wrap ON"
     set wrap
-    noremap  <buffer> <silent> <Up>   gk
-    noremap  <buffer> <silent> <Down> gj
-    noremap  <buffer> <silent> <Home> g<Home>
-    noremap  <buffer> <silent> <End>  g<End>
-    inoremap <buffer> <silent> <Up>   <C-o>gk
-    inoremap <buffer> <silent> <Down> <C-o>gj
-    inoremap <buffer> <silent> <Home> <C-o>g<Home>
-    inoremap <buffer> <silent> <End>  <C-o>g<End>
+    noremap  <Up>   gk
+    noremap  <Down> gj
+    noremap  <Home> g<Home>
+    noremap  <End>  g<End>
+    " <C-O> Escape back to normal, do command, then go back to insert
+    inoremap <Up>   <C-o>gk
+    inoremap <Down> <C-o>gj
+    inoremap <Home> <C-o>g<Home>
+    inoremap <End>  <C-o>g<End>
   endif
 endfunction
 
-
+" Set nowrap on
 set nowrap
-silent! nunmap <buffer> <Up>
-silent! nunmap <buffer> <Down>
-silent! nunmap <buffer> <Home>
-silent! nunmap <buffer> <End>
-silent! iunmap <buffer> <Up>
-silent! iunmap <buffer> <Down>
-silent! iunmap <buffer> <Home>
-silent! iunmap <buffer> <End>
+"silent! noremap  <Up>   k
+"silent! noremap  <Down> j
+"silent! noremap  <Home> <Home>
+"silent! noremap  <End>  <End>
+"silent! inoremap <Up>   <C-o>k
+"silent! inoremap <Down> <C-o>j
+"silent! inoremap <Home> <C-o><Home>
+"silent! inoremap <End>  <C-o><End>
 
 
 " testing
