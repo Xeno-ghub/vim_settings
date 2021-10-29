@@ -210,39 +210,17 @@ function ToggleWrap()
   if &wrap
     echo "Wrap OFF"
     set nowrap 
-"    silent! noremap  <Up>   k
-"    silent! noremap  <Down> j
-"    silent! noremap  <Home> <Home>
-"    silent! noremap  <End>  <End>
-"    silent! inoremap <Up>   <C-o>k
-"    silent! inoremap <Down> <C-o>j
-"    silent! inoremap <Home> <C-o><Home>
-"    silent! inoremap <End>  <C-o><End>
+    :call WrapOffRemaps()
   else
     echo "Wrap ON"
     set wrap
-    noremap  <Up>   gk
-    noremap  <Down> gj
-    noremap  <Home> g<Home>
-    noremap  <End>  g<End>
-    " <C-O> Escape back to normal, do command, then go back to insert
-    inoremap <Up>   <C-o>gk
-    inoremap <Down> <C-o>gj
-    inoremap <Home> <C-o>g<Home>
-    inoremap <End>  <C-o>g<End>
+    :call WrapOnRemaps()
   endif
 endfunction
 
 " Set nowrap on
 set nowrap
-"silent! noremap  <Up>   k
-"silent! noremap  <Down> j
-"silent! noremap  <Home> <Home>
-"silent! noremap  <End>  <End>
-"silent! inoremap <Up>   <C-o>k
-"silent! inoremap <Down> <C-o>j
-"silent! inoremap <Home> <C-o><Home>
-"silent! inoremap <End>  <C-o><End>
+:call WrapOffRemaps()
 
 
 " testing
@@ -250,7 +228,6 @@ set nowrap
 " see :help i_CTRL-R
 nnoremap <C-R> itagubaltagu<Esc>
 inoremap <C-R> tagubaltagu
-
 
 
 
