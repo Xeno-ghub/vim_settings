@@ -223,7 +223,7 @@ set nowrap
 :call WrapOffRemaps()
 
 
-" testing
+" testing new hotkey for new tag, so now I don't have to type xxx everytime
 
 " see :help i_CTRL-R
 nnoremap <C-R> itagubaltagu<Esc>
