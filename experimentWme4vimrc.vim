@@ -226,9 +226,9 @@ set nowrap
 " testing new hotkey for new tag, so now I don't have to type xxx everytime
 
 " see :help i_CTRL-R
-nnoremap <C-R> izyYyx<Esc>
-snoremap <C-R> zyYyx
-inoremap <C-R> zyYyx
+nnoremap <C-R> ixXx<Esc>
+snoremap <C-R> xXx
+inoremap <C-R> xXx
 
 
 
