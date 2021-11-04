@@ -189,6 +189,10 @@ set tabstop=4     " How many whitespaces a TAB is displayed/printed. Who knows
 set softtabstop=0 " Sets the number of columns for a TAB.
                   " VERY IMPORTANT. USE THIS TO DELETE 1 SPACE @ A TIME WITH BS
 set shiftwidth=4  " Indents will have a width of 4.
+
+                  " Remaping tab once and for all i want 4 spaces 
+                  " no tabstops no stupid columns no nothing. just tab
+inoremap <C-i> <space><space><space><space>
 " --------------------
 
 " Allow placing the cursor after last character in normal mode
