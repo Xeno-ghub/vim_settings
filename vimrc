@@ -30,7 +30,7 @@
 " Why the hell do this?
 " I grew up in Windows 95, and there if you press ctrl+backspace => delete word
 "                              there if you press ctrl+arrow     => jump   word
-"                              there if you highlight and write  => overwrite
+"                              there if you highlight and type   => overwrite
 " 
 " The thing is it's not just me that grew up like this.
 " Every. Single. Text. Editor. Except for VIM follows those basic rules.
