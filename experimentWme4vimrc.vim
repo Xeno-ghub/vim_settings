@@ -223,6 +223,13 @@ set nowrap
 :call WrapOffRemaps()
 
 
+" Test scrolloff for a while, if it works, put it in with Wrap & Tab stuff
+" --------------------
+set scrolloff=8
+set sidescrolloff=20
+" --------------------
+
+
 " testing new hotkey for new tag, so now I don't have to type xxx everytime
 
 " see :help i_CTRL-R
