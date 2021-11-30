@@ -263,8 +263,9 @@ noremap <C-]> :tabnew<CR>
 inoremap <C-]> <Esc>:tabnew<CR>
 
 " Switch tabs. For now just use gT as Ctrl+Q
-noremap  <C-e> gT
-inoremap <C-e> <Esc>gT
+noremap  <C-e> gt
+inoremap <C-e> <Esc>gt
+vnoremap <C-e> <Esc>gt
 
 " Open a new split horizontally with Control-T as if opening a tab
 " You know, like a normal editor
