@@ -226,7 +226,7 @@ set nowrap
 " Test scrolloff for a while, if it works, put it in with Wrap & Tab stuff
 " --------------------
 set scrolloff=8
-set sidescrolloff=20
+" This is horrible set sidescrolloff=20
 " --------------------
 
 
