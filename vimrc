@@ -46,14 +46,14 @@
 "      you're just 1 git pull away from your favorite text editor
 "
 " Why is it ruining VIM?
-" > Fpr VIM there's this core rule: "Never take your hands off the keyboard"
+" > For VIM there's this core rule: "Never take your hands off the keyboard"
 " > My mod has a different rule   : "Only need your left hand on the keyboard"
 
 " > Other than this I tried keeping VIM as unchanged as possible.
 "
 " This is by no means finished. Enjoy
 "
-" So far tested on Linux & Android. More to come.
+" So far tested on Linux, Android (termux) & OS X. More to come.
 "
 " Xeno
 
@@ -152,7 +152,7 @@ onoremap o' i'
 onoremap o" i"
 onoremap ot it "t for HTML tag
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""broken normality_fixed
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""Frankenstein is alive
 
 " Place swap files in a central directory instead of polluting your projects
 call CentralizeSwapFiles()
