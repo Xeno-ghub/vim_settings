@@ -35,16 +35,13 @@ endfunction
 
 
 " Search for a regex of the form keyword *blabla* keyword
+"     Note: In VIM \v[^\r\n]{-} is equivalent to normal regex [^\r\n]*?
 function! s:modifySearchQuery(searchQueryStr)
-
-    :echom "search query string is >>" . a:searchQueryStr . "<<"
 
     let target  = '([^ \-''":;,\.\r\n]+)'
     let bulk    = '([^\r\n]{-})'
     let fringe  = '[^a-zA-Z0-9]{-}'
     let regex   = '\v^' . fringe . target . bulk . target . fringe . '$'
-
-    "* Note: In VIM \v[^\r\n]{-} is equivalent to normal regex [^\r\n]*?
 
     let matchdOldQry = matchlist(a:searchQueryStr, regex)
 
