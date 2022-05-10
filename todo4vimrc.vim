@@ -28,6 +28,12 @@
 " ( https://vim.fandom.com/wiki/Mapping_keys_in_Vim_-_Tutorial_(Part_2) )
 
 
+" Make it so that current OS       keybindings that mess with my VIM are unbound
+" Make it so that current Terminal keybindings that mess with my VIM are unbound  
+
+" Make it so that current keybindings you changed could be reverted, and 
+"    even reverted to some "saved state". So, like an uninstaller
+
 
 " Learn the Jumping stuff more
 " "https://stackoverflow.com/questions/11018713/vim-go-to-previous-location"

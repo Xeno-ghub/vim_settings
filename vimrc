@@ -32,7 +32,7 @@
 "                              there if you press ctrl+arrow     => jump   word
 "                              there if you highlight and type   => overwrite
 " 
-" The thing is it's not just me that grew up like this.
+" It's not just me that grew up like this.
 " Every. Single. Text. Editor. Except for VIM follows those basic rules.
 " Any IDE
 " Any online coding tool
@@ -46,8 +46,8 @@
 "      you're just 1 git pull away from your favorite text editor
 "
 " Why is it ruining VIM?
-" > For VIM there's this core rule: "Never take your hands off the keyboard"
-" > My mod has a different rule   : "Only need your left hand on the keyboard"
+" > VIM has this core rule: "Never take your hands off the keyboard"
+" > My mod's rule         : "Left only still doable, two hands even better"
 
 " > Other than this I tried keeping VIM as unchanged as possible.
 "
@@ -86,7 +86,7 @@ else
     " function bodies (functions4vimrc.vim)
     " ruin vanilla VIM and bend it to my will (windowsComponent4vimrc.vim)
     " learning zone (experimentWme4vimrc.vim)
-    " future plans (todo4vimrc.vim)
+    " future plans  (todo4vimrc.vim)
     " useless stuff (superfluousDeprecated4vimrc.vim)
     "
     "-----------------finished sourcing a bunch of files
@@ -104,7 +104,7 @@ endif
 " Most important part
 " ======================================
 
-" Remap "H" to <insert>, and use 'ijkl' for an inverted-T layout. Like shooters
+" Remap "H" to <insert> and use 'ijkl' for an inverted-T layout. Like FPS games
 "
 noremap h <insert>
 noremap i <Up>
@@ -217,13 +217,12 @@ set linebreak
 " [FOR WRAP ON]
 set display+=lastline
 
-" Change Vim's <ESC> key to <CAPS> (just because it's much easier to reach)
-" FOR THIS YOU NEED TO GET xorg-xmodmap package!
-"disabling it since it makes vim sluggish, maybe reenable call BindESCtoCAPS()
-
 " Display line numbers
 set number
 set relativenumber
+
+" Syntax highlighting is sometimes disabled in some vim distros
+syntax on
 
 " Open a new split vertically with Control-t as if opening a tab
 " You know, like a normal editor
