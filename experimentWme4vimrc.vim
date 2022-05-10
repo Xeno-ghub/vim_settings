@@ -238,4 +238,5 @@ snoremap <C-R> xXx
 inoremap <C-R> xXx
 
 
-
+" use ":Man" command or leader+K to open Man pages directly into VIM
+runtime! ftplugin/man.vim
