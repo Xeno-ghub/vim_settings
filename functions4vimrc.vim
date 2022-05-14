@@ -51,7 +51,7 @@ function! s:modifySearchQuery(searchQueryStr)
         " Make sure we matched the whole regex & the three capture groups
         if !empty(matchdOldQry[0]) 
             \&& !empty(matchdOldQry[1])
-            \&& !empty(matchdOldQry[2])
+            "Middle can be empty for single selections
             \&& !empty(matchdOldQry[3])
 
             " return this regex into our function body 
