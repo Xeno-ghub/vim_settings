@@ -82,7 +82,7 @@ function! s:get_visual_selection()
 endfunction
 
 " The function's used for searching goodness
-function! MySearchFun(mode, alsoReplace)
+function! MySearchFunc(mode, alsoReplace)
 
     " For "visualmode" I'm actually searching the visual-selected text
     if a:mode == "visualmode"
@@ -167,27 +167,27 @@ function! MySearchFun(mode, alsoReplace)
         endif
 
     else "warn that this function was called with invalid param
-        echom "Invalid param for MySearchFun!"
+        echom "Invalid param for MySearchFunc!"
     endif
 
 endfunction
 
 function! MySearchRemaps()
-    nnoremap <C-F> :call MySearchFun("normalmode","justSearch")<CR>
+    nnoremap <C-F> :call MySearchFunc("normalmode","justSearch")<CR>
     " go left 4 times to position cursor correctly
-    nnoremap <C-b> :call MySearchFun("normalmode","alsoReplace")
+    nnoremap <C-b> :call MySearchFunc("normalmode","alsoReplace")
         \<CR><left><left><left><left>
 
-    vnoremap <C-F> :call MySearchFun("visualmode","justSearch")<CR>
+    vnoremap <C-F> :call MySearchFunc("visualmode","justSearch")<CR>
     " go left 4 times to position cursor correctly
-    vnoremap <C-b> :call MySearchFun("visualmode","alsoReplace")
+    vnoremap <C-b> :call MySearchFunc("visualmode","alsoReplace")
         \<CR><left><left><left><left>
 
     " Manually exiting insert mode as I can't get this function to work
     " in insert mode for the life of me
-    inoremap <C-F> <Esc>:call MySearchFun("insertmode","justSearch")<CR>
+    inoremap <C-F> <Esc>:call MySearchFunc("insertmode","justSearch")<CR>
     " go left 4 times to position cursor correctly
-    inoremap <C-b> <Esc>:call MySearchFun("insertmode","alsoReplace")
+    inoremap <C-b> <Esc>:call MySearchFunc("insertmode","alsoReplace")
         \<CR><left><left><left><left>
 
     " Duplicate n/N search functionality on f/F. I search with ctrl+f.
