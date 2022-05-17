@@ -275,9 +275,18 @@ vnoremap <C-e> <Esc>gt
 
 " Close split/window with control-w.
 " You know, like a normal editor
-vnoremap <C-w> <Esc>:q<Enter>
-nnoremap <C-w> <Esc>:q<Enter>
-inoremap <C-w> <Esc>:q<Enter>
+" "Attention!" We're deleting the buffer, i.e., CLOSING the source
+" for hiding see below
+vnoremap <C-w> <Esc>:bd<Enter>
+nnoremap <C-w> <Esc>:bd<Enter>
+inoremap <C-w> <Esc>:bd<Enter>
+
+" hide split/window Ctrl+U Control+U
+" "Attention!" This hides the buffers, it does not close them 
+" TODO - Find a better shortcut than control-u...
+vnoremap <C-u> <Esc>:q<Enter>
+nnoremap <C-u> <Esc>:q<Enter>
+inoremap <C-u> <Esc>:q<Enter>
 
 " Make vim check for any changes from outside to your file.
 " The idea with this is that if anyone modifies your files, vim should become
