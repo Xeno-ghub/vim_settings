@@ -22,7 +22,7 @@ nnoremap ! :set relativenumber!<CR>
 nnoremap <C-@> <Esc>
 snoremap <C-@> <Esc>
 xnoremap <C-@> <Esc>
-inoremap <C-@> <Esc>
+inoremap <C-@> <Esc><Right>
 " Map just spacebar for insert mode.
 nnoremap <Space> i
 
