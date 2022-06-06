@@ -52,14 +52,14 @@ nnoremap # :call ToggleListChars()<CR>
 "nnoremap <silent> # :call ToggleListChars()<CR>
 
 function! ToggleListChars()
-        if &listchars=="extends:◪,precedes:◩"
+        if &listchars=="extends:▶,precedes:◀ "
         " CAN'T GET THIS COOL SET OF CHARACTERS TO WORK IN-FUNCTION 😭😭😭
         " and Tab & Space don't work either 😭😭😭
         ":set listchars=eol:¬,tab:>·,trail:█,extends:🔜,precedes:🔙,space:
-        :set listchars=eol:¬,trail:█,extends:◪,precedes:◩
+        :set listchars=eol:¬,trail:█,extends:▶,precedes:◀ 
         :set list
     else
-        :set listchars=extends:◪,precedes:◩
+        :set listchars=extends:▶,precedes:◀ 
         :set list
    endif
 endfunction

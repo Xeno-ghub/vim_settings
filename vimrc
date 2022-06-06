@@ -208,7 +208,7 @@ set breakindent
 
 " [FOR WRAP ON]
 " Display symbol for wrapped lines
-set showbreak=___↩️_____
+set showbreak=____↩️_____
 
 " [FOR WRAP ON]
 " Don't interrupt words when wrapping lines
