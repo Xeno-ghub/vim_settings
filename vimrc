@@ -296,7 +296,7 @@ set autoread
 
 " Vim has its own clipboards. Go figure.
 " Set VIM to use the same clilpboard as the system
-set clipboard=unnamed
+" MOVE TO unwanted_options.vim Disabling this so Ctrl+c & v & everything work now because I'm manually using the system register set clipboard=unnamed
 
 " Have a keybinding for inserting a timestamp
 inoremap <C-D> <Esc>a<C-R>=strftime("%Y%m%d_%H%M%S")<CR>

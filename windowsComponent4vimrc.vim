@@ -34,12 +34,23 @@ if has("clipboard")
     vnoremap <C-C> "+y
     vnoremap <C-Insert> "+y
 
-    " CTRL-V and SHIFT-Insert are Paste
-    map <C-V>		"+gP
-    map <S-Insert>		"+gP
+    " CTRL-V and SHIFT-Insert are Past
+    " Normal mode just paste system register
+    map <C-V> "+gP
+    map <S-Insert> "+gP
 
-    cmap <C-V>		<C-R>+
-    cmap <S-Insert>		<C-R>+
+    " CTRL-V and SHIFT-Insert are Past
+    " In insert mode quickly exit insert, paste, then go back
+    imap <C-V> <Esc>"+gPh
+
+    " CTRL-V and SHIFT-Insert are Past
+    " in visual mode delete to black hole register then paste
+    vmap <C-V> "_d"+gP
+
+    " CTRL-V and SHIFT-Insert are Past
+    " Have it work in command line mode too
+    cmap <C-V> <C-R>+
+    cmap <S-Insert> <C-R>+
 endif
 
 " Pasting blockwise and linewise selections is not possible in Insert and
@@ -48,10 +59,10 @@ endif
 " Uses the paste.vim autoload script.
 " Use CTRL-G u to have CTRL-Z only undo the paste.
 
-if 1
-    exe 'inoremap <script> <C-V> <C-G>u' . paste#paste_cmd['i']
-    exe 'vnoremap <script> <C-V> ' . paste#paste_cmd['v']
-endif
+"if 1
+"    exe 'inoremap <script> <C-V> <C-G>u' . paste#paste_cmd['i']
+"    exe 'vnoremap <script> <C-V> ' . paste#paste_cmd['v']
+"endif
 
 imap <S-Insert>		<C-V>
 vmap <S-Insert>		<C-V>

@@ -59,5 +59,10 @@ let g:todoFname="~/.vim/todo4vimrc.vim"
 call TryToSourceFile(g:todoFname, 0)
 
 
+" This file is supposed to contain all vim "normal stuff"
+" Which I don't particularly like, and will change
+let g:functionsFname="~/.vim/fix_idiosyncrasies.vim" 
+call TryToSourceFile(g:functionsFname, 1)
+
 
 
