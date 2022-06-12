@@ -141,3 +141,9 @@ if 1
   let &cpoptions = s:save_cpo
   unlet s:save_cpo
 endif
+
+" Please for the love of god stop indenting things
+filetype indent off
+set noautoindent
+set nosmartindent
+set nocindent
