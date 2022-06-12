@@ -34,7 +34,7 @@ if has("clipboard")
     vnoremap <C-C> "+y
     vnoremap <C-Insert> "+y
 
-    " CTRL-V and SHIFT-Insert are Past
+    " CTRL-V and SHIFT-Insert are Paste
     " Normal mode just paste system register
     map <C-V> "+gP
     map <S-Insert> "+gP
@@ -51,6 +51,11 @@ if has("clipboard")
     " Have it work in command line mode too
     cmap <C-V> <C-R>+
     cmap <S-Insert> <C-R>+
+
+    " If all else fails just send c & d to black hole register
+    " (uncomment the 2 lines below)
+    "nnoremap c "_c
+    "nnoremap d "_d
 endif
 
 " Pasting blockwise and linewise selections is not possible in Insert and
