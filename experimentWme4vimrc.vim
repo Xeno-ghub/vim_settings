@@ -48,18 +48,18 @@ endfunction
 " extends & precedes are characters that would indicate line
 "    > continuation for when nowrap is set. 
 "    > trail is trailing whitespace. Simply a space @ end of line
-nnoremap # :call ToggleListChars()<CR>
+nnoremap * :call ToggleListChars()<CR>
 "nnoremap <silent> # :call ToggleListChars()<CR>
 
 function! ToggleListChars()
-        if &listchars=="extends:▶,precedes:◀ "
+        if &listchars=="tab:>>,extends:▶,precedes:◀"
         " CAN'T GET THIS COOL SET OF CHARACTERS TO WORK IN-FUNCTION 😭😭😭
         " and Tab & Space don't work either 😭😭😭
         ":set listchars=eol:¬,tab:>·,trail:█,extends:🔜,precedes:🔙,space:
-        :set listchars=eol:¬,trail:█,extends:▶,precedes:◀ 
+        :set listchars=eol:¬,tab:>>,trail:█,extends:▶,precedes:◀ 
         :set list
     else
-        :set listchars=extends:▶,precedes:◀ 
+        :set listchars=tab:>>,extends:▶,precedes:◀ 
         :set list
    endif
 endfunction
@@ -240,3 +240,10 @@ inoremap <C-R> xXx
 
 " use ":Man" command or leader+K to open Man pages directly into VIM
 runtime! ftplugin/man.vim
+
+
+" Jumping to beginning of line with a more reachable hotkey
+noremap # 0
+
+
+
