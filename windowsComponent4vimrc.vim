@@ -41,7 +41,7 @@ if has("clipboard")
 
     " CTRL-V and SHIFT-Insert are Past
     " In insert mode quickly exit insert, paste, then go back
-    imap <C-V> <Esc>"+gPh
+    imap <C-V> <Right><Esc>"+gPh
 
     " CTRL-V and SHIFT-Insert are Past
     " in visual mode delete to black hole register then paste
