@@ -62,7 +62,7 @@
 
 " The internal representation.
 set encoding=utf-8
-"scriptencoding utf-8
+scriptencoding utf-8
 " The representation that will be used when the file is written
 " set fileencoding=utf-8
 
@@ -112,10 +112,6 @@ noremap j <Left>
 noremap k <Down>
 noremap l <Right>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""normality_resumed
-
-" Reverse 0 & ^ functionality to be akin to regex
-noremap 0 ^
-noremap ^ 0
 
 " Stop visual selections from ruining my day when I press:
 " o, 0, i, h, j, k, l, $
