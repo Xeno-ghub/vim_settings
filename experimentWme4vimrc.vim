@@ -245,5 +245,7 @@ runtime! ftplugin/man.vim
 " Jumping to beginning of line with a more reachable hotkey
 noremap # 0
 
-
+" I want newline & backspace to work in normal mode too
+nnoremap <BS> i<BS><Esc>`^
+nnoremap <CR> i<CR><Esc>`^
 
