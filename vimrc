@@ -108,7 +108,7 @@ endif
 "
 noremap h <insert>
 noremap i <Up>
-noremap j <Left>
+" noremap j <Left> This is dealt with in fix_idiosyncrasies.vim
 noremap k <Down>
 noremap l <Right>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""normality_resumed
@@ -194,8 +194,8 @@ set shiftwidth=4  " Indents will have a width of 4.
 inoremap <C-i> <space><space><space><space>
 " --------------------
 
-" Allow placing the cursor after last character in normal mode
-" YOu know, like every normal editor. So you can select the whole line
+" Allow placing the cursor after last character in normal mode / newline
+" You know, like every normal editor. So you can select the whole line
 set virtualedit+=onemore
 
 " [FOR WRAP ON]

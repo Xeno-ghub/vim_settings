@@ -6,4 +6,8 @@ inoremap <silent> <C-@> <Esc>`^
 " I'd like for $ to jump after the last character, not to it
 nnoremap $ $<Right>
 
-
+" Fixing movements around newline. When moving between lines I want to be 
+" positioned after last character. Not on top of it... 
+"     (since whichwrap & virtualedit are not enough to fix this...)
+nnoremap <expr> j col('.')==1?'k$l':'h'
+nnoremap <expr> <Left> col('.')==1?'k$l':'h'
