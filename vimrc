@@ -240,7 +240,7 @@ inoremap <C-\> <Esc>:new<CR>
 
 " Also shortcircuit VIM's way of entering 'split mode' with <C-w> then moving to
 " desired split /w hjkl. What?...
-nnoremap <C-i> <C-w>k
+" making it be tab... maybe i'll do meta-these? nnoremap <C-i> <C-w>k
 nnoremap <C-j> <C-w>h
 nnoremap <C-k> <C-w>j
 nnoremap <C-l> <C-w>l
@@ -251,7 +251,6 @@ nnoremap <C-l> <C-w>l
 inoremap <C-j> <Esc><C-w>h
 inoremap <C-k> <Esc><C-w>j
 inoremap <C-l> <Esc><C-w>l
-
 " New tab
 " Yes ... Control+2 is actually Control+] (ctrl+5 == ctrl+])
 noremap <C-]> :tabnew<CR>
@@ -363,7 +362,6 @@ if !filereadable(expand(g:lspfname))
 else
     execute "source " . g:lspfname
 endif
-
 
 
 
