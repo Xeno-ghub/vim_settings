@@ -241,9 +241,9 @@ inoremap <C-\> <Esc>:new<CR>
 " Also shortcircuit VIM's way of entering 'split mode' with <C-w> then moving to
 " desired split /w hjkl. What?...
 " making it be tab... maybe i'll do meta-these? nnoremap <C-i> <C-w>k
-nnoremap <C-j> <C-w>h
-nnoremap <C-k> <C-w>j
-nnoremap <C-l> <C-w>l
+" Using for Ag ProjectDir  search Hotkey nnoremap <C-j> <C-w>h
+" Using for Ag CurrentDir  search Hotkey nnoremap <C-k> <C-w>j
+" Using for Ag SolutionDir search Hotkey nnoremap <C-l> <C-w>l
 " Also added the possiblity to switch with Meta-Arrows (check experiments)
 
 " I cannot map <C-i> as it's literally the tab character in Terminals...TODO

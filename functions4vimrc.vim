@@ -36,13 +36,22 @@ endfunction
 
 " Search for a regex of the form keyword *blabla* keyword
 "     Note: In VIM \v[^\r\n]{-} is equivalent to normal regex [^\r\n]*?
-function! s:modifySearchQuery(searchQueryStr)
+function! s:modifySearchQuery(searchQueryStr, whatRegex)
 
-    let target  = '([^ \-''":;,\.\r\n]+)'
-    let bulk    = '([^\r\n]{-})'
-    let fringe  = '[^a-zA-Z0-9]{-}'
-    let regex   = '\v^' . fringe . target . bulk . target . fringe . '$'
+    let target           = '([^ \-''":;,\.\r\n]+)'
+    let bulk_thisfunc    = '([^\r\n]{-})'
+    let bulk             = ''
+    let fringe           = '[^a-zA-Z0-9]{-}'
 
+    if a:whatRegex == "vimRegex"
+       let bulk    = '[^\r\n]\{-}'
+    elseif a:whatRegex == "normalRegex"
+       let bulk    = '[^\r\n]*?'
+    else
+        return 'errorInMyVimscript_QuickAbort'
+    endif
+
+    let regex = '\v^' . fringe . target . bulk_thisfunc . target . fringe . '$'
     let matchdOldQry = matchlist(a:searchQueryStr, regex)
 
     " len always >3 since matchlist always returns list /w 10elem
@@ -55,7 +64,8 @@ function! s:modifySearchQuery(searchQueryStr)
             \&& !empty(matchdOldQry[3])
 
             " return this regex into our function body 
-            let regexRet = matchdOldQry[1] . '[^\r\n]\{-}' . matchdOldQry[3]
+            "let regexRet = matchdOldQry[1] . '[^\r\n]\{-}' . matchdOldQry[3]
+            let regexRet = matchdOldQry[1] . bulk . matchdOldQry[3]
             return regexRet
         endif
     endif
@@ -82,7 +92,7 @@ function! s:get_visual_selection()
 endfunction
 
 " The function's used for searching goodness
-function! MySearchFunc(mode, alsoReplace)
+function! MySearchFunc(mode, alsoReplace, whatRegex)
 
     " For "visualmode" I'm actually searching the visual-selected text
     if a:mode == "visualmode"
@@ -91,7 +101,7 @@ function! MySearchFunc(mode, alsoReplace)
         let selText = s:get_visual_selection()
 
         " Splice stuff into currently selected text
-        let splicedText = s:modifySearchQuery(selText)
+        let splicedText = s:modifySearchQuery(selText, a:whatRegex)
 
         " Tried so many combinations to get this function to work ... 
         " ... I can't even ...
@@ -113,9 +123,18 @@ function! MySearchFunc(mode, alsoReplace)
             " Visual-Select mode fast enough. Another quirk of Vim I guess
 
             " also that 'i' thing is very important. IDK why. It just works.
-
             :call feedkeys("/" . splicedText . "\<CR><Up>", 'i')
-        
+
+        elseif a:alsoReplace == 'justSearchButWitAg'
+
+            " Hopefully you have some Ag-like program installed. 
+            " We'll search the current directory using that
+            :call feedkeys(":Ag --depth 0 -i '" . splicedText . "'",'i')
+        elseif a:alsoReplace == 'justSearchButWitAgProjectDir'
+            :call feedkeys(":Ag -i '" . splicedText . "' " . g:ProjectDir,'i')
+        elseif a:alsoReplace == 'justSearchButWitAgSolutionDir'
+            :call feedkeys(":Ag -i '" . splicedText . "' " . g:SolutionDir,'i')
+
         elseif a:alsoReplace == 'alsoReplace'
             " : - because when searching in VIM you'd have to start by typing :
             " % - in VIM unless you specify "%" it will just search current
@@ -162,33 +181,73 @@ function! MySearchFunc(mode, alsoReplace)
         elseif a:alsoReplace == 'alsoReplace'
             " Search for word under cursor
             :call feedkeys(":%s/" . wordundercursor . "//gci", 'i')
+        elseif a:alsoReplace == 'justSearchButWitAg'
+
+            " Hopefully you have some Ag-like program installed. 
+            " We'll search the current directory using that
+            :call feedkeys(":Ag --depth 0 -i '" . wordundercursor . "'",'i')
+        elseif a:alsoReplace == 'justSearchButWitAgProjectDir'
+            :call feedkeys(":Ag -i '" . wordundercursor . "' " .  g:ProjectDir,'i')
+        elseif a:alsoReplace == 'justSearchButWitAgSolutionDir'
+            :call feedkeys(":Ag -i '" . wordundercursor . "' " .  g:SolutionDir,'i')
         else
-            "do nothing
+            echom "Invalid action-param for MySearchFunc!"
         endif
 
     else "warn that this function was called with invalid param
-        echom "Invalid param for MySearchFunc!"
+        echom "Invalid mode-param for MySearchFunc!"
     endif
 
 endfunction
 
 function! MySearchRemaps()
-    nnoremap <C-F> :call MySearchFunc("normalmode","justSearch")<CR>
+    nnoremap <C-F> :call MySearchFunc("normalmode","justSearch","vimRegex")<CR>
     " go left 4 times to position cursor correctly
-    nnoremap <C-b> :call MySearchFunc("normalmode","alsoReplace")
+    nnoremap <C-b> :call MySearchFunc("normalmode","alsoReplace","vimRegex")
         \<CR><left><left><left><left>
 
-    vnoremap <C-F> :call MySearchFunc("visualmode","justSearch")<CR>
+    " Search for the string with Ag
+    nnoremap <C-K> :call MySearchFunc("normalmode","justSearchButWitAg","normalRegex")<CR><Left>
+    nnoremap <C-k> :call MySearchFunc("normalmode","justSearchButWitAg","normalRegex")<CR><Left>
+    " Search for the string with Ag in ProjectDir
+    nnoremap <C-j> :call MySearchFunc("normalmode","justSearchButWitAgProjectDir","normalRegex")<CR><Left>
+    nnoremap <C-J> :call MySearchFunc("normalmode","justSearchButWitAgProjectDir","normalRegex")<CR><Left>
+    " Search for the string with Ag in ProjectDir
+    nnoremap <C-l> :call MySearchFunc("normalmode","justSearchButWitAgSolutionDir","normalRegex")<CR><Left>
+    nnoremap <C-L> :call MySearchFunc("normalmode","justSearchButWitAgSolutionDir","normalRegex")<CR><Left>
+
+
+    vnoremap <C-F> :call MySearchFunc("visualmode","justSearch","vimRegex")<CR>
     " go left 4 times to position cursor correctly
-    vnoremap <C-b> :call MySearchFunc("visualmode","alsoReplace")
+    vnoremap <C-b> :call MySearchFunc("visualmode","alsoReplace","vimRegex")
         \<CR><left><left><left><left>
+
+    " Search for the string with Ag
+    vnoremap <C-K> :call MySearchFunc("visualmode","justSearchButWitAg","normalRegex")<CR><Left>
+    vnoremap <C-k> :call MySearchFunc("visualmode","justSearchButWitAg","normalRegex")<CR><Left>
+    " Search for the string with Ag in ProjectDir
+    vnoremap <C-j> :call MySearchFunc("visualmode","justSearchButWitAgProjectDir","normalRegex")<CR><Left>
+    vnoremap <C-J> :call MySearchFunc("visualmode","justSearchButWitAgProjectDir","normalRegex")<CR><Left>
+    " Search for the string with Ag in SolutionDir
+    vnoremap <C-l> :call MySearchFunc("visualmode","justSearchButWitAgSolutionDir","normalRegex")<CR><Left>
+    vnoremap <C-L> :call MySearchFunc("visualmode","justSearchButWitAgSolutionDir","normalRegex")<CR><Left>
 
     " Manually exiting insert mode as I can't get this function to work
     " in insert mode for the life of me
-    inoremap <C-F> <Esc>:call MySearchFunc("insertmode","justSearch")<CR>
+    inoremap <C-F> <Esc>:call MySearchFunc("insertmode","justSearch","vimRegex")<CR>
     " go left 4 times to position cursor correctly
-    inoremap <C-b> <Esc>:call MySearchFunc("insertmode","alsoReplace")
+    inoremap <C-b> <Esc>:call MySearchFunc("insertmode","alsoReplace","vimRegex")
         \<CR><left><left><left><left>
+
+    " Search for the string with Ag
+    inoremap <C-K> <Esc>:call MySearchFunc("insertmode","justSearchButWitAg","normalRegex")<CR><Left>
+    inoremap <C-k> <Esc>:call MySearchFunc("insertmode","justSearchButWitAg","normalRegex")<CR><Left>
+    " Search for the string with Ag in ProjectDir
+    inoremap <C-j> :call MySearchFunc("insertmode","justSearchButWitAgProjectDir","normalRegex")<CR><Left>
+    inoremap <C-J> :call MySearchFunc("insertmode","justSearchButWitAgProjectDir","normalRegex")<CR><Left>
+    " Search for the string with Ag in SolutionDir
+    inoremap <C-l> :call MySearchFunc("insertmode","justSearchButWitAgSolutionDir","normalRegex")<CR><Left>
+    inoremap <C-L> :call MySearchFunc("insertmode","justSearchButWitAgSolutionDir","normalRegex")<CR><Left>
 
     " Duplicate n/N search functionality on f/F. I search with ctrl+f.
     " Might as well keep searching with f/F

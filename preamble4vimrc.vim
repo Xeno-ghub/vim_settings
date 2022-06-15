@@ -65,4 +65,9 @@ let g:functionsFname="~/.vim/fix_idiosyncrasies.vim"
 call TryToSourceFile(g:functionsFname, 1)
 
 
+" This file is supposed to contain just two paths for Ag
+let g:functionsFname="~/.vim/ag_search_paths.vim" 
+call TryToSourceFile(g:functionsFname, 1)
+
+
 
