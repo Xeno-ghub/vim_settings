@@ -5,6 +5,7 @@ inoremap <silent> <C-@> <Esc>`^
 
 " I'd like for $ to jump after the last character, not to it
 nnoremap $ $<Right>
+nnoremap <End> $<Right>
 
 " Fixing movements around newline. When moving between lines I want to be 
 " positioned after last character. Not on top of it... 
