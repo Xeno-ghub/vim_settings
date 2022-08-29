@@ -162,7 +162,7 @@ function! s:getSearchCommandPostfix(searchType, alsoTrigger)
     elseif a:searchType == g:searchTypeVimAllBuffers
         return "NotImplementoPostfixAmigo"
     elseif a:searchType == g:searchTypeVimReplace
-        return "//gci\<Left>\<Left>\<Left>\<Left>"
+        return "//gc\<Left>\<Left>\<Left>\<Left>"
     elseif a:searchType == g:searchTypeVimReplaceAll
         return "NotImplementoPostfixAmigo"
     elseif a:searchType == g:searchTypeAg
