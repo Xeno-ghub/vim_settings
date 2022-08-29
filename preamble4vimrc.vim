@@ -25,6 +25,10 @@ endfunction
 let g:functionsFname="~/.vim/functions4vimrc.vim" 
 call TryToSourceFile(g:functionsFname, 1)
 
+" Vim normie customizations
+let s:subjectivePrefsFname="~/.vim/subjectivePreferences.vim" 
+call TryToSourceFile(s:subjectivePrefsFname, 1)
+
 
 " Dedicated file for search functions, cuz there's a lot of them
 " This file is optional

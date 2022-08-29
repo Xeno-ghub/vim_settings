@@ -75,10 +75,6 @@ if &term =~ "xterm"
     let &t_EI = "\<Esc>]12;white\x7"
 endif
 
-" add "_" to the set of word delimiters. This is the single most important 
-" reason I switched to Vim for. This sort of customizability 🥲
-set iskeyword-=_
-
 " Enable meta key shortcuts. This would open a new bunch of hotkeys for me
 " which would be very important, cuz rn I only have the ctrl ones active.
 execute "set <M-a>=\ea"
