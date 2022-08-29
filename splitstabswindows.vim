@@ -21,14 +21,18 @@ inoremap <C-j> <Esc><C-w>h
 inoremap <C-k> <Esc><C-w>j
 inoremap <C-l> <Esc><C-w>l
 " New tab
-" Yes ... Control+2 is actually Control+] (ctrl+5 == ctrl+])
+
+" Yes ... Control+5 is actually Control+] (ctrl+5 == ctrl+])
 noremap <C-]> :tabnew<CR>
-inoremap <C-]> <Esc>:tabnew<CR>
+inoremap <C-]> <Esc>:tabnew<CR>c
+vnoremap <C-]> <Esc>:tabnew<CR>
+snoremap <C-]> <Esc>:tabnew<CR>
 
 " Switch tabs. For now just use gT as Ctrl+Q
 noremap  <C-e> gt
 inoremap <C-e> <Esc>gt
 vnoremap <C-e> <Esc>gt
+snoremap <C-e> <Esc>gt
 
 " Close split/window with control-w.
 " like a normal editor / browser / w/e
