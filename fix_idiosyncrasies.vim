@@ -20,6 +20,4 @@ nnoremap <End> $<Right>
 nnoremap <expr> j col('.')==1?'k$l':'h'
 nnoremap <expr> <Left> col('.')==1?'k$l':'h'
 
-" I'd like tab to work in normal mode as well, and put me in insert mode
-" ( <TAB> & Control-i are synonymous in vim )
-nnoremap <C-i> i<space><space><space><space>
+
