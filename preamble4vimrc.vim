@@ -29,7 +29,7 @@ call TryToSourceFile(g:functionsFname, 1)
 " Windowsify vim. 
 " \"behave mswin"
 " and accompanying logic is in this file.
-let g:mswinFname="~/.vim/windowsComponent4vimrc.vim"
+let g:mswinFname="~/.vim/behaveMswinest.vim"
 if has('clipboard')
     if has('xterm_clipboard')
         " Do nothing
@@ -49,7 +49,7 @@ call TryToSourceFile(g:experimentalVIMRC, 0)
 
 " A bunch of legacy vim stuff here
 " This file is optional
-let g:superfluousFname="~/.vim/superfluousDeprecated4vimrc.vim" 
+let g:superfluousFname="~/.vim/superfluousDeprecated.vim" 
 call TryToSourceFile(g:superfluousFname, 0)
 
 
@@ -61,13 +61,13 @@ call TryToSourceFile(g:todoFname, 0)
 
 " This file is supposed to contain all vim "normal stuff"
 " Which I don't particularly like, and will change
-let g:functionsFname="~/.vim/fix_idiosyncrasies.vim" 
-call TryToSourceFile(g:functionsFname, 1)
+let g:idioFname="~/.vim/fix_idiosyncrasies.vim" 
+call TryToSourceFile(g:idioFname, 1)
 
 
 " This file is supposed to contain just two paths for Ag
-let g:functionsFname="~/.vim/ag_search_paths.vim" 
-call TryToSourceFile(g:functionsFname, 1)
+let g:globalsFname="~/.vim/globals4vimrc.vim" 
+call TryToSourceFile(g:globalsFname, 1)
 
 
 

@@ -84,7 +84,7 @@ else
     execute "source " . g:preambleFname
     " Here ye shall find:
     " function bodies (functions4vimrc.vim)
-    " ruin vanilla VIM and bend it to my will (windowsComponent4vimrc.vim)
+    " ruin vanilla VIM and bend it to my will (behaveMswinest.vim)
     " learning zone (experimentWme4vimrc.vim)
     " future plans  (todo4vimrc.vim)
     " useless stuff (superfluousDeprecated4vimrc.vim)
@@ -98,7 +98,7 @@ endif
 "      The "vim way" this is not
 " ................................
 "
-" This is done in the windowsComponent4vimrc file
+" This is done in the behaveMswinest file
 
 " ======================================
 " Most important part
