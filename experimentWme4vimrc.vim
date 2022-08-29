@@ -163,14 +163,6 @@ inoremap <M-z> <Esc>:echom "Testing Meta Character Shortcut (pressed Meta Key Z)
 " using <Leader>w (or maybe I should change that Leader W to something else)
 
 
-" testing new hotkey for new tag, so now I don't have to type xxx everytime
-
-" see :help i_CTRL-R
-nnoremap <C-R> ixXx<Esc>
-snoremap <C-R> xXx
-inoremap <C-R> xXx
-
-
 " use ":Man" command or leader+K to open Man pages directly into VIM
 runtime! ftplugin/man.vim
 

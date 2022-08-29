@@ -226,6 +226,12 @@ inoremap <C-D> <Esc>a<C-R>=strftime("%Y%m%d_%H%M%S")<CR>
 vnoremap <C-D> <del>i<C-R>=strftime("%Y%m%d_%H%M%S")<CR>
 nnoremap <C-D> a<C-R>=strftime("%Y%m%d_%H%M%S")<CR><Esc>
 
+" Creating a hotkey for xxx so I don't have to type it everytime
+" see :help i_CTRL-R
+nnoremap <C-R> ixXx<Esc>
+snoremap <C-R> xXx
+inoremap <C-R> xXx
+
 " Most important part of this VIMRC I guess
 " My beloved search mechanics
 call MySearchRemaps()
