@@ -5,15 +5,19 @@
 "                
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+
 " ======================================
 " Add-ons required
 " ======================================
 " FZF
 " Ultisnips
 
-" Tabs hotkeys / Should I even Use Tabs at all?
+" Deprecate C-b search in favor of the searc & replace from below (still have the deprecated one as \C-b)
 
-" Make the damned tab always insert 4 spaces. FIXED WIDTH. Fucking Vim man.
+" Making it so serach & replace will start from current line:
+"    https://stackoverflow.com/questions/7598133/how-to-search-and-replace-globally-starting-from-the-cursor-position-and-wrappi
+
+" change the nnoremap ijkl hjkl to nmap ijkl hjkl
 
 " How to make Meta/Alt hotkeys work:
 "    https://tex.stackexchange.com/questions/53692/m-i-mapping-not-working-in-vim-latexsuite-on-linux/53748
@@ -55,3 +59,37 @@
 " Make Control-Backspace delete previous word
 "noremap <C-U> <Esc>dwdb<insert>
 "Maybe with metakey? Apparently it worksi n NEOVIM inoremap <a-BS> <Esc>dwdb<insert>
+
+" Make your own ctlr-arrows?
+" map <ESC>[5D <C-Left>
+" map <ESC>[5C <C-Right>
+" map! <ESC>[5D <C-Left> I don't know what the exclamation mark does to map
+" map! <ESC>[5C <C-Right> I don't know what the exclamation mark does to map
+
+
+" Search-replace everything (open buffers / files)
+" https://vi.stackexchange.com/questions/2776/vim-search-replace-all-files-in-current-project-folder
+" use this for the find command : find -type f -regex '\./[^\.][^\r\n]*?.*'
+" All files in folder & subdirectories ignoring all .folders
+
+
+" Not yet decided if I want <c-w> to do :bufferdelete or :quit. If I decide to do :bufferdelete
+" I need to use a func similar to this because when :bufdeling all buffers vim just leaves you
+" with an empty unsaved file, it doesn't quit. So I have to somehow make it quit. Probably this func will come in handy
+" function! UnlistedBufs()
+"     " All 'possible' buffers that may exist
+"     let b_all = range(1, bufnr('$'))
+" 
+"     " Unlisted ones
+"     let b_unl = filter(b_all, 'buflisted(v:val)')
+" 
+"     " Number of unlisted ones
+"     let b_num = len(b_unl)
+" 
+"     " Or... All at once
+"     let b_numall = len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))
+" 
+"     echom "All buffers=" . b_numall
+"     echom "Unlisted buffers=" . b_num
+" 
+" endfunction

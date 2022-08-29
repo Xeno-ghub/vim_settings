@@ -53,10 +53,14 @@
 "
 " This is by no means finished. Enjoy
 "
-" So far tested on Linux, Android (termux) & OS X. More to come.
+" So far tested on:
+"                   > Linux (Ubuntu VM)
+"                   > Android (termux) 
+"                   > OS X
+"                   > Windows WSL
+"                   > More to come.
 "
 " Xeno
-
 
 " Unicode support
 
@@ -93,18 +97,17 @@ else
 endif
 
 " Windowsify the insert-mode. I think my plan is to not ever go to visual mode
-"
-" ....... I know ... I know ......
+" ................................
 "      The "vim way" this is not
 " ................................
-"
 " This is done in the behaveMswinest file
 
 " ======================================
-" Most important part
+" Most important part (First of two major vanilla vim diffs)
 " ======================================
 
-" Remap "H" to <insert> and use 'ijkl' for an inverted-T layout. Like FPS games
+" Remap "H" to <insert> and use 'ijkl' for an inverted-T layout. 
+"     Like wasd in FPS games
 "
 noremap h <insert>
 noremap i <Up>
@@ -127,6 +130,8 @@ snoremap $ <del>i$
 " ======================================
 " Because I remapped ijkl we broke text objects... Let's fix those
 " From now on instead of "ciw" use "cow", instead of "dip" use "dop" etc.
+"
+" (Second of two major vanilla vim diffs)
 " ======================================
 "
 
@@ -195,7 +200,7 @@ inoremap <C-i> <space><space><space><space>
 " --------------------
 
 " Allow placing the cursor after last character in normal mode / newline
-" You know, like every normal editor. So you can select the whole line
+" like every normal editor. So you can select the whole line
 set virtualedit+=onemore
 
 " [FOR WRAP ON]
@@ -221,7 +226,7 @@ set relativenumber
 syntax on
 
 " Open a new split vertically with Control-t as if opening a tab
-" You know, like a normal editor
+" like a normal editor
 noremap <C-t> :vnew<CR>
 inoremap <C-t> <Esc>:vnew<CR>
 
@@ -262,14 +267,13 @@ inoremap <C-e> <Esc>gt
 vnoremap <C-e> <Esc>gt
 
 " Open a new split horizontally with Control-T as if opening a tab
-" You know, like a normal editor
 "TODO CURRENTLY DON'T KNOW HOW TO GET IT TO WORK vnoremap <C-T> <Esc>:vs<Enter>
 "TODO CURRENTLY DON'T KNOW HOW TO GET IT TO WORK nnoremap <C-T> <Esc>:vs<Enter>
 "TODO CURRENTLY DON'T KNOW HOW TO GET IT TO WORK inoremap <C-T> <Esc>:vs<Enter>
 
 
 " Close split/window with control-w.
-" You know, like a normal editor
+" like a normal editor / browser / w/e
 " "Attention!" We're deleting the buffer, i.e., CLOSING the source
 " for hiding see below
 vnoremap <C-w> <Esc>:bd<Enter>
