@@ -160,12 +160,6 @@ nnoremap <LeftMouse> <LeftMouse>i
 inoremap <RightMouse> <RightMouse><Esc>
 snoremap <RightMouse> <RightMouse><Esc>
 
-" Search settings
-set incsearch     " do incremental searching
-set hlsearch      " highlight all matches (like Chrome or IE)
-set ignorecase    " Searches ignore case
-"Actually Disable This set smartcase     " Only ignore case when word searched
-                                         " has some capitalized letters
 
 " Allow placing the cursor after last character in normal mode / newline
 " like every normal editor. So you can select the whole line

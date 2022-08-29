@@ -34,6 +34,13 @@ nnoremap <C-i> i<space><space><space><space>
 " TODO deprecate above if not used
 " --------------------
 
+" Search settings
+set incsearch     " do incremental searching
+set hlsearch      " highlight all matches (like Chrome or IE)
+set ignorecase    " Searches ignore case
+"Actually Disable This set smartcase     " Only ignore case when word searched
+                                         " has some capitalized letters
+
 
 " add "_" to the set of word delimiters. This is the single most important 
 " reason I switched to Vim for. This sort of customizability 🥲
