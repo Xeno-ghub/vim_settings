@@ -85,4 +85,15 @@ let g:globalsFname="~/.vim/globals4vimrc.vim"
 call TryToSourceFile(g:globalsFname, 1)
 
 
+" Experimenting with language support (none of that YouCompletemeWhatever)
+" If these files don't exist, then this vimrc's a no-go
+let g:lspfname='~/.vim/lsp_vim-lsp_init.vim'
+if !filereadable(expand(g:lspfname))
+    echo "File " g:lspfname " does not exist! This VIMRC needs it."
+    call MyQuit()
+else
+    execute "source " . g:lspfname
+endif
+
+
 
