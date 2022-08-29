@@ -160,11 +160,6 @@ nnoremap <LeftMouse> <LeftMouse>i
 inoremap <RightMouse> <RightMouse><Esc>
 snoremap <RightMouse> <RightMouse><Esc>
 
-
-" Allow placing the cursor after last character in normal mode / newline
-" like every normal editor. So you can select the whole line
-set virtualedit+=onemore
-
 " Display line numbers
 set number
 set relativenumber

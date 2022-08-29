@@ -20,4 +20,8 @@ nnoremap <End> $<Right>
 nnoremap <expr> j col('.')==1?'k$l':'h'
 nnoremap <expr> <Left> col('.')==1?'k$l':'h'
 
+" Allow placing the cursor after last character in normal mode / newline
+" like every normal editor. So you can select the whole line
+set virtualedit+=onemore
+
 
