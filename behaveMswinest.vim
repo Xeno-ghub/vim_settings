@@ -1,7 +1,7 @@
 " Set options and add mapping such that Vim behaves a lot like MS-Windows
 "
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last Change:	2018 Dec 07
+" Maintainer:   Bram Moolenaar <Bram@vim.org>
+" Last Change:  2018 Dec 07
 
 " Bail out if this isn't wanted.
 if exists("g:skip_loading_mswin") && g:skip_loading_mswin
@@ -9,7 +9,7 @@ if exists("g:skip_loading_mswin") && g:skip_loading_mswin
 endif
 
 " set the 'cpoptions' to its Vim default
-if 1	" only do this when compiled with expression evaluation
+if 1  "only do this when compiled with expression evaluation
   let s:save_cpo = &cpoptions
 endif
 set cpo&vim
@@ -70,17 +70,17 @@ endif
 "    exe 'vnoremap <script> <C-V> ' . paste#paste_cmd['v']
 "endif
 
-imap <S-Insert>		<C-V>
-vmap <S-Insert>		<C-V>
+imap <S-Insert> <C-V>
+vmap <S-Insert> <C-V>
 
 " Use CTRL-Q to do what CTRL-V used to do
-noremap <C-Q>		<C-V>
+noremap <C-Q> <C-V>
 
 " Use CTRL-S for saving, also in Insert mode (<C-O> doesn't work well when
 " using completions).
-noremap <C-S>		:update<CR>
-vnoremap <C-S>		<C-C>:update<CR>
-inoremap <C-S>		<Esc>:update<CR>gi
+noremap <C-S> :update<CR>
+vnoremap <C-S> <C-C>:update<CR>
+inoremap <C-S> <Esc>:update<CR>gi
 
 " For CTRL-V to work autoselect must be off.
 " On Unix we have two selections, autoselect can be used.

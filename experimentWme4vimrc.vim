@@ -4,7 +4,7 @@
 "         try out new commands here and see if you get used to them 
 "      
 "      theoretically stuff from here should either disappear in time
-"                   (superfluousDeprecated4vimrc.vim) 	  
+"                   (superfluousDeprecated4vimrc.vim)       
 "      
 "                     or move to the main vimrc file
 "
@@ -70,9 +70,9 @@ endfunction
 " see :help termcap-cursor-shape
 " !!! NEED XTERM
 if &term =~ "xterm"
-	let &t_SI = "\<Esc>]12;green\x7"
-	let &t_SR = "\<Esc>]12;red\x7"
-	let &t_EI = "\<Esc>]12;white\x7"
+    let &t_SI = "\<Esc>]12;green\x7"
+    let &t_SR = "\<Esc>]12;red\x7"
+    let &t_EI = "\<Esc>]12;white\x7"
 endif
 
 

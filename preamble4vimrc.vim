@@ -15,7 +15,7 @@ function! TryToSourceFile(fname, DIE)
             echo "File " a:fname "doesn't exist, but it's optional so ok."
         endif
     else 
-	execute "source " . a:fname
+    execute "source " . a:fname
     endif
 endfunction
 
