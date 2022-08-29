@@ -5,6 +5,20 @@
 "                
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+
+" add "_" to the set of word delimiters. This is the single most important 
+" reason I switched to Vim for. This sort of customizability 🥲
+set iskeyword-=_
+
+
+" Search settings
+set incsearch     " do incremental searching
+set hlsearch      " highlight all matches (like Chrome or IE)
+set ignorecase    " Searches ignore case
+"Actually Disable This set smartcase     " Only ignore case when word searched
+                                         " has some capitalized letters
+
+
 " Softtabs, 4 spaces
 " If you change the setup below (et, tb=4, sts=0, sw=4 ) you'll probably ruin
     " the backspace / tab behaviour
@@ -33,18 +47,6 @@ inoremap <C-i> <space><space><space><space>
 nnoremap <C-i> i<space><space><space><space>
 " TODO deprecate above if not used
 " --------------------
-
-" Search settings
-set incsearch     " do incremental searching
-set hlsearch      " highlight all matches (like Chrome or IE)
-set ignorecase    " Searches ignore case
-"Actually Disable This set smartcase     " Only ignore case when word searched
-                                         " has some capitalized letters
-
-
-" add "_" to the set of word delimiters. This is the single most important 
-" reason I switched to Vim for. This sort of customizability 🥲
-set iskeyword-=_
 
 " Jumping to beginning of line with a more reachable hotkey
 noremap # 0
