@@ -160,10 +160,6 @@ nnoremap <LeftMouse> <LeftMouse>i
 inoremap <RightMouse> <RightMouse><Esc>
 snoremap <RightMouse> <RightMouse><Esc>
 
-" Display line numbers
-set number
-set relativenumber
-
 " Syntax highlighting is sometimes disabled in some vim distros
 syntax on
 

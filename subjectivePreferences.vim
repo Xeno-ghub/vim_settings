@@ -46,15 +46,17 @@ set ignorecase    " Searches ignore case
 " reason I switched to Vim for. This sort of customizability 🥲
 set iskeyword-=_
 
+" Jumping to beginning of line with a more reachable hotkey
+noremap # 0
+
+" Display line numbers
+set number
+set relativenumber
+
 " I want vim to start scrolling when I'm 8 chars away from the top/bottom,
 " not wait 'til the very top/bottom line
 set scrolloff=8
 " This is horrible set sidescrolloff=20
-
-
-
-" Jumping to beginning of line with a more reachable hotkey
-noremap # 0
 
 " --------------------
 " [FOR WRAP ON]
