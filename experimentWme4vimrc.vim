@@ -159,12 +159,6 @@ inoremap <M-y> <Esc>:echom "Testing Meta Character Shortcut (pressed Meta Key Y)
 inoremap <M-z> <Esc>:echom "Testing Meta Character Shortcut (pressed Meta Key Z)"<CR>
 
 
-noremap <M-Up> <C-w>k
-noremap <M-Left> <C-w>h
-noremap <M-Down> <C-w>j
-noremap <M-Right> <C-w>l
-
-
 " Test out always being nowrapped, see how it goes. We can toggle between them
 " using <Leader>w (or maybe I should change that Leader W to something else)
 

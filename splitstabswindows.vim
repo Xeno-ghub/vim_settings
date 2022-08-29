@@ -5,6 +5,13 @@
 "                
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+
+" Jump between splits
+noremap <M-Up> <C-w>k
+noremap <M-Left> <C-w>h
+noremap <M-Down> <C-w>j
+noremap <M-Right> <C-w>l
+
 " Jump forward & also after jumping center the screen
 nnoremap <M-e> <C-i>zz
 inoremap <M-e> <Esc><C-i>zzi
