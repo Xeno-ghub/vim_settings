@@ -305,6 +305,10 @@ execute "set <M-Q>=\eQ"
 
 
 
+" Use CTRL-Q to do what CTRL-V used to do
+" This probably doesn't work in terminals where c-q is reserved
+noremap <C-Q> <C-V>
+
 
 " use ":Man" command or leader+K to open Man pages directly into VIM
 runtime! ftplugin/man.vim

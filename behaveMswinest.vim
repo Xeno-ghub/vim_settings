@@ -14,7 +14,7 @@ if exists("g:skip_loading_mswin") && g:skip_loading_mswin
 endif
 
 " set the 'cpoptions' to its Vim default
-if 1  "only do this when compiled with expression evaluation
+if 1	" only do this when compiled with expression evaluation
   let s:save_cpo = &cpoptions
 endif
 set cpo&vim
@@ -24,68 +24,11 @@ behave mswin
 
 " backspace and cursor keys wrap to previous/next line
 " make the backspace work like in most other programs
-set backspace=indent,eol,start whichwrap+=<,>,[,]
-
+set backspace=indent,eol,start 
+set whichwrap+=<,>,[,]
 
 " backspace in Visual mode deletes selection
 vnoremap <BS> d
-
-if has("clipboard")
-    " CTRL-X and SHIFT-Del are Cut
-    vnoremap <C-X> "+x
-    vnoremap <S-Del> "+x
-
-    " CTRL-C and CTRL-Insert are Copy
-    vnoremap <C-C> "+y
-    vnoremap <C-Insert> "+y
-
-    " CTRL-V and SHIFT-Insert are Paste
-    " Normal mode just paste system register
-    map <C-V> "+gP
-    map <S-Insert> "+gP
-
-    " CTRL-V and SHIFT-Insert are Past
-    " In insert mode quickly exit insert, paste, then go back
-
-    imap <C-V> <Esc>`^"+gPh
-
-    " CTRL-V and SHIFT-Insert are Past
-    " in visual mode delete to black hole register then paste
-    vmap <C-V> "_d"+gP
-
-    " CTRL-V and SHIFT-Insert are Past
-    " Have it work in command line mode too
-    cmap <C-V> <C-R>+
-    cmap <S-Insert> <C-R>+
-
-    " If all else fails just send c & d to black hole register
-    " (uncomment the 2 lines below)
-    "nnoremap c "_c
-    "nnoremap d "_d
-endif
-
-" Pasting blockwise and linewise selections is not possible in Insert and
-" Visual mode without the +virtualedit feature.  They are pasted as if they
-" were characterwise instead.
-" Uses the paste.vim autoload script.
-" Use CTRL-G u to have CTRL-Z only undo the paste.
-
-"if 1
-"    exe 'inoremap <script> <C-V> <C-G>u' . paste#paste_cmd['i']
-"    exe 'vnoremap <script> <C-V> ' . paste#paste_cmd['v']
-"endif
-
-imap <S-Insert> <C-V>
-vmap <S-Insert> <C-V>
-
-" Use CTRL-Q to do what CTRL-V used to do
-noremap <C-Q> <C-V>
-
-" Use CTRL-S for saving, also in Insert mode (<C-O> doesn't work well when
-" using completions).
-noremap <C-S> :update<CR>
-vnoremap <C-S> <C-C>:update<CR>
-inoremap <C-S> <Esc>:update<CR>gi
 
 " For CTRL-V to work autoselect must be off.
 " On Unix we have two selections, autoselect can be used.
@@ -93,20 +36,71 @@ if !has("unix")
   set guioptions-=a
 endif
 
+if has("clipboard")
+
+
+    " CTRL-X and SHIFT-Del are Cut
+    vnoremap <C-X> "+x
+    " Does not make sense in normal/insert/command
+
+
+    " CTRL-C and CTRL-Insert are Copy
+    vnoremap <C-C> "+y
+    " Does not make sense in normal/insert/command
+
+
+    " CTRL-V and SHIFT-Insert are Paste
+    " Normal mode just paste system register
+    nnoremap <C-V> "+gP
+    " In insert mode quickly exit insert, paste
+    inoremap <C-V> <Esc>`^"+gPi
+    " in visual mode delete to black hole register then paste
+    vnoremap <C-V> "_d"+gP
+    " Have it work in command line mode too
+    cnoremap <C-V> <C-R>+
+    
+
+    " If all else fails (i.e. you don't have X server)
+    " just send c & d to black hole register    
+    " (uncomment the 2 lines below)
+    "nnoremap c "_c
+    "nnoremap d "_d
+
+    " I don't really care about shift_insert, shift_del
+    nnoremap <S-Insert> "+gP
+    cnoremap <S-Insert> <C-R>+
+    vnoremap <S-Del> "+x
+    vnoremap <C-Insert> "+y
+endif
+
+" Somehow nowadays vim (at least vim-gtk which I'm testing) comes directly with
+" Control-Shift-Arrows selection capability.
+
+" However, it's kinda limited & annoying because it ignores iskeyword
+" So I'm remapping it to something more convenient
+
+" Protip: For some weird reason (@least on WSL) ctrl+shift+alt+arrows also works
+"         If you want to keep the old annoying very fast selection
+nnoremap <C-S-Right> vw<C-g>
+snoremap <C-S-Right> <C-O>w
+inoremap <C-S-Right> <Esc><Right>vw<C-g>
+
+nnoremap <C-S-Left> vb<C-g>
+snoremap <C-S-Left> <C-O>b
+inoremap <C-S-Left> <Esc><Right>vb<C-g>
+
+nnoremap <C-Right> w
+nnoremap <C-Left>  b
+
 " CTRL-Z is Undo; not in cmdline though
 noremap <C-Z> u
 inoremap <C-Z> <C-O>u
+vnoremap <C-Z> <Esc>u
+snoremap <C-Z> <Esc>u
 
 " CTRL-Y is Redo (although not repeat); not in cmdline though
 noremap <C-Y> <C-R>
 inoremap <C-Y> <C-O><C-R>
-
-" Alt-Space is System menu
-if has("gui")
-  noremap <M-Space> :simalt ~<CR>
-  inoremap <M-Space> <C-O>:simalt ~<CR>
-  cnoremap <M-Space> <C-C>:simalt ~<CR>
-endif
 
 " CTRL-A is Select all
 noremap <C-A> gggH<C-O>G
@@ -129,31 +123,6 @@ inoremap <C-H> <Esc><Right>dbi
 "NOT LIKE THIS nnoremap <C-BS> <C-w>
 "NOT LIKE THIS inoremap <C-BS> <C-\><C-o>db
 
-" CTRL-Tab is Next window
-noremap <C-Tab> <C-W>w
-inoremap <C-Tab> <C-O><C-W>w
-cnoremap <C-Tab> <C-C><C-W>w
-onoremap <C-Tab> <C-C><C-W>w
-
-" CTRL-F4 is Close window
-noremap <C-F4> <C-W>c
-inoremap <C-F4> <C-O><C-W>c
-cnoremap <C-F4> <C-C><C-W>c
-onoremap <C-F4> <C-C><C-W>c
-
-"DISABLE THIS REPLACE WITH MY OWN if has("gui")
-  " CTRL-F is the search dialog
-"DISABLE THIS REPLACE WITH MY OWN noremap  <expr> <C-F> has("gui_running") ? :promptfind\<CR>" : /"
-""DISABLE THIS REPLACE WITH MY OWN inoremap <expr> <C-F> has("gui_running") ? \<C-\>\<C-O>:promptfind\<CR>" : \<C-\>\<C-O>/"
-"DISABLE THIS REPLACE WITH MY OWN   cnoremap <expr> <C-F> has("gui_running") ? \<C-\>\<C-C>:promptfind\<CR>" : \<C-\>\<C-O>/"
-
-  " CTRL-H is the replace dialog,
-  " but in console, it might be backspace, so don't map it there
-"DISABLE THIS REPLACE WITH MY OWN   nnoremap <expr> <C-H> has("gui_running") ? :promptrepl\<CR>" : \<C-H>"
-"DISABLE THIS REPLACE WITH MY OWN   inoremap <expr> <C-H> has("gui_running") ? \<C-\>\<C-O>:promptrepl\<CR>" : \<C-H>"
-"DISABLE THIS REPLACE WITH MY OWN   cnoremap <expr> <C-H> has("gui_running") ? \<C-\>\<C-C>:promptrepl\<CR>" : \<C-H>"
-"DISABLE THIS REPLACE WITH MY OWN endif
-
 " restore 'cpoptions'
 set cpo&
 if 1
@@ -161,9 +130,6 @@ if 1
   unlet s:save_cpo
 endif
 
-" Please for the love of god stop indenting things
-filetype indent off
-set noautoindent
-set nosmartindent
-set nocindent
+
+
 
