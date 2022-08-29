@@ -162,25 +162,6 @@ inoremap <M-z> <Esc>:echom "Testing Meta Character Shortcut (pressed Meta Key Z)
 " Test out always being nowrapped, see how it goes. We can toggle between them
 " using <Leader>w (or maybe I should change that Leader W to something else)
 
-" When WRAP is set on, we can navigate on "display lines" not just source lines
-noremap <silent> <Leader>w :call ToggleWrap()<CR>
-function ToggleWrap()
-  if &wrap
-    echo "Wrap OFF"
-    set nowrap 
-    :call WrapOffRemaps()
-  else
-    echo "Wrap ON"
-    set wrap
-    :call WrapOnRemaps()
-  endif
-endfunction
-
-" Set nowrap on
-set nowrap
-:call WrapOffRemaps()
-
-
 " Test scrolloff for a while, if it works, put it in with Wrap & Tab stuff
 " --------------------
 set scrolloff=8

@@ -252,6 +252,20 @@ function! MySearchRemaps()
 
 endfunction
 
+
+
+function ToggleWrap()
+  if &wrap
+    echo "Wrap OFF"
+    set nowrap 
+    :call WrapOffRemaps()
+  else
+    echo "Wrap ON"
+    set wrap
+    :call WrapOnRemaps()
+  endif
+endfunction
+
 " Because I'm using "behave mswin" I have to make sure to get these remaps right
 function! WrapOffRemaps()
 
@@ -272,7 +286,6 @@ function! WrapOffRemaps()
     inoremap <Down> <C-o>j
     inoremap <Home> <C-o><Home>
     inoremap <End>  <C-o><End>
-
 endfunction
 
 " Because I'm using "behave mswin" I have to make sure to get these remaps right
@@ -295,5 +308,5 @@ function! WrapOnRemaps()
     inoremap <Down> <C-o>gj
     inoremap <Home> <C-o>g<Home>
     inoremap <End>  <C-o>g<End>
-
 endfunction
+

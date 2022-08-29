@@ -204,21 +204,6 @@ inoremap <C-i> <space><space><space><space>
 " like every normal editor. So you can select the whole line
 set virtualedit+=onemore
 
-" [FOR WRAP ON]
-" Make it so wrapped lines start with indentation
-set breakindent
-
-" [FOR WRAP ON]
-" Display symbol for wrapped lines
-set showbreak=____↩️_____
-
-" [FOR WRAP ON]
-" Don't interrupt words when wrapping lines
-set linebreak
-
-" [FOR WRAP ON]
-set display+=lastline
-
 " Display line numbers
 set number
 set relativenumber
