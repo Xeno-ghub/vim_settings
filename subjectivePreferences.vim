@@ -15,6 +15,11 @@ set iskeyword-=_
 set scrolloff=8
 " This is horrible set sidescrolloff=20
 
+
+
+" Jumping to beginning of line with a more reachable hotkey
+noremap # 0
+
 " --------------------
 " [FOR WRAP ON]
 " Make it so wrapped lines start with indentation
