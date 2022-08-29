@@ -19,11 +19,14 @@ function! TryToSourceFile(fname, DIE)
     endif
 endfunction
 
+" Global variables used
+let s:globalsFname="~/.vim/globals4vimrc.vim" 
+call TryToSourceFile(s:globalsFname, 1)
 
 " A bunch of function definitions here.  
 " If this file doesn't exist, then this vimrc's a no-go 
-let g:functionsFname="~/.vim/functions4vimrc.vim" 
-call TryToSourceFile(g:functionsFname, 1)
+let s:functionsFname="~/.vim/functions4vimrc.vim" 
+call TryToSourceFile(s:functionsFname, 1)
 
 " Vim normie customizations
 let s:subjectivePrefsFname="~/.vim/subjectivePreferences.vim" 
@@ -35,44 +38,28 @@ call TryToSourceFile(s:subjectivePrefsFname, 1)
 let s:searchFname="~/.vim/searchStuff.vim" 
 call TryToSourceFile(s:searchFname, 0)
 
-
 " Windowsify vim. 
 " \"behave mswin"
 " and accompanying logic is in this file.
-let g:mswinFname="~/.vim/behaveMswinest.vim"
+let s:mswinFname="~/.vim/behaveMswinest.vim"
 if has('clipboard')
     if has('xterm_clipboard')
         " Do nothing
     else
         echo "Your VIM doesn't have xterm_clipboard component. Nobody cares"
     endif
-    call TryToSourceFile(g:mswinFname, 1)
+    call TryToSourceFile(s:mswinFname, 1)
 else
     echo "Your VIM doesn't have the clipboard component."
     echo "\"behave mswin\" behaves weirdly without it."
     call MyQuit()
 endif
 
-" Try out new vim commands here to see if you like them
-let g:experimentalVIMRC="~/.vim/experimentWme4vimrc.vim"
-call TryToSourceFile(g:experimentalVIMRC, 0)
 
-" A bunch of legacy vim stuff here
-" This file is optional
-let g:superfluousFname="~/.vim/superfluousDeprecated.vim" 
-call TryToSourceFile(g:superfluousFname, 0)
-
-
-" A bunch of function definitions here.  
-" This file is optional
-let g:todoFname="~/.vim/todo4vimrc.vim" 
-call TryToSourceFile(g:todoFname, 0)
-
-
-" This file is supposed to contain all vim "normal stuff"
-" Which I don't particularly like, and will change
-let g:idioFname="~/.vim/fix_idiosyncrasies.vim" 
-call TryToSourceFile(g:idioFname, 1)
+" This file contains vim particularities which I don't like
+" and will change
+let s:idioFname="~/.vim/fix_idiosyncrasies.vim" 
+call TryToSourceFile(s:idioFname, 1)
 
 
 " Self explanatory - window & tab & stuff
@@ -80,9 +67,20 @@ let s:splitsFname="~/.vim/splitstabswindows.vim"
 call TryToSourceFile(s:splitsFname, 1)
 
 
-" This file is supposed to contain just two paths for Ag
-let g:globalsFname="~/.vim/globals4vimrc.vim" 
-call TryToSourceFile(g:globalsFname, 1)
+" A bunch of legacy vim stuff here
+" This file is optional
+let s:superfluousFname="~/.vim/superfluousDeprecated.vim" 
+call TryToSourceFile(s:superfluousFname, 0)
+
+
+" Stuff planned for the future? Idk
+let s:todoFname="~/.vim/todo4vimrc.vim" 
+call TryToSourceFile(s:todoFname, 0)
+
+
+" Try out new vim commands here to see if you like them
+let s:experimentalVIMRC="~/.vim/experimentWme4vimrc.vim"
+call TryToSourceFile(s:experimentalVIMRC, 0)
 
 
 " Experimenting with language support (none of that YouCompletemeWhatever)
