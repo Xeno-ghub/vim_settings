@@ -162,12 +162,6 @@ inoremap <M-z> <Esc>:echom "Testing Meta Character Shortcut (pressed Meta Key Z)
 " Test out always being nowrapped, see how it goes. We can toggle between them
 " using <Leader>w (or maybe I should change that Leader W to something else)
 
-" Test scrolloff for a while, if it works, put it in with Wrap & Tab stuff
-" --------------------
-set scrolloff=8
-" This is horrible set sidescrolloff=20
-" --------------------
-
 
 " testing new hotkey for new tag, so now I don't have to type xxx everytime
 

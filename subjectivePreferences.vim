@@ -10,6 +10,10 @@
 " reason I switched to Vim for. This sort of customizability 🥲
 set iskeyword-=_
 
+" I want vim to start scrolling when I'm 8 chars away from the top/bottom,
+" not wait 'til the very top/bottom line
+set scrolloff=8
+" This is horrible set sidescrolloff=20
 
 " --------------------
 " [FOR WRAP ON]
