@@ -97,7 +97,7 @@ else
     "-----------------finished sourcing a bunch of files
 endif
 
-" Windowsify the insert-mode. I think my plan is to not ever go to visual mode
+" Windowsify the insert-mode.
 " ................................
 "      The "vim way" this is not
 " ................................
@@ -116,17 +116,6 @@ noremap i <Up>
 noremap k <Down>
 noremap l <Right>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""normality_resumed
-
-" Stop visual selections from ruining my day when I press:
-" o, 0, i, h, j, k, l, $
-snoremap o <del>io
-snoremap 0 <del>i0
-snoremap i <del>ii
-snoremap h <del>ih
-snoremap j <del>ij
-snoremap k <del>ik
-snoremap l <del>il
-snoremap $ <del>i$
 
 " ======================================
 " Because I remapped ijkl we broke text objects... Let's fix those
