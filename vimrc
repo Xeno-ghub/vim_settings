@@ -72,7 +72,8 @@ scriptencoding utf-8
 
 function! MyQuit()
     echo 'I quit.'
-    sleep 5000m
+    echo 'But in 3.5 seconds...'
+    sleep 3500m
     q
 endfunction
 
