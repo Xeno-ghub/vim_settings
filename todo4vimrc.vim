@@ -12,6 +12,11 @@
 " FZF
 " Ultisnips
 
+" Open a new tab with Control-t as just like browsers & other editors
+" You know, like a normal editor
+"TODOUNCOMMENTME noremap <C-t> :vnew<CR>
+"TODOUNCOMMENTME inoremap <C-t> <Esc>:vnew<CR>
+
 " Deprecate C-b search in favor of the searc & replace from below (still have the deprecated one as \C-b)
 
 " Making it so serach & replace will start from current line:

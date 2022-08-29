@@ -226,68 +226,6 @@ set relativenumber
 " Syntax highlighting is sometimes disabled in some vim distros
 syntax on
 
-" Open a new split vertically with Control-t as if opening a tab
-" like a normal editor
-noremap <C-t> :vnew<CR>
-inoremap <C-t> <Esc>:vnew<CR>
-
-" Open a new split horizontally with Control-4 as if opening a tab
-" The "4" hotkey is kinda wonky, but idk what I can set it to...
-" Yes... <C-\> actually means <C-4> .... 
-
-" "Normally Ctrl-Number produce a different key code. You can check like this"
-" "Open Vim and change to insert mode. Then hit Ctrl-V followed by Ctrl-4"
-" https://vi.stackexchange.com/questions/19358/cannot-map-ctrl-number-except-6-or
-noremap <C-\> :new<CR>
-inoremap <C-\> <Esc>:new<CR>
-
-" Navigate between splits directly
-" And we also broke <C-w> hjkl, I mean we didn't. It's stil not working. Me Fix
-
-" Also shortcircuit VIM's way of entering 'split mode' with <C-w> then moving to
-" desired split /w hjkl. What?...
-" making it be tab... maybe i'll do meta-these? nnoremap <C-i> <C-w>k
-" Using for Ag ProjectDir  search Hotkey nnoremap <C-j> <C-w>h
-" Using for Ag CurrentDir  search Hotkey nnoremap <C-k> <C-w>j
-" Using for Ag SolutionDir search Hotkey nnoremap <C-l> <C-w>l
-" Also added the possiblity to switch with Meta-Arrows (check experiments)
-
-" I cannot map <C-i> as it's literally the tab character in Terminals...TODO
-"inoremap <C-i> <Esc><C-w>k
-inoremap <C-j> <Esc><C-w>h
-inoremap <C-k> <Esc><C-w>j
-inoremap <C-l> <Esc><C-w>l
-" New tab
-" Yes ... Control+2 is actually Control+] (ctrl+5 == ctrl+])
-noremap <C-]> :tabnew<CR>
-inoremap <C-]> <Esc>:tabnew<CR>
-
-" Switch tabs. For now just use gT as Ctrl+Q
-noremap  <C-e> gt
-inoremap <C-e> <Esc>gt
-vnoremap <C-e> <Esc>gt
-
-" Open a new split horizontally with Control-T as if opening a tab
-"TODO CURRENTLY DON'T KNOW HOW TO GET IT TO WORK vnoremap <C-T> <Esc>:vs<Enter>
-"TODO CURRENTLY DON'T KNOW HOW TO GET IT TO WORK nnoremap <C-T> <Esc>:vs<Enter>
-"TODO CURRENTLY DON'T KNOW HOW TO GET IT TO WORK inoremap <C-T> <Esc>:vs<Enter>
-
-
-" Close split/window with control-w.
-" like a normal editor / browser / w/e
-" "Attention!" We're deleting the buffer, i.e., CLOSING the source
-" for hiding see below
-vnoremap <C-w> <Esc>:bd<Enter>
-nnoremap <C-w> <Esc>:bd<Enter>
-inoremap <C-w> <Esc>:bd<Enter>
-
-" hide split/window Ctrl+U Control+U
-" "Attention!" This hides the buffers, it does not close them 
-" TODO - Find a better shortcut than control-u...
-vnoremap <C-u> <Esc>:q<Enter>
-nnoremap <C-u> <Esc>:q<Enter>
-inoremap <C-u> <Esc>:q<Enter>
-
 " Make vim check for any changes from outside to your file.
 " The idea with this is that if anyone modifies your files, vim should become
 " aware.
