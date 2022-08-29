@@ -20,6 +20,12 @@ nnoremap <End> $<Right>
 nnoremap <expr> j col('.')==1?'k$l':'h'
 nnoremap <expr> <Left> col('.')==1?'k$l':'h'
 
+" Please for the love of god stop indenting things
+filetype indent off
+set noautoindent
+set nosmartindent
+set nocindent
+
 " Allow placing the cursor after last character in normal mode / newline
 " like every normal editor. So you can select the whole line
 set virtualedit+=onemore
