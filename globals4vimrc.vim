@@ -1,3 +1,10 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                          globals4vimrc.vim
+"
+"                               globals
+"                
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " These will be two arbitrary paths meant for Ag to search in
 " Set them to whatever you want, it should follow the unix format
 

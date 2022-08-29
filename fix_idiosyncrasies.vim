@@ -1,3 +1,10 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                          fix_idiosyncracies.vim
+"
+"                  Fix weird stuff (IMO) that's native to vim.
+"                
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " I'd like for <Esc> to keep the cursor in the same position,
 " not jump around
 " ( https://stackoverflow.com/questions/2295410/how-to-prevent-the-cursor-from-moving-back-one-character-on-leaving-insert-mode )

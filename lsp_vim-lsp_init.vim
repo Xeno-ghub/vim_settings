@@ -1,3 +1,9 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                          lsp_vim-lsp_init.vim
+"
+"                  Testing out lsp for vim. So far much disappoint
+"                
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " I'm using this for my own stuff!!!! DON'T STEAL MA KEYS imap <c-space> <Plug>(asyncomplete_force_refresh)
 " I'm using this, fuck off inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
