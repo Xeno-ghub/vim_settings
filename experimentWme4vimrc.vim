@@ -75,11 +75,6 @@ if &term =~ "xterm"
     let &t_EI = "\<Esc>]12;white\x7"
 endif
 
-
-" Try to switch up fF & tT. I know it's not ideal :( but fF are taken
-nnoremap t f
-nnoremap T F
-
 " Delete previous word (like any normal text editor...)
 " CTRL + BACKSPACE deletes previous word
 " nnoremap <C-H> dge --> dge is too crazy, it deletes last character of word

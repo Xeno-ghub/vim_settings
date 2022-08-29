@@ -26,6 +26,12 @@ let g:functionsFname="~/.vim/functions4vimrc.vim"
 call TryToSourceFile(g:functionsFname, 1)
 
 
+" Dedicated file for search functions, cuz there's a lot of them
+" This file is optional
+let s:searchFname="~/.vim/searchStuff.vim" 
+call TryToSourceFile(s:searchFname, 0)
+
+
 " Windowsify vim. 
 " \"behave mswin"
 " and accompanying logic is in this file.
