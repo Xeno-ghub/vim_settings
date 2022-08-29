@@ -56,10 +56,6 @@
 
 
 
-" Make Control-Backspace delete previous word
-"noremap <C-U> <Esc>dwdb<insert>
-"Maybe with metakey? Apparently it worksi n NEOVIM inoremap <a-BS> <Esc>dwdb<insert>
-
 " Make your own ctlr-arrows?
 " map <ESC>[5D <C-Left>
 " map <ESC>[5C <C-Right>

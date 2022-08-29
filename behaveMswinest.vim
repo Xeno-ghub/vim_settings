@@ -116,6 +116,19 @@ onoremap <C-A> <C-C>gggH<C-O>G
 snoremap <C-A> <C-C>gggH<C-O>G
 xnoremap <C-A> <C-C>ggVG
 
+" Delete previous word (like any normal text editor...)
+" CTRL + BACKSPACE deletes previous word
+" nnoremap <C-H> dge --> dge is too crazy, it deletes last character of word
+nnoremap <C-H> db
+    " In insert mode the cursor is a bit behind what is shown
+    " so go right one step
+" inoremap <C-H> <Esc>dgei<Right> "DEPRECATED, using dbi again
+"   can sort of delete tailend spaces
+inoremap <C-H> <Esc><Right>dbi
+"TODO - This doesn't work :( cnoremap <C-BS> <C-w>
+"NOT LIKE THIS nnoremap <C-BS> <C-w>
+"NOT LIKE THIS inoremap <C-BS> <C-\><C-o>db
+
 " CTRL-Tab is Next window
 noremap <C-Tab> <C-W>w
 inoremap <C-Tab> <C-O><C-W>w
