@@ -165,20 +165,6 @@ noremap <M-Down> <C-w>j
 noremap <M-Right> <C-w>l
 
 
-
-" First meta keys experiment. Remap jumping between locations.
-" DEPRECATED We broke ctrl+i (jump forward), remap to c-u
-" DEPRECATED noremap <c-u> <c-i>
-noremap <c-u> <c-i>
-
-" Jump forward & also after jumping center the screen wtf 
-nnoremap <M-e> <C-i>zz
-inoremap <M-e> <Esc><C-i>zzi
-
-" Jump backward
-nnoremap <M-q> <C-o>zz
-inoremap <M-q> <Esc><C-o>zzi
-
 " Test out always being nowrapped, see how it goes. We can toggle between them
 " using <Leader>w (or maybe I should change that Leader W to something else)
 

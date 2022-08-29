@@ -75,6 +75,11 @@ let g:idioFname="~/.vim/fix_idiosyncrasies.vim"
 call TryToSourceFile(g:idioFname, 1)
 
 
+" Self explanatory - window & tab & stuff
+let s:splitsFname="~/.vim/splitstabswindows.vim" 
+call TryToSourceFile(s:splitsFname, 1)
+
+
 " This file is supposed to contain just two paths for Ag
 let g:globalsFname="~/.vim/globals4vimrc.vim" 
 call TryToSourceFile(g:globalsFname, 1)
