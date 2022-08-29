@@ -19,9 +19,6 @@
 
 " Deprecate C-b search in favor of the searc & replace from below (still have the deprecated one as \C-b)
 
-" Making it so serach & replace will start from current line:
-"    https://stackoverflow.com/questions/7598133/how-to-search-and-replace-globally-starting-from-the-cursor-position-and-wrappi
-
 " change the nnoremap ijkl hjkl to nmap ijkl hjkl
 
 " How to make Meta/Alt hotkeys work:

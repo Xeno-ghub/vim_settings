@@ -117,7 +117,8 @@ function! s:getSearchCommandPrefix(searchType)
     elseif a:searchType == g:searchTypeVimAllBuffers
         return "/NotImplementoAmigo"
     elseif a:searchType == g:searchTypeVimReplace
-        return ":%s/"
+        "deprecated return ":%s/"
+        return ":,$s/"
     elseif a:searchType == g:searchTypeVimReplaceAll
         return "/NotImplementoAmigo"
     elseif a:searchType == g:searchTypeAg
@@ -162,7 +163,7 @@ function! s:getSearchCommandPostfix(searchType, alsoTrigger)
     elseif a:searchType == g:searchTypeVimAllBuffers
         return "NotImplementoPostfixAmigo"
     elseif a:searchType == g:searchTypeVimReplace
-        return "//gc\<Left>\<Left>\<Left>\<Left>"
+        return "//gc|1,''-&&\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>"
     elseif a:searchType == g:searchTypeVimReplaceAll
         return "NotImplementoPostfixAmigo"
     elseif a:searchType == g:searchTypeAg
