@@ -35,6 +35,23 @@ How to install my vim config for Windows.
     # AG
     apt-get install silversearcher-ag
 
+    # for WSL - You need xserver for clipboard functionality
+    Install Windows Terminal
+        Go to Settings->Actions Remove ctrl+c & ctrl+v from there
+
+    sudo apt-get build-essential
+    sudo apt-get update
+    sudo apt-get install vim-gtk3
+
+    X-Server:
+    Source: ( 
+        https://www.rickmakes.com/windows-subsystem-for-linux-2-installing-vcxrv-x-server/ 
+            or youtu.be/4SZXbl9KVsw )
+    https://sourceforge.net/projects/vcxsrv/
+
+    > install VcXsrv and be sure to set firewall to allow on public (& the other settings)
+    > export LIGBL & DISPLAY. That's pretty much it
+    
     # vim-lsp
     git clone https://github.com/prabirshrestha/vim-lsp
     cp -r vim-lsp ~/.vim/pack/mypluginz/start/vim-lsp
