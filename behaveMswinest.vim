@@ -36,6 +36,17 @@ if !has("unix")
   set guioptions-=a
 endif
 
+" Vim has its own clipboards. Go figure.
+" Set VIM to use the same clilpboard as the system
+" undeprecated out of the grave
+" I guess it's good I didn't delete this as it seems WSL overwrites system 
+" registers for whatever reason when visual selecting or selecting. 
+" With this on, it doesn't anymoe
+set clipboard=unnamed
+"set clipboard^=unnamed,unnamedplus
+"set clipboard=unnamedplus
+
+
 if has("clipboard")
 
 

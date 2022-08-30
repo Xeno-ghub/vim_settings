@@ -169,17 +169,6 @@ syntax on
 " I tested it, it doesn't really work every time....
 set autoread
 
-" Vim has its own clipboards. Go figure.
-" Set VIM to use the same clilpboard as the system
-" undeprecated out of the grave
-" I guess it's good I didn't delete this as it seems WSL overwrites system 
-" registers for whatever reason when visual selecting or selecting. 
-" With this on, it doesn't anymoe
-set clipboard=unnamed
-"set clipboard^=unnamed,unnamedplus
-"set clipboard=unnamedplus
-
-
 " Have a keybinding for inserting a timestamp
 inoremap <C-D> <Esc>a<C-R>=strftime("%Y%m%d_%H%M%S")<CR>
 vnoremap <C-D> <del>i<C-R>=strftime("%Y%m%d_%H%M%S")<CR>
