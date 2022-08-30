@@ -35,6 +35,11 @@ How to install my vim config for Windows.
     # AG
     apt-get install silversearcher-ag
 
+    [ Optional ]
+        Put .inputrc into ~/.inputrc if some stuff isn't working
+        (if you need to make ctrl-arrows work, or stuff like that,
+         nowadays it's being taken care of by vim-gtk3 I think)
+
     # for WSL - You need xserver for clipboard functionality
     Install Windows Terminal
         Go to Settings->Actions Remove ctrl+c & ctrl+v from there
