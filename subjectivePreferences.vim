@@ -27,7 +27,8 @@ set ignorecase    " Searches ignore case
     " I want backspace to always delete 1 character (not whole column...)
     " It's still not working perfectly as inline tab still works weirdly
 " --------------------
- "set expandtab     " ALWAYS EXPAND TAB TO SPACES. Pointless. 
+set expandtab     " not so pointless afterall, good for ultisnips
+
                     " Ended up totally remapping tab to 4 spaces as it was the
                     " only way to get it to always type 4 spaces.
 
