@@ -125,11 +125,13 @@ xnoremap <C-A> <C-C>ggVG
 " CTRL + BACKSPACE deletes previous word
 " nnoremap <C-H> dge --> dge is too crazy, it deletes last character of word
 nnoremap <C-H> db
+" Black hole variant in dire times of need nnoremap <C-H> "_db
     " In insert mode the cursor is a bit behind what is shown
     " so go right one step
 " inoremap <C-H> <Esc>dgei<Right> "DEPRECATED, using dbi again
 "   can sort of delete tailend spaces
 inoremap <C-H> <Esc><Right>dbi
+" Black hole variant in dire times of need inoremap <C-H> <Esc><Right>"_dbi
 "TODO - This doesn't work :( cnoremap <C-BS> <C-w>
 "NOT LIKE THIS nnoremap <C-BS> <C-w>
 "NOT LIKE THIS inoremap <C-BS> <C-\><C-o>db
