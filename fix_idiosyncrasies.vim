@@ -31,3 +31,14 @@ set nocindent
 set virtualedit+=onemore
 
 
+" Vim doesn't have undo man. It doesn't have undo.
+" no comment...
+inoremap <space> <C-G>u<space>
+" ☝️ This is a shitty workaround to undo once every word
+inoremap _ <C-G>u_
+inoremap - <C-G>u-
+inoremap . <C-G>u.
+" ☝️ We can add undo checkpoints for other separators as well I guess?
+
+
+
