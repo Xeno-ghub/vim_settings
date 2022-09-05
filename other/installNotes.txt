@@ -35,6 +35,17 @@ How to install my vim config for Windows.
     # AG
     apt-get install silversearcher-ag
 
+    # Ultisnips
+    cd ~/.vim/pack/mypluginz/start/
+    git clone https://github.com/SirVer/ultisnips
+
+    Change in: (it interferes with my stuff i think)
+    vim ~/.vim/pack/mypluginz/start/ultisnips/autoload/UltiSnips/map_keys.vim
+             line |73 col 6|
+             "ruinUltiSnipsNow snoremap <c-r> <c-g>"_c<c-r>
+
+    Ultisnips folder with all snippets is already there (~/.vim/UltiSnips)
+
     [ Optional ]
         Put .inputrc into ~/.inputrc if some stuff isn't working
         (if you need to make ctrl-arrows work, or stuff like that,

@@ -216,14 +216,14 @@ set showcmd       " display incomplete commands
 
 "" ADD-ONs
 
-let pesteringMessages = 0
+let g:pesteringMessages = 0
 if !executable('ag')
     :echom "Your vim is incomplete. Ag not installed."
-    let pesteringMessages = 1
+    let g:pesteringMessages = 1
 endif 
 if !executable('fzf')
     :echom "Your vim is incomplete. FZF not installed."
-    let pesteringMessages = 1
+    let g:pesteringMessages = 1
 else
     " add FZF to runtimepath
     set rtp+=~/fzf
