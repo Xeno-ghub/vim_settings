@@ -90,4 +90,43 @@
 "     echom "All buffers=" . b_numall
 "     echom "Unlisted buffers=" . b_num
 " 
-" endfunction
+" endfunctio
+
+
+" How to programmatically change modes in vim? 
+" IDK, here's some jank hack way of doing it:
+" " Vim go into select-insert mode manually
+" " https://www.reddit.com/r/vim/comments/jeryf8/wtf_is_insert_select_mode/
+" 
+" " inoremap <C-X>? <C-R>=<SID>insert_select_mode()<CR>
+" inoremap <C-P>? <C-R>=<SID>selectz()<CR
+" inoremap <C-P> <C-R>
+" 
+" 
+" fun! s:selectz()
+"   fun! s:select()
+"     "call search('\<', 'b')
+"     normal! gh
+"     let g:mode = mode(1)
+"     "call search('\>')
+"   endfun
+" 
+"     au CompleteDone <buffer> ++once call <SID>select()
+"     call complete(col('.'), ['foo', 'bar'])
+"     return ''
+" endfun
+" 
+" 
+" fun! s:insert_select_mode()
+"   fun! s:select()
+"     call search('\<', 'b')
+"     normal! gh
+"     let g:mode = mode(1)
+"     call search('\>')
+"   endfun
+" 
+"   au CompleteDone <buffer> ++once call <SID>select()
+"   call complete(col('.'), ['foo', 'bar'])
+"   return ''
+" endfun
+
