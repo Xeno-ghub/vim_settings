@@ -12,6 +12,10 @@
 " FZF
 " Ultisnips
 
+
+" maybe one day remove behavemswin and see if everything still works
+"  Since you pretty much rewrote it
+
 " Open a new tab with Control-t as just like browsers & other editors
 " You know, like a normal editor
 "TODOUNCOMMENTME noremap <C-t> :vnew<CR>
