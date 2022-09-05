@@ -94,11 +94,11 @@ endif
 "         If you want to keep the old annoying very fast selection
 nnoremap <C-S-Right> vw<C-g>
 snoremap <C-S-Right> <C-O>w
-inoremap <C-S-Right> <Esc><Right>vw<C-g>
+inoremap <C-S-Right> <C-O>vw<C-g>
 
 nnoremap <C-S-Left> vb<C-g>
 snoremap <C-S-Left> <C-O>b
-inoremap <C-S-Left> <Esc><Right>vb<C-g>
+inoremap <C-S-Left> <C-O>vb<C-g>
 
 nnoremap <C-Right> w
 nnoremap <C-Left>  b
