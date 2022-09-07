@@ -159,7 +159,13 @@ function! s:getSearchCommandPostfix(searchType, alsoTrigger)
             return ""
         endif
     elseif a:searchType == g:searchTypeVimVisual
-        return "\<CR>N"
+
+        let l:visualColIdx = getpos("'<")[2]
+        if( l:visualColIdx == 1 )
+            return "\<CR>N"
+        else
+            return "\<CR>"
+        endif
     elseif a:searchType == g:searchTypeVimAllBuffers
         return "NotImplementoPostfixAmigo"
     elseif a:searchType == g:searchTypeVimReplace
@@ -270,6 +276,9 @@ endfunction
 " Rewriting search function
 " this cannot be local ("s:mySearchFunc"), as it's called from a global func
 function! MySearchFunc(vimmode, searchType)
+
+    " no matter what mode I entered this function, I'm stopping insert mode
+    stopinsert
 
     let l:searchTypeFinalized = a:searchType
 
