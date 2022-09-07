@@ -56,7 +56,7 @@
 " So far tested on:
 "                   > Linux (Ubuntu VM)
 "                   > Android (termux) 
-"                   > OS X
+"                   > OS X (vim8/vim9)
 "                   > Windows WSL
 "                   > More to come.
 "
