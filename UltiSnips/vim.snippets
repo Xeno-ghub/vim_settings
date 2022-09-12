@@ -1,4 +1,9 @@
-snippet / "expand comments with the same command each time"
-${1}" 
+snippet "^( *)([^\r\n]*?)//" "Comment expander" iAr
+`!p snip.rv = match.group(1)`" `!p snip.rv = match.group(2)`
 endsnippet
 
+snippet f "Function expander"
+function ${1:s:localFuncName}(${2:arg1})
+    ${3:bod}
+endfunction
+endsnippet
