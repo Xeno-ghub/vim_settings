@@ -158,11 +158,25 @@ function! s:getSearchCommandPostfix(searchType, alsoTrigger)
         else
             return ""
         endif
+    " So many conditions here. Vim search behaves differently whether
+    " you visual-search from start of line, mid of line, 
+    " mid-of-line but starting with nonalphanumeric
     elseif a:searchType == g:searchTypeVimVisual
 
         let l:visualColIdx = getpos("'<")[2]
+
+        " If column == first
         if( l:visualColIdx == 1 )
-            return "\<CR>N"
+            " Get character @ beginning of visual selection
+            let l:whitespaceUnderCursor = getline("'<")[getpos("'<")[2]-1]
+
+            " If we're over some whitespace-like just do as if midline
+            if l:whitespaceUnderCursor =~ "[^[a-zA-Z0-9]" || (len(l:whitespaceUnderCursor) == 0)
+                return "\<CR>"
+            else
+            " Otherwise vimsearch will jump to next result, so go back with "N"
+                return "\<CR>N"
+            endif
         else
             return "\<CR>"
         endif
