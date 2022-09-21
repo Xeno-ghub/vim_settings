@@ -12,6 +12,48 @@
 " FZF
 " Ultisnips
 
+
+
+" " Emoji shortcuts
+" ab :white_check_mark: ✅
+" ab :warning: ⚠
+" ab :bulb: 💡
+" ab :pushpin: 📌
+" ab :bomb: 💣
+" ab :pill: 💊
+" ab :construction: 🚧
+" ab :pencil: 📝
+" ab :point_right: 👉
+" ab :book: 📖
+" ab :link: 🔗
+" ab :wrench: 🔧
+" ab :info: 🛈
+" ab :telephone: 📞
+" ab :email: 📧
+" ab :computer: 💻
+
+
+
+
+" Map ctrl+alt+arrows & B & W to 5xw
+" or maybe characters? Or maybe nothing?
+
+
+" Mine own jump to indnets? Should not be hard to code
+"     in a way that I like better compared to EnhancedJumps from Vim
+
+
+" Connected TODOs:
+" 1# arrange mappings somewhere nicer, the sparsely used mappings
+
+" 2#
+" have a hotkey that cleans up empty lines with just spaces
+" have a hotkey that cleans up ends of lines
+" have a hotkey that cleans up tabs
+" autocmd from primegean
+
+
+
 " Enable signcolumn option whenever you get around to setting up a LSP server
 "       Creates empty column to the left for error warnings
 
