@@ -12,7 +12,7 @@ set iskeyword-=_
 
 
 " Search settings
-set incsearch     " do incremental searching
+set incsearch     " do incremental searching live as you type
 set hlsearch      " highlight all matches (like Chrome or IE)
 set ignorecase    " Searches ignore case
 "Actually Disable This set smartcase     " Only ignore case when word searched

@@ -46,8 +46,9 @@
 "      you're just 1 git pull away from your favorite text editor
 "
 " Why is it ruining VIM?
-" > VIM has this core rule: "Never take your hands off the keyboard"
-" > My mod's rule         : "Left only still doable, two hands even better"
+" > VIM has a core motto| "Don't take yer hands off the keyboard to be fast..."
+"                              "... . But if you take even one... you won't be"
+" > My mod's rule       | "Left only still doable, two hands even better"
 
 " > Other than this I tried keeping VIM as unchanged as possible.
 "

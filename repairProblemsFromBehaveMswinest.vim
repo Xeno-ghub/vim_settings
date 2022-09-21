@@ -7,7 +7,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-" Stop visual selections from ruining my day when I press:
+" Stop select-mode selections from ruining my day when I press:
 " o, 0, i, h, j, k, l, $
 snoremap o <del>io
 snoremap 0 <del>i0
