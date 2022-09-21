@@ -64,7 +64,8 @@ if has("clipboard")
     " Normal mode just paste system register
     nnoremap <C-V> "+gP
     " In insert mode quickly exit insert, paste
-    inoremap <C-V> <Esc>`^"+gPi
+    " The "<C-G>u" is only used to create an undo point. Check:j678x
+    inoremap <C-V> <C-G>u<Esc>`^"+gPi
     " in visual mode delete to black hole register then paste
     vnoremap <C-V> "_d"+gP
     " Have it work in command line mode too
