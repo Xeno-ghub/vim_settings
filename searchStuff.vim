@@ -11,8 +11,8 @@ let s:invalidRegexType = 0x1002
 
 " Duplicate n/N search functionality on f/F. I search with ctrl+f.
 " Might as well keep searching with f/F
-nnoremap f n
-nnoremap F N
+nnoremap s n
+nnoremap S N
 
 function! MySearchRemaps()
 

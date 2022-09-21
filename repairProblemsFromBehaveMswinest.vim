@@ -18,13 +18,6 @@ snoremap k <del>ik
 snoremap l <del>il
 snoremap $ <del>i$
 
-
-" Already remapped f to something else, so let's restore "f/F" usage
-" Might as well keep searching with f/F
-nnoremap t f
-nnoremap t F
-
-
 " Ctrl+V is already taken for paste, so to go into visual block
 "     Alt+V/Meta+V?
 noremap <M-v> <C-V>
