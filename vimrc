@@ -110,11 +110,17 @@ endif
 " Remap "H" to <insert> and use 'ijkl' for an inverted-T layout. 
 "     Like wasd in FPS games
 "
-noremap h <insert>
-noremap i <Up>
+nnoremap h i
+nnoremap i k
 " noremap j <Left> This is dealt with in fix_idiosyncrasies.vim
-noremap k <Down>
-noremap l <Right>
+nnoremap k j
+"SameSuperfluous nnoremap l l
+
+xnoremap h I
+xnoremap i k
+xnoremap j h
+xnoremap k j
+"SameSuperfluous xnoremap l l
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""normality_resumed
 
 " ======================================
