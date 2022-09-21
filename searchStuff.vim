@@ -13,11 +13,6 @@ let s:invalidRegexType = 0x1002
 " Might as well keep searching with f/F
 nnoremap f n
 nnoremap F N
-" In visual-select I just want to overwrite, like a normal text editor
-" So pressing "s" or "n" for that matter will just overwrite selected
-" text
-vnoremap f <del>if
-vnoremap F <del>iF
 
 function! MySearchRemaps()
 
