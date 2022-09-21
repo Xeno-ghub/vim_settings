@@ -55,6 +55,10 @@ else
     call MyQuit()
 endif
 
+" We kinda ruined vim with "Behave" so let's repair as much as needed atm
+let s:repairFname="~/.vim/repairProblemsFromBehaveMswinest.vim" 
+call TryToSourceFile(s:repairFname, 1)
+
 
 " This file contains vim particularities which I don't like
 " and will change
@@ -85,7 +89,7 @@ call TryToSourceFile(s:experimentalVIMRC, 0)
 
 " Experimenting with language support (none of that YouCompletemeWhatever)
 " If these files don't exist, then this vimrc's a no-go
-let g:lspfname='~/.vim/lsp_vim-lsp_init.vim'
+let g:lspfname="~/.vim/lsp_vim-lsp_init.vim"
 if !filereadable(expand(g:lspfname))
     echo "File " g:lspfname " does not exist! This VIMRC needs it."
     call MyQuit()
