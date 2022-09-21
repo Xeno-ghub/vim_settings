@@ -28,7 +28,11 @@ set nocindent
 
 " Allow placing the cursor after last character in normal mode / newline
 " like every normal editor. So you can select the whole line
-set virtualedit+=onemore
+set virtualedit=onemore
+" For inserting columns of characters in visual block mode.
+" !!! Only works with "A"ppend, with "I"nsert it doesn't
+set virtualedit+=block
+
 
 
 " Vim doesn't have undo man. It doesn't have undo.

@@ -25,5 +25,8 @@ nnoremap t f
 nnoremap t F
 
 
+" Ctrl+V is already taken for paste, so to go into visual block
+"     Alt+V/Meta+V?
+noremap <M-v> <C-V>
 
 
