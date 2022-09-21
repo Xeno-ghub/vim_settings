@@ -134,3 +134,43 @@
 "   return ''
 " endfun
 
+
+
+" If you ever want to make "w" (or just ctrl+arrows) stop at the end of the line / newline
+
+" https://vi.stackexchange.com/questions/10602/vim-jump-between-words-and-stop-at-end-of-line
+" Just overwrite ctrl+stuff
+" 
+" 
+" " Override w motion
+" function! MyWMotion()
+"     " Save the initial position
+"     let initialLine=line('.')
+" 
+"     " Execute the builtin word motion and get the new position
+"     normal! w
+"     let newLine=line('.')
+" 
+"     " If the line as changed go back to the previous line
+"     if initialLine != newLine
+"         normal k$
+"     endif
+" endfunction
+" 
+" " Override b motion
+" function! MyBMotion()
+"     " Save the initial position
+"     let initialLine=line('.')
+" 
+"     " Execute the builtin word motion and get the new position
+"     normal! b
+"     let newLine=line('.')
+" 
+"     " If the line as changed go back to the previous line
+"     if initialLine != newLine
+"         normal j^
+"     endif
+" endfunction
+" 
+" nnoremap <silent> w :call MyWMotion()<CR>
+" nnoremap <silent> b :call MyBMotion()<CR>
