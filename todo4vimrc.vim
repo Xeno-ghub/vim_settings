@@ -12,6 +12,8 @@
 " FZF
 " Ultisnips
 
+" Enable signcolumn option whenever you get around to setting up a LSP server
+"       Creates empty column to the left for error warnings
 
 " maybe one day remove behavemswin and see if everything still works
 "  Since you pretty much rewrote it
