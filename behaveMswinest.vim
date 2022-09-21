@@ -37,19 +37,15 @@ if !has("unix")
 endif
 
 " Vim has its own clipboards. Go figure.
-" Set VIM to use the same clilpboard as the system
-" undeprecated out of the grave
-" I guess it's good I didn't delete this as it seems WSL overwrites system 
-" registers for whatever reason when visual selecting or selecting. 
-" With this on, it doesn't anymoe
-set clipboard=unnamed
+set clipboard=
+" Tried all the values below, they all somehow manage to overwrite
+    " system clipboard on some OS or other. Nowadays testing nothing [1]
+"set clipboard=unnamed
 "set clipboard^=unnamed,unnamedplus
 "set clipboard=unnamedplus
 
-
+" see [1] for deeper explanation
 if has("clipboard")
-
-
     " CTRL-X and SHIFT-Del are Cut
     vnoremap <C-X> "+x
     " Does not make sense in normal/insert/command
@@ -144,6 +140,10 @@ if 1
   unlet s:save_cpo
 endif
 
-
+" [1]
+" A lot of the clipboard settings in this .vim are serendipitously similar to 
+    " the following website. It crystallizes things much better than I could
+    " so I'll leave it here:
+" https://ezhik.me/blog/vim-clipboard/
 
 
