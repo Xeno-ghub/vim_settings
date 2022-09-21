@@ -189,6 +189,19 @@ https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c4411
 https://medium.com/in-the-weeds/my-2-5-year-journey-with-vim-and-why-i-switched-back-to-sublime-text-4afcc303741e
         
 
+----------
+20220920:
+Adding stuff in here as goto quick references:
+
+" All known mapping types
+" :nmap :nnoremap  Display normal mode maps
+" :imap :inoremap  Display insert mode maps
+" :vmap :vnoremap  Display visual and select mode maps
+" :smap :snoremap  Display select mode maps
+" :xmap :xnoremap  Display visual mode maps
+" :cmap :cnoremap  Display command-line mode maps
+" :omap :onoremap  Display operator pending mode maps
+
         
         
         
