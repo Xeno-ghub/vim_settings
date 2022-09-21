@@ -60,3 +60,17 @@ let g:UltiSnipsJumpBackwardTrigger="<M-S>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" Remember buffer names
+let g:Qbufname="zeroinit"
+let g:Wbufname="zeroinit"
+let g:Ebufname="zeroinit"
+let g:Rbufname="zeroinit"
+let g:Tbufname="zeroinit"
+let g:Ybufname="zeroinit"
+let g:Abufname="zeroinit"
+let g:Sbufname="zeroinit"
+let g:Dbufname="zeroinit"
+let g:Fbufname="zeroinit"
+let g:Gbufname="zeroinit"
+let g:Hbufname="zeroinit"

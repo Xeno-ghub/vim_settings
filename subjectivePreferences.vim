@@ -85,3 +85,12 @@ set nowrap
 :call WrapOffRemaps()
 " --------------------
 
+" I would like that vim doesn't overwrite buffers
+" when using switchbuf/sbuf if one is already open
+set switchbuf=usetab,useopen
+
+" Remapped all smallcase marks to uppercase marks
+"     Check:p32pg
+
+
+
