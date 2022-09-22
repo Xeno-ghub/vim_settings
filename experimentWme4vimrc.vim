@@ -24,33 +24,6 @@ xnoremap <C-@> <Esc>
 nnoremap <Space> i
 
 
-function! ToggleColumn()
-   if &colorcolumn==0
-        :set colorcolumn=80
-        execute 'highlight ColorColumn ctermbg=LightGray'
-        execute 'highlight ColorColumn ctermbg=Grey'
-        let g:hiddenColorColumnToggle=0
-    else
-        :set colorcolumn=0
-        execute 'highlight ColorColumn ctermbg=magenta'
-        let g:hiddenColorColumnToggle=1
-    endif
-endfunction
- 
-function! ToggleListChars()
-        if &listchars=="tab:>>,extends:▶,precedes:◀"
-        " CAN'T GET THIS COOL SET OF CHARACTERS TO WORK IN-FUNCTION 😭😭😭
-        " and Tab & Space don't work either 😭😭😭
-        ":set listchars=eol:¬,tab:>·,trail:█,extends:🔜,precedes:🔙,space:
-        :set listchars=eol:¬,tab:>>,trail:█,extends:▶,precedes:◀ 
-        :set list
-    else
-        :set listchars=tab:>>,extends:▶,precedes:◀ 
-        :set list
-   endif
-endfunction
-:call ToggleListChars()
-
 
 " Experiment with changing the color of insert mode.
 " see :help termcap-cursor-shape

@@ -74,6 +74,33 @@ function! WrapOnRemaps()
 endfunction
 
 
+" Toggle between the 80 line column always-on/off
+function! ToggleColumn()
+   if &colorcolumn==0
+        :set colorcolumn=80
+        execute 'highlight ColorColumn ctermbg=LightGray'
+        execute 'highlight ColorColumn ctermbg=Grey'
+        let g:hiddenColorColumnToggle=0
+    else
+        :set colorcolumn=0
+        execute 'highlight ColorColumn ctermbg=magenta'
+        let g:hiddenColorColumnToggle=1
+    endif
+endfunction
+
+function! ToggleListChars()
+        if &listchars=="tab:>>,extends:▶,precedes:◀"
+        " CAN'T GET THIS COOL SET OF CHARACTERS TO WORK IN-FUNCTION 😭😭😭
+        " and Tab & Space don't work either 😭😭😭
+        ":set listchars=eol:¬,tab:>·,trail:█,extends:🔜,precedes:🔙,space:
+        :set listchars=eol:¬,tab:>>,trail:█,extends:▶,precedes:◀ 
+        :set list
+    else
+        :set listchars=tab:>>,extends:▶,precedes:◀ 
+        :set list
+   endif
+endfunction
+
 " When I go to some mark I want it to be auto-switched if buffer is already open
 function! SetMarkAndRememberBufName(markLetter)
     if(a:markLetter =~ "[^[QWERTYASDFGH]")

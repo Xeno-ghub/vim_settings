@@ -9,7 +9,7 @@
 " to my knowledge, "!" isn't really bound to anything in normal/visual/insert
 nnoremap ! :set relativenumber!<CR>
 
-" Maybe sometimes I want that column line to display?
+" Toggle between the 80 line column always-on/off
 " I'm hiding it for fear of OLED burn-in anwyay
 noremap & :call ToggleColumn()<CR>
 
