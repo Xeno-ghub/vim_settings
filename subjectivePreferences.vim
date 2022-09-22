@@ -97,5 +97,8 @@ set switchbuf=usetab,useopen
 nnoremap <expr> <PageUp> winheight(0) . "k"
 nnoremap <expr> <PageDown> winheight(0) . "j"
 
+" backspace in Visual mode deletes selection
+vnoremap <BS> d
+
 
 

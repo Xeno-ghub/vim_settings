@@ -27,9 +27,6 @@ behave mswin
 set backspace=indent,eol,start 
 set whichwrap+=<,>,[,]
 
-" backspace in Visual mode deletes selection
-vnoremap <BS> d
-
 " For CTRL-V to work autoselect must be off.
 " On Unix we have two selections, autoselect can be used.
 if !has("unix")
@@ -94,22 +91,20 @@ nnoremap <C-Right> w
 nnoremap <C-Left>  b
 
 " CTRL-Z is Undo; not in cmdline though
-noremap <C-Z> u
+nnoremap <C-Z> u
 inoremap <C-Z> <C-O>u
 vnoremap <C-Z> <Esc>u
-snoremap <C-Z> <Esc>u
 
 " CTRL-Y is Redo (although not repeat); not in cmdline though
-noremap <C-Y> <C-R>
+nnoremap <C-Y> <C-R>
 inoremap <C-Y> <C-O><C-R>
+vnoremap <C-Y> <Esc><C-R>
 
 " CTRL-A is Select all
-noremap <C-A> gggH<C-O>G
-inoremap <C-A> <C-O>gg<C-O>gH<C-O>G
-cnoremap <C-A> <C-C>gggH<C-O>G
-onoremap <C-A> <C-C>gggH<C-O>G
-snoremap <C-A> <C-C>gggH<C-O>G
-xnoremap <C-A> <C-C>ggVG
+nnoremap <C-A> gggh<C-O>G
+inoremap <C-A> <C-O>gg<C-O>gh<C-O>G
+snoremap <C-A> <C-G><C-C>gggh<C-O>G
+xnoremap <C-A> <C-C>gggh<C-O>G
 
 " Delete previous word (like any normal text editor...)
 " CTRL + BACKSPACE deletes previous word
