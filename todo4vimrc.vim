@@ -44,7 +44,7 @@
 
 
 " Connected TODOs:
-" 1# arrange mappings somewhere nicer, the sparsely used mappings
+" DONE (seldomused): 1# arrange mappings somewhere nicer, the sparsely used mappings
 
 " 2#
 " have a hotkey that cleans up empty lines with just spaces
