@@ -67,12 +67,6 @@ if has("clipboard")
     cnoremap <C-V> <C-R>+
     
 
-    " If all else fails (i.e. you don't have X server)
-    " just send c & d to black hole register    
-    " (uncomment the 2 lines below)
-    "nnoremap c "_c
-    "nnoremap d "_d
-
     " I don't really care about shift_insert, shift_del
     nnoremap <S-Insert> "+gP
     cnoremap <S-Insert> <C-R>+
@@ -121,13 +115,11 @@ xnoremap <C-A> <C-C>ggVG
 " CTRL + BACKSPACE deletes previous word
 " nnoremap <C-H> dge --> dge is too crazy, it deletes last character of word
 nnoremap <C-H> db
-" Black hole variant in dire times of need nnoremap <C-H> "_db
     " In insert mode the cursor is a bit behind what is shown
     " so go right one step
 " inoremap <C-H> <Esc>dgei<Right> "DEPRECATED, using dbi again
 "   can sort of delete tailend spaces
 inoremap <C-H> <Esc><Right>dbi
-" Black hole variant in dire times of need inoremap <C-H> <Esc><Right>"_dbi
 "TODO - This doesn't work :( cnoremap <C-BS> <C-w>
 "NOT LIKE THIS nnoremap <C-BS> <C-w>
 "NOT LIKE THIS inoremap <C-BS> <C-\><C-o>db
@@ -145,4 +137,8 @@ endif
     " so I'll leave it here:
 " https://ezhik.me/blog/vim-clipboard/
 
+nnoremap <Leader>blackbeauty :call ToggleBlackHoleApparatus()<CR>
 
+
+
+ 

@@ -163,3 +163,34 @@ function s:rememberBufferName(markLetter)
     endif
 
 endfunction
+
+" In case of dire need, add black holes to all important operations
+    " To avoid overwriting the clipboard
+function ToggleBlackHoleApparatus()
+    if( g:BlackHoleOn != 1)
+        " If all else fails (i.e. you don't have X server)
+        " just send c & d to black hole register    
+        nnoremap c "_c
+        nnoremap d "_d
+        " for deleting words with Ctrl Backspace
+        nnoremap <C-H> "_db
+        inoremap <C-H> <Esc><Right>"_dbi
+        " Pasting without immediately overwriting clipboard before 
+            " getting a chance to paste
+        vnoremap <C-V> "_d"+gP
+        let g:BlackHoleOn = 1
+        echo "Black hole defenses up!"
+    else
+        " Revert changes above
+        nnoremap c c
+        nnoremap d d
+        nnoremap <C-H> db
+        inoremap <C-H> <Esc><Right>dbi
+        vnoremap <C-V> "+gP
+        let g:BlackHoleOn = 0
+        echo "Black holes have been disabled! Tread carefully!"
+    endif
+endfunction
+   
+
+

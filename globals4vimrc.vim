@@ -74,3 +74,7 @@ let g:Dbufname="zeroinit"
 let g:Fbufname="zeroinit"
 let g:Gbufname="zeroinit"
 let g:Hbufname="zeroinit"
+
+
+" Black hole toggle
+let g:BlackHoleOn=0
