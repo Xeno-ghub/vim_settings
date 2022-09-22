@@ -22,11 +22,6 @@ set cpo&vim
 " set 'selection', 'selectmode', 'mousemodel' and 'keymodel' for MS-Windows
 behave mswin
 
-" backspace and cursor keys wrap to previous/next line
-" make the backspace work like in most other programs
-set backspace=indent,eol,start 
-set whichwrap+=<,>,[,]
-
 " For CTRL-V to work autoselect must be off.
 " On Unix we have two selections, autoselect can be used.
 if !has("unix")
@@ -105,6 +100,15 @@ nnoremap <C-A> gggh<C-O>G
 inoremap <C-A> <C-O>gg<C-O>gh<C-O>G
 snoremap <C-A> <C-G><C-C>gggh<C-O>G
 xnoremap <C-A> <C-C>gggh<C-O>G
+
+" backspace and cursor keys wrap to previous/next line
+" make the backspace work like in most other programs
+set backspace=indent,eol,start 
+set whichwrap+=<,>,[,]
+
+" I want newline & backspace to work in normal mode too
+nnoremap <BS> i<BS><Esc>`^
+nnoremap <CR> i<CR><Esc>`^
 
 " Delete previous word (like any normal text editor...)
 " CTRL + BACKSPACE deletes previous word

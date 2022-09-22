@@ -28,5 +28,7 @@
 "     endif
 " endfunction
 
-
+" Doesn't work in WSL, deprecating:
+" use ":Man" command or leader+K to open Man pages directly into VIM
+" runtime! ftplugin/man.vim
 

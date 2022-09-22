@@ -49,8 +49,21 @@ nnoremap <C-i> i<space><space><space><space>
 " TODO deprecate above if not used
 " --------------------
 
-" Jumping to beginning of line with a more reachable hotkey
-noremap # 0
+" Make vim smoother in modern consoles/terminals
+set ttyfast      " I have no idea if this thing does anything 
+                 " or why it's not on by default
+                 " I just copypaste
+
+" ======================================
+" Customization settings (interface)
+" ======================================
+" Notify user of characters exceeding the 80 column mark
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
+
+set history=500   " history length
+set ruler         " show the cursor position all the time
+set showcmd       " display incomplete commands
 
 " Display line numbers
 set number
@@ -79,6 +92,9 @@ set display+=lastline
 
 " When WRAP is set on, we can navigate on "display lines" not just source lines
 noremap <silent> <Leader>w :call ToggleWrap()<CR>
+
+" Jumping to beginning of line with a more reachable hotkey
+noremap # 0
 
 " Set nowrap on
 set nowrap

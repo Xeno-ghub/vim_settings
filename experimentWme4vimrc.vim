@@ -269,11 +269,5 @@ vnoremap <M-V> :echom "<VISUAL MODE> Testing Meta Character Shortcut (pressed Me
 noremap <C-Q> <C-V>
 
 
-" use ":Man" command or leader+K to open Man pages directly into VIM
-runtime! ftplugin/man.vim
 
-
-" I want newline & backspace to work in normal mode too
-nnoremap <BS> i<BS><Esc>`^
-nnoremap <CR> i<CR><Esc>`^
 
