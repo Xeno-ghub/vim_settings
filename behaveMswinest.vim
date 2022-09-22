@@ -108,16 +108,10 @@ xnoremap <C-A> <C-C>gggh<C-O>G
 
 " Delete previous word (like any normal text editor...)
 " CTRL + BACKSPACE deletes previous word
-" nnoremap <C-H> dge --> dge is too crazy, it deletes last character of word
 nnoremap <C-H> db
     " In insert mode the cursor is a bit behind what is shown
     " so go right one step
-" inoremap <C-H> <Esc>dgei<Right> "DEPRECATED, using dbi again
-"   can sort of delete tailend spaces
 inoremap <C-H> <Esc><Right>dbi
-"TODO - This doesn't work :( cnoremap <C-BS> <C-w>
-"NOT LIKE THIS nnoremap <C-BS> <C-w>
-"NOT LIKE THIS inoremap <C-BS> <C-\><C-o>db
 
 " restore 'cpoptions'
 set cpo&
