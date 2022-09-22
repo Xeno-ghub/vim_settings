@@ -10,11 +10,6 @@
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Set ctrl+i to jump to beginning of file, akin to ctrl+home in other editors
-" <C-Home> is already remapped to "go to beginning" from "behave mswin" command
-"DELME NOT WORKING noremap <C-i> gg
-
-
 " Trying to see what having <Esc> on <Ctrl+Spacebar> feels like
 nnoremap <C-@> <Esc>
 snoremap <C-@> <Esc>
@@ -264,9 +259,6 @@ vnoremap <M-V> :echom "<VISUAL MODE> Testing Meta Character Shortcut (pressed Me
 
 
 
-" Use CTRL-Q to do what CTRL-V used to do
-" This probably doesn't work in terminals where c-q is reserved
-noremap <C-Q> <C-V>
 
 
 

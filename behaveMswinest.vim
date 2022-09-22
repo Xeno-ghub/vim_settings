@@ -43,12 +43,12 @@ if has("clipboard")
     " Does not make sense in normal/insert/command
 
 
-    " CTRL-C and CTRL-Insert are Copy
+    " CTRL-C is Copy
     vnoremap <C-C> "+y
     " Does not make sense in normal/insert/command
 
 
-    " CTRL-V and SHIFT-Insert are Paste
+    " CTRL-V is Paste
     " Normal mode just paste system register
     nnoremap <C-V> "+gP
     vnoremap <C-V> "+gP
@@ -57,13 +57,6 @@ if has("clipboard")
     inoremap <C-V> <C-G>u<Esc>`^"+gPi
     " Have it work in command line mode too
     cnoremap <C-V> <C-R>+
-    
-
-    " I don't really care about shift_insert, shift_del
-    nnoremap <S-Insert> "+gP
-    cnoremap <S-Insert> <C-R>+
-    vnoremap <S-Del> "+x
-    vnoremap <C-Insert> "+y
 endif
 
 " Somehow nowadays vim (at least vim-gtk which I'm testing) comes directly with

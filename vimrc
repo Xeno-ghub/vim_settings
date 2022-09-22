@@ -163,17 +163,7 @@ inoremap <C-R> xXx
 " My beloved search mechanics
 call MySearchRemaps()
 
-
-" Color scheme
-" colorscheme solarized
-" colorscheme tomorrow-night
-" colorscheme tomorrow
-" set background=light
-" Highlight line number of where cursor currently is
-" hi CursorLineNr guifg=#050505
-
-"" ADD-ONs
-
+" Warn if some "essential" addons are not installed
 let g:pesteringMessages = 0
 if !executable('ag')
     :echom "Your vim is incomplete. Ag not installed."
