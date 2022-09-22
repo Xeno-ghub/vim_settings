@@ -53,6 +53,9 @@
 " autocmd from primegean
 
 
+" Awesome usage of vim conceal, although it would take a lot of work
+" https://alok.github.io/2018/04/26/using-vim-s-conceal-to-make-languages-more-tolerable/
+
 
 " Enable signcolumn option whenever you get around to setting up a LSP server
 "       Creates empty column to the left for error warnings
