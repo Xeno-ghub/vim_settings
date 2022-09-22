@@ -14,7 +14,7 @@ nnoremap ! :set relativenumber!<CR>
 noremap & :call ToggleColumn()<CR>
 
 " Toggle list chars
-nnoremap * :call ToggleListChars()<CR>
+nnoremap * :call CycleListChars()<CR>
 
 " black hole protection if all else fails with clipboard being overwritten
 nnoremap <Leader>blackbeauty :call ToggleBlackHoleApparatus()<CR>

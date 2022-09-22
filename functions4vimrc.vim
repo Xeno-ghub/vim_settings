@@ -88,17 +88,29 @@ function! ToggleColumn()
     endif
 endfunction
 
-function! ToggleListChars()
-        if &listchars=="tab:>>,extends:▶,precedes:◀"
-        " CAN'T GET THIS COOL SET OF CHARACTERS TO WORK IN-FUNCTION 😭😭😭
-        " and Tab & Space don't work either 😭😭😭
-        ":set listchars=eol:¬,tab:>·,trail:█,extends:🔜,precedes:🔙,space:
-        :set listchars=eol:¬,tab:>>,trail:█,extends:▶,precedes:◀ 
-        :set list
-    else
-        :set listchars=tab:>>,extends:▶,precedes:◀ 
-        :set list
-   endif
+" CAN'T GET THIS COOL SET OF CHARACTERS TO WORK IN-FUNCTION 😭😭😭
+" nbsp:♢ doesn't show for whatever reason... So I'm leaving it out
+function! CycleListChars()
+     if g:ListCharsLevel==3
+         :set listchars=tab:⬅️⬅️,extends:➡️,precedes:➡️
+         let g:ListCharsLevel = 0
+         echo "Listchars now cycled to level 0"
+     elseif g:ListCharsLevel==0
+         :set listchars=tab:⬅️⬅️,trail:✴️,extends:➡️,precedes:➡️
+         let g:ListCharsLevel = 1
+         echo "Listchars now cycled to level 1"
+     elseif g:ListCharsLevel==1
+         :set listchars=eol:☨,tab:⬅️⬅️,trail:✴️,extends:➡️,precedes:➡️
+         let g:ListCharsLevel = 2
+         echo "Listchars now cycled to level 2"
+     else
+         :set listchars=eol:☨,tab:⬅️⬅️,trail:✴️,extends:➡️,precedes:➡️,space:·
+         let g:ListCharsLevel = 3
+         echo "Listchars now cycled to level 3"
+    endif
+
+    " Put in effect actual settings I just set above
+    :set list
 endfunction
 
 " When I go to some mark I want it to be auto-switched if buffer is already open

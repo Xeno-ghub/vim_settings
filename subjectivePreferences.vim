@@ -2,7 +2,7 @@
 "                          subjectivePreferences.vim
 "
 "                  Vanilla vim customizations to one's liking
-"                
+"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -116,6 +116,5 @@ nnoremap <expr> <PageDown> winheight(0) . "j"
 " backspace in Visual mode deletes selection
 vnoremap <BS> d
 
-" Set listchars as desired
-:call ToggleListChars()
+silent! :call CycleListChars()
 
