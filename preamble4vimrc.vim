@@ -71,6 +71,11 @@ let s:splitsFname="~/.vim/splitstabswindows.vim"
 call TryToSourceFile(s:splitsFname, 1)
 
 
+" Self explanatory
+let s:seldomFname="~/.vim/seldomusedmaps.vim" 
+call TryToSourceFile(s:seldomFname, 1)
+
+
 " A bunch of legacy vim stuff here
 " This file is optional
 let s:superfluousFname="~/.vim/superfluousDeprecated.vim" 
