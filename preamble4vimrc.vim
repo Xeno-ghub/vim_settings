@@ -46,7 +46,8 @@ if has('clipboard')
     if has('xterm_clipboard')
         " Do nothing
     else
-        echo "Your VIM doesn't have xterm_clipboard component. Nobody cares"
+        echo "Your VIM doesn't have xterm_clipboard component."
+        echo "So far only using it for cursor color change based on mode"
     endif
     call TryToSourceFile(s:mswinFname, 1)
 else

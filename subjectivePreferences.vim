@@ -93,7 +93,7 @@ set display+=lastline
 " When WRAP is set on, we can navigate on "display lines" not just source lines
 noremap <silent> <Leader>w :call ToggleWrap()<CR>
 
-" Jumping to beginning of line with a more reachable hotkey
+" Add jump to beginning of line with a left hand reachable hotkey
 noremap # 0
 
 " Set nowrap on
