@@ -126,8 +126,6 @@ endif
     " so I'll leave it here:
 " https://ezhik.me/blog/vim-clipboard/
 
-nnoremap <Leader>blackbeauty :call ToggleBlackHoleApparatus()<CR>
-
 
 
  

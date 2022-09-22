@@ -14,9 +14,6 @@
 " <C-Home> is already remapped to "go to beginning" from "behave mswin" command
 "DELME NOT WORKING noremap <C-i> gg
 
-" set "!" to toggle between hybrid line numbers & absolute line numbers
-" to my knowledge, "!" isn't really bound to anything in normal/visual/insert
-nnoremap ! :set relativenumber!<CR>
 
 " Trying to see what having <Esc> on <Ctrl+Spacebar> feels like
 nnoremap <C-@> <Esc>
@@ -25,10 +22,6 @@ xnoremap <C-@> <Esc>
 " inoremap <C-@> <Esc><Right> find in fix_idiosyncrasies
 " Map just spacebar for insert mode.
 nnoremap <Space> i
-
-" Maybe sometimes I want that column line to display?
-" I'm hiding it for fear of OLED burn-in anwyay
-noremap & :call ToggleColumn()<CR>
 
 
 function! ToggleColumn()
@@ -43,14 +36,7 @@ function! ToggleColumn()
         let g:hiddenColorColumnToggle=1
     endif
 endfunction
-
-" Adding another toggle to test.
-" extends & precedes are characters that would indicate line
-"    > continuation for when nowrap is set. 
-"    > trail is trailing whitespace. Simply a space @ end of line
-nnoremap * :call ToggleListChars()<CR>
-"nnoremap <silent> # :call ToggleListChars()<CR>
-
+ 
 function! ToggleListChars()
         if &listchars=="tab:>>,extends:▶,precedes:◀"
         " CAN'T GET THIS COOL SET OF CHARACTERS TO WORK IN-FUNCTION 😭😭😭

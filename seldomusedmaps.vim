@@ -5,5 +5,17 @@
 "                      for easy viewing pleasure
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" set "!" to toggle between hybrid line numbers & absolute line numbers
+" to my knowledge, "!" isn't really bound to anything in normal/visual/insert
+nnoremap ! :set relativenumber!<CR>
 
+" Maybe sometimes I want that column line to display?
+" I'm hiding it for fear of OLED burn-in anwyay
+noremap & :call ToggleColumn()<CR>
+
+" Toggle list chars
+nnoremap * :call ToggleListChars()<CR>
+
+" black hole protection if all else fails with clipboard being overwritten
+nnoremap <Leader>blackbeauty :call ToggleBlackHoleApparatus()<CR>
 
