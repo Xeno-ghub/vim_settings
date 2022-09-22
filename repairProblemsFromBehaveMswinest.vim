@@ -6,17 +6,27 @@
 "                
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Because I remapped ijkl we broke text objects... Let's fix those
+" From now on instead of "ciw" use "cow", instead of "dip" use "dop" etc.
 
-" Stop select-mode selections from ruining my day when I press:
-" o, 0, i, h, j, k, l, $
-snoremap o <del>io
-snoremap 0 <del>i0
-snoremap i <del>ii
-snoremap h <del>ih
-snoremap j <del>ij
-snoremap k <del>ik
-snoremap l <del>il
-snoremap $ <del>i$
+"but now we'll break "o". Who cares. We don't need it. Unbind it
+map o <Nop>
+map O <Nop>
+
+onoremap ow iw
+onoremap op ip
+onoremap o) i)
+onoremap o( i)
+onoremap o] i]
+onoremap o[ i]
+onoremap o} i}
+onoremap o{ i}
+onoremap o> i>
+onoremap o< i>
+onoremap o' i'
+onoremap o" i"
+onoremap ot it "t for HTML tag
+
 
 " Ctrl+V is already taken for paste, so to go into visual block
 "     Alt+V/Meta+V?

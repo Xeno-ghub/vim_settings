@@ -105,7 +105,7 @@ endif
 " This is done in the behaveMswinest file
 
 " ======================================
-" Most important part (First of two major vanilla vim diffs)
+" Most important part
 " ======================================
 
 " Remap "H" to <insert> and use 'ijkl' for an inverted-T layout. 
@@ -123,34 +123,6 @@ xnoremap j h
 xnoremap k j
 "SameSuperfluous xnoremap l l
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""normality_resumed
-
-" ======================================
-" Because I remapped ijkl we broke text objects... Let's fix those
-" From now on instead of "ciw" use "cow", instead of "dip" use "dop" etc.
-"
-" (Second of two major vanilla vim diffs)
-" ======================================
-"
-
-"but now we'll break "o". Who cares. We don't need it. Unbind it
-map o <Nop>
-map O <Nop>
-
-onoremap ow iw
-onoremap op ip
-onoremap o) i)
-onoremap o( i)
-onoremap o] i]
-onoremap o[ i]
-onoremap o} i}
-onoremap o{ i}
-onoremap o> i>
-onoremap o< i>
-onoremap o' i'
-onoremap o" i"
-onoremap ot it "t for HTML tag
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""Frankenstein is alive
 
 " Place swap files in a central directory instead of polluting your projects
 call CentralizeSwapFiles()

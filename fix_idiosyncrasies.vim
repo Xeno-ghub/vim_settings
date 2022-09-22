@@ -5,6 +5,18 @@
 "                
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Stop select-mode selections from ruining my day when I press:
+" o, 0, i, h, j, k, l, $
+snoremap o <del>io
+snoremap 0 <del>i0
+snoremap i <del>ii
+snoremap h <del>ih
+snoremap j <del>ij
+snoremap k <del>ik
+snoremap l <del>il
+snoremap $ <del>i$
+
+
 " I'd like for <Esc> to keep the cursor in the same position,
 " not jump around
 " ( https://stackoverflow.com/questions/2295410/how-to-prevent-the-cursor-from-moving-back-one-character-on-leaving-insert-mode )
@@ -45,6 +57,7 @@ inoremap . <C-G>u.
 inoremap <Tab> <C-G>u<Tab>
 " ☝️ We can add undo checkpoints for other separators as well I guess?
 " Fixed paste (Ctrl-V) so that it has an undo point in insert mode Check:j678x
+
 
 
 
