@@ -29,6 +29,10 @@ if &term =~ "xterm"
     let &t_EI = "\<Esc>]12;white\x7"
 endif
 
+" Also set vim to go into insert mode upon clicking somewhere. Most likely
+" You want to edit where you click
+nnoremap <LeftMouse> <LeftMouse>i
+
 
 " Enable meta key shortcuts. This would open a new bunch of hotkeys for me
 " which would be very important, cuz rn I only have the ctrl ones active

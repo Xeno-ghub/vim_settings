@@ -133,12 +133,6 @@ set nobackup
 " Mouse compatibility ... how is this not default
 set mouse=a       " Set mouse support for all modes
 
-" Also set vim to go into insert mode upon clicking somewhere. Most likely
-" You want to edit where you click
-nnoremap <LeftMouse> <LeftMouse>i
-inoremap <RightMouse> <RightMouse><Esc>
-snoremap <RightMouse> <RightMouse><Esc>
-
 " Syntax highlighting is sometimes disabled in some vim distros
 syntax on
 
