@@ -89,10 +89,10 @@ inoremap <C-Y> <C-O><C-R>
 vnoremap <C-Y> <Esc><C-R>
 
 " CTRL-A is Select all
-nnoremap <C-A> gggh<C-O>G
-inoremap <C-A> <C-O>gg<C-O>gh<C-O>G
-snoremap <C-A> <C-G><C-C>gggh<C-O>G
-xnoremap <C-A> <C-C>gggh<C-O>G
+nnoremap <C-A> gggh<C-O>G<C-O>$
+inoremap <C-A> <C-O>gg<C-O>gh<C-O>G<C-O>$
+snoremap <C-A> <C-G><C-C>gggh<C-O>G<C-O>$
+xnoremap <C-A> <C-C>gggh<C-O>G<C-O>$
 
 " backspace and cursor keys wrap to previous/next line
 " make the backspace work like in most other programs
