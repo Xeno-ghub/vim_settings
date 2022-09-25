@@ -60,4 +60,21 @@ inoremap . <C-G>u.
 inoremap <C-i> <C-G>u<space><space><space><space>
 
 
+" Adding absolute search directions
+" idk about you, but to me relative search directions are extremely unintuitive
+" [1] [2]
+nnoremap <expr> ; ',;'[getcharsearch().forward] 
+nnoremap <expr> , ';,'[getcharsearch().forward] 
+vnoremap <expr> ; ',;'[getcharsearch().forward] 
+vnoremap <expr> , ';,'[getcharsearch().forward] 
+    " equivalent to:
+    " nnoremap <expr> ; (getcharsearch().forward ? ';' : ',') 
+    " nnoremap <expr> , (getcharsearch().forward ? ',' : ';') 
+
+" [1] : https://vi.stackexchange.com/questions/2365/how-can-i-get-n-to-go-forward-even-if-i-started-searching-with-or/2366#2366
+" [2] : https://superuser.com/questions/1430901/how-to-make-vim-repeat-search-direction-absolute-instead-of-relative
+
+
+
+
 
