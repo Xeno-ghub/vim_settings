@@ -27,6 +27,11 @@ onoremap o' i'
 onoremap o" i"
 onoremap ot it "t for HTML tag
 
+" We also broke all directional commands (like di, dj, dk). Let's fix those too
+onoremap i k
+onoremap j h
+onoremap k j
+
 
 " Ctrl+V is already taken for paste, so to go into visual block
 "     Alt+V/Meta+V?
