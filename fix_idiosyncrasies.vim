@@ -75,6 +75,10 @@ vnoremap <expr> , ';,'[getcharsearch().forward]
 " [2] : https://superuser.com/questions/1430901/how-to-make-vim-repeat-search-direction-absolute-instead-of-relative
 
 
+" I would like Page Down & PageUp to always move the same nr of lines
+    " So that when you hit Page Down->PageUp you're in the same spot
+noremap <expr> <PageUp> winheight(0) . "k"
+noremap <expr> <PageDown> winheight(0) . "j"
 
 
 
