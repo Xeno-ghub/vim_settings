@@ -54,10 +54,10 @@ inoremap <space> <C-G>u<space>
 inoremap _ <C-G>u_
 inoremap - <C-G>u-
 inoremap . <C-G>u.
-inoremap <Tab> <C-G>u<Tab>
 " ☝️ We can add undo checkpoints for other separators as well I guess?
 " Fixed paste (Ctrl-V) so that it has an undo point in insert mode Check:j678x
-
+" Also adding an undo jump for tab. Check:hznrd
+inoremap <C-i> <C-G>u<space><space><space><space>
 
 
 

@@ -42,7 +42,7 @@ set shiftwidth=4  " Indents will have a width of 4.
 
 " Remaping tab once and for all i want 4 spaces 
 " no tabstops no stupid columns no nothing. just tab=4spaces
-inoremap <C-i> <space><space><space><space>
+" inoremap <C-i> <space><space><space><space> also adding undo jump. Check:hznrd
 " I'd like tab to work in normal mode as well, and put me in insert mode
 " ( <TAB> & Control-i are synonymous in vim )
 nnoremap <C-i> i<space><space><space><space>
