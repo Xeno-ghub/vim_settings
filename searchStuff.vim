@@ -247,18 +247,21 @@ function! s:getSearchKey(vimmode)
         " In append mode the cursor is placed 1 step forward...
         let l:whitespaceUnderCursor = " "
 
-        " This only works because my vim has insert & normal
+        " !!!! This only works because how I setup this function's mappings
+        " my vim has insert & normal mode 
         " positions the same (look at how <c-f> is mapped for insert mode
         " If they were different, then only normal would have "-1"
         let l:whitespaceUnderCursor = getline('.')[col('.')-1]
 
         " If we're over some whitespace-like just open an empty search diag
         if l:whitespaceUnderCursor =~ "[^[a-zA-Z0-9]" || (len(l:whitespaceUnderCursor) == 0)
-            " If there's no word under cursor
-            return ""
-        else
-            return l:wordundercursor
+            " If there's no word under cursor, go left 1 position
+            " to still trigger a search-word even over nonwords
+            normal! b
+            let l:wordundercursor = expand("<cword>")
         endif
+
+        return l:wordundercursor
 
     else "warn that this function was called with invalid param
         echom "Invalid mode-param for getSearchKey!"
