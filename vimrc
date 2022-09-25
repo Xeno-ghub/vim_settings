@@ -149,7 +149,7 @@ nnoremap <C-D> i<C-R>=strftime("%Y%m%d_%H%M%S")<CR><Esc><Right>
 
 " Creating a hotkey for xxx so I don't have to type it everytime
 " see :help i_CTRL-R
-nnoremap <C-R> ixXx<Esc>
+nnoremap <C-R> ixXx<Esc>l
 snoremap <C-R> xXx
 inoremap <C-R> xXx
 
