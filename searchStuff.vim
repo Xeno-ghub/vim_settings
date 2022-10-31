@@ -46,7 +46,7 @@ endfunction
 "     Note: In VIM \v[^\r\n]{-} is equivalent to normal regex [^\r\n]*?
 function! s:modifySearchQuery(searchQueryStr, whatRegex)
 
-    let l:target           = '([^ \-''":;,\.\r\n]+)'
+    let l:target           = '([^ \-''":;,\(\)\[\]\<\>\.\r\n]+)'
     let l:bulk_thisfunc    = '([^\r\n]{-})'
     let l:bulk             = ''
     let l:fringe           = '[^a-zA-Z0-9]{-}'
