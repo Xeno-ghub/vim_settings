@@ -13,6 +13,11 @@
 map o <Nop>
 map O <Nop>
 
+
+" Fix "viw"
+vnoremap o i
+
+
 onoremap ow iw
 onoremap op ip
 onoremap o) i)
