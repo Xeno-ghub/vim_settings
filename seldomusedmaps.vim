@@ -19,3 +19,11 @@ nnoremap * :call CycleListChars()<CR>
 " black hole protection if all else fails with clipboard being overwritten
 nnoremap <Leader>blackbeauty :call ToggleBlackHoleApparatus()<CR>
 
+" Remove all trailing whitespaces
+nnoremap <Leader>spaces :call feedkeys(':%s/\s\+$//g', 'i')<CR><CR>
+
+" Forfeit all tabs in lieu of spaces
+nnoremap <Leader>tabs :call feedkeys(':%s/\t/    /g', 'i')<CR><CR>
+
+
+
