@@ -52,6 +52,29 @@
 " autocmd from primegean
 
 
+
+" Cool search and replace technique
+" a a a a a
+" a a a a a
+" a a a a a
+" a a a a a
+" a a a a a
+" a a a a a
+" a a a a a
+"
+" :3,6g/^/let i=0 | while i<3 | s/a/b/ | let i+=1 | endwhile
+"
+" a a a a a
+" a a a a a
+" b b b a a
+" b b b a a
+" b b b a a
+" b b b a a
+" a a a a a
+
+
+
+
 " Awesome usage of vim conceal, although it would take a lot of work
 " https://alok.github.io/2018/04/26/using-vim-s-conceal-to-make-languages-more-tolerable/
 
