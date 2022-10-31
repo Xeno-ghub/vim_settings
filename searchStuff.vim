@@ -14,6 +14,10 @@ let s:invalidRegexType         = 0x1003
 " Might as well keep searching with f/F
 nnoremap s n
 nnoremap S N
+xnoremap s n
+xnoremap S N
+nnoremap gs gn
+nnoremap gS gN
 
 function! MySearchRemaps()
 
