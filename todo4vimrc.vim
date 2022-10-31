@@ -14,6 +14,11 @@
 
 
 
+" Jump words in command words line mode.
+" https://github.com/vim-utils/vim-husk/blob/master/autoload/husk.vim
+
+
+
 " " Emoji shortcuts
 " ab :white_check_mark: ✅
 " ab :warning: ⚠
