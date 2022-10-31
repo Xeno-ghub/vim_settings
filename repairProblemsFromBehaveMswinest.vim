@@ -33,6 +33,11 @@ onoremap j h
 onoremap k j
 
 
+" We broke expressions by replacing Ctrl-R with some weird xxx thing
+" Move it to M-R
+inoremap <M-r> <C-R>
+
+
 " Ctrl+V is already taken for paste, so to go into visual block
 "     Alt+V/Meta+V?
 noremap <M-v> <C-V>
