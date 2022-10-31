@@ -71,14 +71,28 @@ vnoremap <expr> , ';,'[getcharsearch().forward]
     " nnoremap <expr> ; (getcharsearch().forward ? ';' : ',') 
     " nnoremap <expr> , (getcharsearch().forward ? ',' : ';') 
 
-" [1] : https://vi.stackexchange.com/questions/2365/how-can-i-get-n-to-go-forward-even-if-i-started-searching-with-or/2366#2366
-" [2] : https://superuser.com/questions/1430901/how-to-make-vim-repeat-search-direction-absolute-instead-of-relative
-
 
 " I would like Page Down & PageUp to always move the same nr of lines
     " So that when you hit Page Down->PageUp you're in the same spot
-noremap <expr> <PageUp> winheight(0) . "k"
-noremap <expr> <PageDown> winheight(0) . "j"
+nnoremap <expr> <PageUp>   winheight(0) . "k"
+nnoremap <expr> <PageDown> winheight(0) . "j"
+snoremap <expr> <PageUp>   "<C-o><Esc>" . winheight(0) . "k"
+snoremap <expr> <PageDown> "<C-o><Esc>" . winheight(0) . "j"
+inoremap <expr> <PageUp>   "<C-o>" . winheight(0) . "k"
+inoremap <expr> <PageDown> "<C-o>" . winheight(0) . "j"
+
+nnoremap <expr> <S-PageUp> "v" . winheight(0) . "k<C-g>"
+nnoremap <expr> <S-PageDown> "v" . winheight(0) . "j<C-g>"
+snoremap <expr> <S-PageUp> "<C-o>" . winheight(0) . "k"
+snoremap <expr> <S-PageDown> "<C-o>" . winheight(0) . "j"
+inoremap <expr> <S-PageUp> "<C-o>v" . winheight(0) . "k<C-g>"
+inoremap <expr> <S-PageDown> "<C-o>v" . winheight(0) . "j<C-g>"
+
+
+
+" [1] : https://vi.stackexchange.com/questions/2365/how-can-i-get-n-to-go-forward-even-if-i-started-searching-with-or/2366#2366
+" [2] : https://superuser.com/questions/1430901/how-to-make-vim-repeat-search-direction-absolute-instead-of-relative
+
 
 
 

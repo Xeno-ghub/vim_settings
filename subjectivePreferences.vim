@@ -108,10 +108,6 @@ set switchbuf=usetab,useopen
 " Remapped all smallcase marks to uppercase marks
 "     Check:p32pg
 
-" I would like PageDown & PageUp to always move the same nr of lines
-    " So that when you hit PageDown->PageUp you're in the same spot
-nnoremap <expr> <PageUp> winheight(0) . "k"
-nnoremap <expr> <PageDown> winheight(0) . "j"
 
 " backspace in Visual mode deletes selection
 vnoremap <BS> d
