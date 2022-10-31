@@ -42,13 +42,6 @@ vnoremap <C-w> <Esc>:bd<Enter>
 nnoremap <C-w> <Esc>:bd<Enter>
 inoremap <C-w> <Esc>:bd<Enter>
 
-" hide split/window Ctrl+U Control+U
-" "Attention!" This hides the buffers, it does not close it
-" TODO - Find a better shortcut than control-u...
-vnoremap <C-u> <Esc>:q<Enter>
-nnoremap <C-u> <Esc>:q<Enter>
-inoremap <C-u> <Esc>:q<Enter>
-
 " Jump between splits
 noremap <M-Up> <C-w>k
 noremap <M-Left> <C-w>h

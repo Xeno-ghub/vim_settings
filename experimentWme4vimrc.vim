@@ -41,6 +41,16 @@ endif
 nnoremap <LeftMouse> <LeftMouse>i
 
 
+
+" hide split/window Ctrl+U Control+U
+" "Attention!" This hides the buffers, it does not close it
+" TODO - Find a better shortcut than control-u... 
+" / TODO: or remove this entirely
+vnoremap <C-u> <Esc>:q<Enter>
+nnoremap <C-u> <Esc>:q<Enter>
+inoremap <C-u> <Esc>:q<Enter>
+
+
 " Enable meta key shortcuts. This would open a new bunch of hotkeys for me
 " which would be very important, cuz rn I only have the ctrl ones active
 " Careful! Apparently some of these meta-keys kind of break vim for some reason
