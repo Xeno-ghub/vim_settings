@@ -1,8 +1,8 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                          fix_idiosyncracies.vim
-"
-"                  Fix weird stuff (IMO) that's native to vim.
-"                
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                          fix_idiosyncracies.vim                             "
+"                                                                             "
+"                  Fix weird stuff (IMO) that's native to vim.                "
+"                                                                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Stop select-mode selections from ruining my day when I press:

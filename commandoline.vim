@@ -1,14 +1,14 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                commandoline.vim
-"
-"                  settings for command line. Sorely needed (imo)
-"                     navigation hotkeys while in commandline.
-"                                 idc about "q:"
-"
-"        !! Almost all the code here lifted from the vim-husk plugin
-"                                  Check it out:
-"      https://github.com/vim-utils/vim-husk/blob/master/plugin/husk.vim
-"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                commandoline.vim                             "
+"                                                                             "
+"                  settings for command line. Sorely needed (imo)             "
+"                     navigation hotkeys while in commandline.                "
+"                                 idc about "q:"                              "
+"                                                                             "
+"        !! Almost all the code here lifted from the vim-husk plugin          "
+"                                  Check it out:                              "
+"      https://github.com/vim-utils/vim-husk/blob/master/plugin/husk.vim      "
+"                                                                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Left/Right 1 character

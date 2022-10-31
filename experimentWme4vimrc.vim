@@ -1,14 +1,14 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                         experimentWme4vimrc.vim
-"
-"         try out new commands here and see if you get used to them 
-"      
-"      theoretically stuff from here should either disappear in time
-"                   (superfluousDeprecated4vimrc.vim)       
-"      
-"                     or move to the main vimrc file
-"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                         experimentWme4vimrc.vim                              "
+"                                                                              "
+"         try out new commands here and see if you get used to them            "
+"                                                                              "
+"      theoretically stuff from here should either disappear in time           "
+"                   (superfluousDeprecated4vimrc.vim)                          "
+"                                                                              "
+"                     or move to the main vimrc file                           "
+"                                                                              "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Trying to see what having <Esc> on <Ctrl+Spacebar> feels like
 nnoremap <C-@> <Esc>

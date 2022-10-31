@@ -1,8 +1,8 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                          splitstabswindows.vim
-"
-"                  Remaps for splits , tabs & windows
-"                
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                          splitstabswindows.vim                              "
+"                                                                             "
+"                  Remaps for splits , tabs & windows                         "
+"                                                                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Open a new split horizontally with Control-4 as if opening a tab

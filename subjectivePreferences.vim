@@ -1,8 +1,8 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                          subjectivePreferences.vim
-"
-"                  Vanilla vim customizations to one's liking
-"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                          subjectivePreferences.vim                          "
+"                                                                             "
+"                  Vanilla vim customizations to one's liking                 "
+"                                                                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 

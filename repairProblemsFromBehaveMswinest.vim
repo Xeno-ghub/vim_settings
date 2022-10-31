@@ -1,9 +1,9 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                   repairProblemsFromBehaveMswinest.vim
-"
-"  Some of my esoteric remaps or vimbending will cause some things to break
-"                              Try to repair
-"                
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                   repairProblemsFromBehaveMswinest.vim                      "
+"                                                                             "
+"  Some of my esoteric remaps or vimbending will cause some things to break   "
+"                              Try to repair                                  "
+"                                                                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Because I remapped ijkl we broke text objects... Let's fix those

@@ -1,10 +1,10 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                          behaveMswinest.vim
-"
-" Set options and add mapping such that Vim behaves a lot like MS-Windows
-" Maintainer: Bram Moolenaar <Bram@vim.org>
-" Changed by Xeno 
-"                
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                          behaveMswinest.vim                                 "
+"                                                                             "
+" Set options and add mapping such that Vim behaves a lot like MS-Windows     "
+" Maintainer: Bram Moolenaar <Bram@vim.org>                                   "
+" Changed by Xeno                                                             "
+"                                                                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 

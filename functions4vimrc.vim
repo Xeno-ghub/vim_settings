@@ -1,8 +1,8 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                          functions4vimrc
-"
-"           function bodies of functions called in vimrc 
-"                meant to make vimrc more readable
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                          functions4vimrc                                    "
+"                                                                             "
+"           function bodies of functions called in vimrc                      "
+"                meant to make vimrc more readable                            "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Place swap files in a central directory instead of polluting projects

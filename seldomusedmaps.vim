@@ -1,8 +1,8 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                          seldomusedmaps.vim
-"
-"            Segregating seldomly serviced switches a.k.a remaps
-"                      for easy viewing pleasure
+"                          seldomusedmaps.vim                                 "
+"                                                                             "
+"            Segregating seldomly serviced switches a.k.a remaps              "
+"                      for easy viewing pleasure                              "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " set "!" to toggle between hybrid line numbers & absolute line numbers

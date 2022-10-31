@@ -1,8 +1,8 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                          lsp_vim-lsp_init.vim
-"
-"                  Testing out lsp for vim. So far much disappoint
-"                
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                          lsp_vim-lsp_init.vim                               "
+"                                                                             "
+"                  Testing out lsp for vim. So far much disappoint            "
+"                                                                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " I'm using this for my own stuff!!!! DON'T STEAL MA KEYS imap <c-space> <Plug>(asyncomplete_force_refresh)
