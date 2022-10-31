@@ -12,9 +12,16 @@
 
 " Trying to see what having <Esc> on <Ctrl+Spacebar> feels like
 nnoremap <C-@> <Esc>
+" inoremap <C-@> <Esc><Right> find in fix_idiosyncrasies
 snoremap <C-@> <Esc>
 xnoremap <C-@> <Esc>
-" inoremap <C-@> <Esc><Right> find in fix_idiosyncrasies
+onoremap <C-@> <Esc>
+" Note: In command mode mappings to esc run the command for some odd
+" historical vi compatibility reason. We use the alternate method of
+" existing which is Ctrl-C [1]
+cnoremap <C-@> <C-C>
+
+
 " Map just spacebar for insert mode.
 nnoremap <Space> i
 
