@@ -55,9 +55,9 @@ execute "set <M-f>=\ef"
 " execute "set <M-g>=\eg"
 " execute "set <M-h>=\eh"
 " execute "set <M-i>=\ei"
-" execute "set <M-j>=\ej"
+execute "set <M-j>=\ej"
 " execute "set <M-k>=\ek"
-" execute "set <M-l>=\el"
+execute "set <M-l>=\el"
 " execute "set <M-m>=\em"
 " execute "set <M-n>=\en"
 " execute "set <M-o>=\eo"
@@ -69,7 +69,7 @@ execute "set <M-s>=\es"
 " execute "set <M-u>=\eu"
 execute "set <M-v>=\ev"
 " execute "set <M-w>=\ew"
-" execute "set <M-x>=\ex"
+execute "set <M-x>=\ex"
 " execute "set <M-y>=\ey"
 " execute "set <M-z>=\ez"
 " 
@@ -110,9 +110,9 @@ execute "set <M-V>=\eV"
 " nnoremap <M-g> :echom "<NORMAL MODE> Testing Meta Character Shortcut (pressed Meta Key g)"<CR>
 " nnoremap <M-h> :echom "<NORMAL MODE> Testing Meta Character Shortcut (pressed Meta Key h)"<CR>
 " nnoremap <M-i> :echom "<NORMAL MODE> Testing Meta Character Shortcut (pressed Meta Key i)"<CR>
-" nnoremap <M-j> :echom "<NORMAL MODE> Testing Meta Character Shortcut (pressed Meta Key j)"<CR>
+nnoremap <M-j> :echom "<NORMAL MODE> Testing Meta Character Shortcut (pressed Meta Key j)"<CR>
 " nnoremap <M-k> :echom "<NORMAL MODE> Testing Meta Character Shortcut (pressed Meta Key k)"<CR>
-" nnoremap <M-l> :echom "<NORMAL MODE> Testing Meta Character Shortcut (pressed Meta Key l)"<CR>
+nnoremap <M-l> :echom "<NORMAL MODE> Testing Meta Character Shortcut (pressed Meta Key l)"<CR>
 " nnoremap <M-m> :echom "<NORMAL MODE> Testing Meta Character Shortcut (pressed Meta Key m)"<CR>
 " nnoremap <M-n> :echom "<NORMAL MODE> Testing Meta Character Shortcut (pressed Meta Key n)"<CR>
 " nnoremap <M-o> :echom "<NORMAL MODE> Testing Meta Character Shortcut (pressed Meta Key o)"<CR>
@@ -124,7 +124,7 @@ execute "set <M-V>=\eV"
 " nnoremap <M-u> :echom "<NORMAL MODE> Testing Meta Character Shortcut (pressed Meta Key u)"<CR>
 " nnoremap <M-v> :echom "<NORMAL MODE> Testing Meta Character Shortcut (pressed Meta Key v)"<CR>
 " nnoremap <M-w> :echom "<NORMAL MODE> Testing Meta Character Shortcut (pressed Meta Key w)"<CR>
-" nnoremap <M-x> :echom "<NORMAL MODE> Testing Meta Character Shortcut (pressed Meta Key x)"<CR>
+nnoremap <M-x> :echom "<NORMAL MODE> Testing Meta Character Shortcut (pressed Meta Key x)"<CR>
 " nnoremap <M-y> :echom "<NORMAL MODE> Testing Meta Character Shortcut (pressed Meta Key y)"<CR>
 " nnoremap <M-z> :echom "<NORMAL MODE> Testing Meta Character Shortcut (pressed Meta Key z)"<CR>
 
@@ -137,9 +137,9 @@ execute "set <M-V>=\eV"
 " inoremap <M-g> :echom "<INSERT MODE> Testing Meta Character Shortcut (pressed Meta Key g)"<CR>
 " inoremap <M-h> :echom "<INSERT MODE> Testing Meta Character Shortcut (pressed Meta Key h)"<CR>
 " inoremap <M-i> :echom "<INSERT MODE> Testing Meta Character Shortcut (pressed Meta Key i)"<CR>
-" inoremap <M-j> :echom "<INSERT MODE> Testing Meta Character Shortcut (pressed Meta Key j)"<CR>
+inoremap <M-j> :echom "<INSERT MODE> Testing Meta Character Shortcut (pressed Meta Key j)"<CR>
 " inoremap <M-k> :echom "<INSERT MODE> Testing Meta Character Shortcut (pressed Meta Key k)"<CR>
-" inoremap <M-l> :echom "<INSERT MODE> Testing Meta Character Shortcut (pressed Meta Key l)"<CR>
+inoremap <M-l> :echom "<INSERT MODE> Testing Meta Character Shortcut (pressed Meta Key l)"<CR>
 " inoremap <M-m> :echom "<INSERT MODE> Testing Meta Character Shortcut (pressed Meta Key m)"<CR>
 " inoremap <M-n> :echom "<INSERT MODE> Testing Meta Character Shortcut (pressed Meta Key n)"<CR>
 " inoremap <M-o> :echom "<INSERT MODE> Testing Meta Character Shortcut (pressed Meta Key o)"<CR>
@@ -151,7 +151,7 @@ execute "set <M-V>=\eV"
 " inoremap <M-u> :echom "<INSERT MODE> Testing Meta Character Shortcut (pressed Meta Key u)"<CR>
 " inoremap <M-v> :echom "<INSERT MODE> Testing Meta Character Shortcut (pressed Meta Key v)"<CR>
 " inoremap <M-w> :echom "<INSERT MODE> Testing Meta Character Shortcut (pressed Meta Key w)"<CR>
-" inoremap <M-x> :echom "<INSERT MODE> Testing Meta Character Shortcut (pressed Meta Key x)"<CR>
+inoremap <M-x> :echom "<INSERT MODE> Testing Meta Character Shortcut (pressed Meta Key x)"<CR>
 " inoremap <M-y> :echom "<INSERT MODE> Testing Meta Character Shortcut (pressed Meta Key y)"<CR>
 " inoremap <M-z> :echom "<INSERT MODE> Testing Meta Character Shortcut (pressed Meta Key z)"<CR>
 
@@ -164,9 +164,9 @@ execute "set <M-V>=\eV"
 " vnoremap <M-g> :echom "<VISUAL MODE> Testing Meta Character Shortcut (pressed Meta Key g)"<CR>
 " vnoremap <M-h> :echom "<VISUAL MODE> Testing Meta Character Shortcut (pressed Meta Key h)"<CR>
 " vnoremap <M-i> :echom "<VISUAL MODE> Testing Meta Character Shortcut (pressed Meta Key i)"<CR>
-" vnoremap <M-j> :echom "<VISUAL MODE> Testing Meta Character Shortcut (pressed Meta Key j)"<CR>
+vnoremap <M-j> :echom "<VISUAL MODE> Testing Meta Character Shortcut (pressed Meta Key j)"<CR>
 " vnoremap <M-k> :echom "<VISUAL MODE> Testing Meta Character Shortcut (pressed Meta Key k)"<CR>
-" vnoremap <M-l> :echom "<VISUAL MODE> Testing Meta Character Shortcut (pressed Meta Key l)"<CR>
+vnoremap <M-l> :echom "<VISUAL MODE> Testing Meta Character Shortcut (pressed Meta Key l)"<CR>
 " vnoremap <M-m> :echom "<VISUAL MODE> Testing Meta Character Shortcut (pressed Meta Key m)"<CR>
 " vnoremap <M-n> :echom "<VISUAL MODE> Testing Meta Character Shortcut (pressed Meta Key n)"<CR>
 " vnoremap <M-o> :echom "<VISUAL MODE> Testing Meta Character Shortcut (pressed Meta Key o)"<CR>
@@ -178,7 +178,7 @@ execute "set <M-V>=\eV"
 " vnoremap <M-u> :echom "<VISUAL MODE> Testing Meta Character Shortcut (pressed Meta Key u)"<CR>
 " vnoremap <M-v> :echom "<VISUAL MODE> Testing Meta Character Shortcut (pressed Meta Key v)"<CR>
 " vnoremap <M-w> :echom "<VISUAL MODE> Testing Meta Character Shortcut (pressed Meta Key w)"<CR>
-" vnoremap <M-x> :echom "<VISUAL MODE> Testing Meta Character Shortcut (pressed Meta Key x)"<CR>
+vnoremap <M-x> :echom "<VISUAL MODE> Testing Meta Character Shortcut (pressed Meta Key x)"<CR>
 " vnoremap <M-y> :echom "<VISUAL MODE> Testing Meta Character Shortcut (pressed Meta Key y)"<CR>
 " vnoremap <M-z> :echom "<VISUAL MODE> Testing Meta Character Shortcut (pressed Meta Key z)"<CR>
 

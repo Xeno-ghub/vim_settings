@@ -88,6 +88,13 @@ let s:todoFname="~/.vim/todo4vimrc.vim"
 call TryToSourceFile(s:todoFname, 0)
 
 
+
+" New features for the command line
+let s:commandoVim="~/.vim/commandoline.vim"
+call TryToSourceFile(s:commandoVim, 0)
+
+
+
 " Try out new vim commands here to see if you like them
 let s:experimentalVIMRC="~/.vim/experimentWme4vimrc.vim"
 call TryToSourceFile(s:experimentalVIMRC, 0)
