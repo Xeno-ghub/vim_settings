@@ -151,6 +151,7 @@ nnoremap <C-D> i<C-R>=strftime("%Y%m%d_%H%M%S")<CR><Esc><Right>
 " see :help i_CTRL-R
 nnoremap <C-R> ixXx<Esc>l
 snoremap <C-R> xXx
+xnoremap <C-R> cxXx<Esc>l
 inoremap <C-R> xXx
 
 " Most important part of this VIMRC I guess
