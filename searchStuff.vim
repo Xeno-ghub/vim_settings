@@ -5,9 +5,10 @@
 "                
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let s:vimRegexType     = 0x1000
-let s:normalRegexType  = 0x1001
-let s:invalidRegexType = 0x1002
+let s:vimNonMagicRegexType     = 0x1000
+let s:vimMagicRegexType        = 0x1001
+let s:normalRegexType          = 0x1002
+let s:invalidRegexType         = 0x1003
 
 " Duplicate n/N search functionality on f/F. I search with ctrl+f.
 " Might as well keep searching with f/F
@@ -30,10 +31,14 @@ function! MySearchRemaps()
     " <C-g> without you I'd be lost
     snoremap <C-b> <C-g>:call MySearchFunc(g:vimmodeVisual, g:searchTypeVimReplace)<CR>
 
-    " vim search/search & replace with various tools
-    nnoremap <M-f> :call MySearchFunc(g:vimmodeNormal, g:searchTypePending)<CR>
-    inoremap <M-f> <Esc>:call MySearchFunc(g:vimmodeInsert, g:searchTypePending)<CR>
-    vnoremap <M-f> :call MySearchFunc(g:vimmodeVisual, g:searchTypePending)<CR>
+    " vim search with various tools
+    nnoremap <M-f> :call MySearchFunc(g:vimmodeNormal, g:searchTreeMetaF)<CR>
+    inoremap <M-f> <Esc>:call MySearchFunc(g:vimmodeInsert, g:searchTreeMetaF)<CR>
+    vnoremap <M-f> :call MySearchFunc(g:vimmodeVisual, g:searchTreeMetaF)<CR>
+    " vim search & replace with various tools
+    nnoremap <M-b> :call MySearchFunc(g:vimmodeNormal, g:searchTreeMetaB)<CR>
+    inoremap <M-b> <Esc>:call MySearchFunc(g:vimmodeInsert, g:searchTreeMetaB)<CR>
+    vnoremap <M-b> :call MySearchFunc(g:vimmodeVisual, g:searchTreeMetaB)<CR>
 endfunction
 
 
@@ -46,8 +51,10 @@ function! s:modifySearchQuery(searchQueryStr, whatRegex)
     let l:bulk             = ''
     let l:fringe           = '[^a-zA-Z0-9]{-}'
 
-    if a:whatRegex == s:vimRegexType
+    if a:whatRegex == s:vimNonMagicRegexType
        let l:bulk    = '[^\r\n]\{-}'
+    elseif a:whatRegex == s:vimMagicRegexType
+       let l:bulk    = '[^\r\n]{-}'
     elseif a:whatRegex == s:normalRegexType
        let l:bulk    = '[^\r\n]*?'
     else
@@ -103,6 +110,19 @@ function! s:get_visual_selection()
     return l:joinage
 endfunction
 
+function! s:getNrFromArg(parseNr)
+    if ( a:parseNr =~# '^\d\+$' )
+        if ( a:parseNr >= 0 )
+            return a:parseNr
+        else
+            echom "getNrFromArg: Error! argument (" . a:parseNr .
+\                 ") is not positive"
+    else
+        echom "getNrFromArg: Error! argument (" . a:parseNr .
+\             ") is not a number"
+    endif
+endfunction
+
 function! s:getSearchCommandPrefix(searchType)
 
     if a:searchType == g:searchTypeVimNotVisual
@@ -114,6 +134,16 @@ function! s:getSearchCommandPrefix(searchType)
     elseif a:searchType == g:searchTypeVimReplace
         "deprecated return ":%s/"
         return ":,$s/"
+    elseif a:searchType == g:searchReplaceTypeCapture
+        " Using '#' delimiter insted of '/'
+        " as now using printf you can do division operations
+        return ":,$s#\\v("
+    elseif a:searchType == g:searchReplaceTypeCaptNPrintf
+        return ":,$s#\\v("
+    elseif a:searchType == g:searchReplaceTypeRowSeq
+        let l:begl  = line('.')
+        let l:endl  = l:begl + g:searchNlinesImLazy - 1
+        return ":" . l:begl . "," . l:endl . "s#^\\v([^\\r\\n]{-}"
     elseif a:searchType == g:searchTypeVimReplaceAll
         return "/NotImplementoAmigo"
     elseif a:searchType == g:searchTypeAg
@@ -179,6 +209,22 @@ function! s:getSearchCommandPostfix(searchType, alsoTrigger)
         return "NotImplementoPostfixAmigo"
     elseif a:searchType == g:searchTypeVimReplace
         return "//gc|1,''-&&\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>"
+    elseif a:searchType == g:searchReplaceTypeCapture
+        return ")#\\1#gc|1,''-&&\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>"
+    elseif a:searchType == g:searchReplaceTypeCaptNPrintf
+        " Using '#' delimiter insted of '/'
+        " as now using printf you can do division operations
+        return ")#\\=printf('%d', submatch(1))#gc|1,''-&&\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>"
+    elseif a:searchType == g:searchReplaceTypeRowSeq
+        let l:cr = line('.')
+        let l:deadcr = str2nr(l:cr)
+        let l:moarleft = ""
+        " More lefts depending on number size
+        while l:deadcr > 0
+            let l:deadcr = l:deadcr / 10
+            let l:moarleft = l:moarleft . "\<Left>"
+        endwhile
+        return ")#\\=printf('%s%d', submatch(1), line('.')-".l:cr.")#g\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>\<Left>" . l:moarleft
     elseif a:searchType == g:searchTypeVimReplaceAll
         return "NotImplementoPostfixAmigo"
     elseif a:searchType == g:searchTypeAg
@@ -221,7 +267,9 @@ endfunction
 function! s:getRegexType(searchType)
 
     if a:searchType >= g:searchTypeVimNotVisual && (a:searchType <= g:searchTypeVimReplaceAll)
-        return s:vimRegexType
+        return s:vimNonMagicRegexType
+    elseif a:searchType >= g:searchReplaceTypeCapture && (a:searchType <= g:searchReplaceTypeRowSeq)
+        return s:vimMagicRegexType
     elseif a:searchType >= g:searchTypeAg && (a:searchType <= g:searchTypeAgProjDir9)
         return s:normalRegexType
     else
@@ -299,8 +347,8 @@ function! MySearchFunc(vimmode, searchType)
 
     " find the type of search. This has to come after searchKey as
     " I would lose my selection when opening a user input dialogue
-    if(a:searchType == g:searchTypePending)
-        let l:searchTypeFinalized = s:confirmSearchType()
+    if(a:searchType == g:searchTreeMetaF || (a:searchType == g:searchTreeMetaB))
+        let l:searchTypeFinalized = s:getUserInputGetSearchType(a:searchType)
     endif
 
     " do the splice trick for visual selection. This has to be here
@@ -327,6 +375,52 @@ function! MySearchFunc(vimmode, searchType)
 
 endfunction
 
+function! s:parseSearchReplaceCommand(commstr)
+
+    let l:stringlen = len(a:commstr)
+
+    if( l:stringlen == 0 )
+        return g:searchTypePending
+    elseif( l:stringlen == 1 && (a:commstr[0] == 'a') )
+        return g:searchReplaceTypeCapture
+    elseif( l:stringlen == 1 && (a:commstr[0] == 's') )
+        return g:searchReplaceTypeCaptNPrintf
+    elseif( l:stringlen == 1 && (a:commstr[0] == 'd') )
+        return g:searchTypePending
+    elseif( l:stringlen >= 2 && l:stringlen < 9 ) "Don't go into billions now
+        if(a:commstr[0] == 'd' && (a:commstr[l:stringlen - 1] == 'd') && (l:stringlen > 2))
+            let l:total = 0
+            let l:c     = 1
+            while c < l:stringlen - 1
+              let l:total += str2float(a:commstr[c]) * pow(10, l:stringlen - c - 2)
+              let c += 1
+            endwhile
+            " Remember the number of lines needed to be filled in some global
+            let g:searchNlinesImLazy = float2nr(l:total)
+            return g:searchReplaceTypeRowSeq
+        elseif(a:commstr[0] == 'd')
+            let l:c     = 1
+            let l:okay  = 1
+            while c < l:stringlen
+                if(a:commstr[c] =~# '\d')
+                    " Do nothing
+                else
+                    let l:okay = 0
+                    return g:searchTypeInvalid
+                endif
+                let c += 1
+            endwhile
+            if( l:okay == 1 )
+                return g:searchTypePending
+            endif
+        else
+            return g:searchTypeInvalid
+        endif
+    else
+        return g:searchTypeInvalid
+    endif
+    return g:searchTypeInvalid
+endfunction
 
 function! s:parseSearchCommand(commstr)
 
@@ -376,7 +470,57 @@ function! s:parseSearchCommand(commstr)
     return g:searchTypeInvalid
 endfunction
 
-function! s:confirmSearchType()
+function! s:getUserInputGetSearchType(keycombo)
+
+    if (a:keycombo == g:searchTreeMetaF)
+        return s:metaFSearchTree()
+    elseif (a:keycombo == g:searchTreeMetaB)
+        return s:metaBSearchTree()
+    else
+        echom "getUserInputGetSearchType: Error, nonexistent keycombo"
+        return "errorlicious"
+    endif
+
+endfunction
+
+function! s:metaBSearchTree()
+    echo 'What sort of search & replace do you want?'
+
+    echo 'capture word under cursor [a]'
+    echo '=printf (capture word under cursor) [s]'
+    echo '=printf (print numbers @ cursor for N lines) [d<NUMBER>d]'
+
+    echo 'To exit this dialogue press: [Q]'
+
+    let l:number = 100
+    let l:string = ""
+
+    while l:number > 0
+        let l:string .= nr2char(getchar())
+
+        if (l:string ==? 'q')
+            redraw
+            return g:searchTypeInvalid
+        endif
+
+        let l:searchType = s:parseSearchReplaceCommand(l:string)
+
+        if( l:searchType == g:searchTypeInvalid )
+            echo 'You entered an invalid command, please start over. len=' . len(l:string)
+            let l:string = ''
+            echo 'len=' . len(l:string)
+        elseif( l:searchType == g:searchTypePending )
+            " continue loop
+        else
+            "echo 'Exiting with comm string=' . l:searchType
+            redraw
+            return l:searchType
+        endif
+        let l:number -= 1
+    endwhile
+endfun
+
+function! s:metaFSearchTree()
     echo 'What sort of search do you want?'
 
     echo 'Do you want to search all open buffers? [V]'

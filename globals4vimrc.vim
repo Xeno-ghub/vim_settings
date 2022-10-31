@@ -20,19 +20,26 @@ let g:searchTypeVimVisual                = 0x513372
 let g:searchTypeVimAllBuffers            = 0x513373
 let g:searchTypeVimReplace               = 0x513374
 let g:searchTypeVimReplaceAll            = 0x513375
-let g:searchTypeAg                       = 0x513376
-let g:searchTypeAgDepth0                 = 0x513377
-let g:searchTypeAgProjDir1               = 0x513378
-let g:searchTypeAgProjDir2               = 0x513379
-let g:searchTypeAgProjDir3               = 0x513380
-let g:searchTypeAgProjDir4               = 0x513381
-let g:searchTypeAgProjDir5               = 0x513382
-let g:searchTypeAgProjDir6               = 0x513383
-let g:searchTypeAgProjDir7               = 0x513384
-let g:searchTypeAgProjDir8               = 0x513385
-let g:searchTypeAgProjDir9               = 0x513386
-let g:searchTypeInvalid                  = 0x513387
-let g:searchTypePending                  = 0x513388
+let g:searchReplaceTypeCapture           = 0x513376
+let g:searchReplaceTypeCaptNPrintf       = 0x513377
+let g:searchReplaceTypeRowSeq            = 0x513378
+let g:searchTypeAg                       = 0x513379
+let g:searchTypeAgDepth0                 = 0x513380
+let g:searchTypeAgProjDir1               = 0x513381
+let g:searchTypeAgProjDir2               = 0x513382
+let g:searchTypeAgProjDir3               = 0x513383
+let g:searchTypeAgProjDir4               = 0x513384
+let g:searchTypeAgProjDir5               = 0x513385
+let g:searchTypeAgProjDir6               = 0x513386
+let g:searchTypeAgProjDir7               = 0x513387
+let g:searchTypeAgProjDir8               = 0x513388
+let g:searchTypeAgProjDir9               = 0x513389
+let g:searchTypeInvalid                  = 0x513390
+let g:searchTypePending                  = 0x513391
+let g:searchTreeMetaF                    = 0x513392
+let g:searchTreeMetaB                    = 0x513393
+" Set below to whatever, it's gonna be "nr of lines"
+let g:searchNlinesImLazy                 = 0
 
 " These will be two arbitrary paths meant for Ag to search in
 " Set them to whatever you want, it should follow the unix format

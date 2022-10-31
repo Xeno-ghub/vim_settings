@@ -40,7 +40,7 @@ nnoremap <LeftMouse> <LeftMouse>i
 " - Only leaving the ones that are necessary now.
 "
 " execute "set <M-a>=\ea"
-" execute "set <M-b>=\eb"
+execute "set <M-b>=\eb"
 " execute "set <M-c>=\ec"
 " execute "set <M-d>=\ed"
 execute "set <M-e>=\ee"
