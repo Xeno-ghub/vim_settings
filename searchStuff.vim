@@ -72,12 +72,12 @@ function! s:modifySearchQuery(searchQueryStr, whatRegex)
     " still check it though
     if len(l:matchdOldQry) >= 3
         " Make sure we matched the whole regex & the three capture groups
-        if !empty(l:matchdOldQry[0]) 
+        if !empty(l:matchdOldQry[0])
             \&& !empty(l:matchdOldQry[1])
             "Middle can be empty for single selections
             \&& !empty(l:matchdOldQry[3])
 
-            " return this regex into our function body 
+            " return this regex into our function body
             let l:regexRet = l:matchdOldQry[1] . l:bulk . l:matchdOldQry[3]
             return l:regexRet
         endif
@@ -88,14 +88,14 @@ function! s:modifySearchQuery(searchQueryStr, whatRegex)
 
         if len(l:matchdBaloneyQry) >= 1
             return ""
-        endif 
+        endif
     endif
-    
+
     return 'errorInMyVimscript'
 endfunction
 
 
-" This function returns a string of the visual selection 
+" This function returns a string of the visual selection
 function! s:get_visual_selection()
     " Why is this not a built-in Vim script function?!
     let [l:line_start, l:column_start] = getpos("'<")[1:2]
@@ -105,7 +105,7 @@ function! s:get_visual_selection()
     if len(lines) == 0
         return ''
     endif
-    let l:lines[-1] = lines[-1][: l:column_end - 
+    let l:lines[-1] = lines[-1][: l:column_end -
                     \(&selection == 'inclusive' ? 1 : 2)]
     let lines[0] = lines[0][l:column_start - 1:]
 
@@ -176,7 +176,7 @@ function! s:getSearchCommandPrefix(searchType)
         return ""
     else
         return "invalid"
-    
+
 endfunction
 
 function! s:getSearchCommandPostfix(searchType, alsoTrigger)
@@ -188,7 +188,7 @@ function! s:getSearchCommandPostfix(searchType, alsoTrigger)
             return ""
         endif
     " So many conditions here. Vim search behaves differently whether
-    " you visual-search from start of line, mid of line, 
+    " you visual-search from start of line, mid of line,
     " mid-of-line but starting with nonalphanumeric
     elseif a:searchType == g:searchTypeVimVisual
 
@@ -287,7 +287,7 @@ function! s:getSearchKey(vimmode)
 
     " For "visualmode" -- doing a trick
     if (a:vimmode == g:vimmodeVisual) || (a:vimmode == g:vimmodeSelect)
- 
+
         " Get currently selected text
         let l:selText = s:get_visual_selection()
 
@@ -300,7 +300,7 @@ function! s:getSearchKey(vimmode)
         let l:whitespaceUnderCursor = " "
 
         " !!!! This only works because how I setup this function's mappings
-        " my vim has insert & normal mode 
+        " my vim has insert & normal mode
         " positions the same (look at how <c-f> is mapped for insert mode
         " If they were different, then only normal would have "-1"
         let l:whitespaceUnderCursor = getline('.')[col('.')-1]
@@ -320,7 +320,7 @@ function! s:getSearchKey(vimmode)
     endif
 
     return l:retSearchKey
-    
+
 endfunction
 
 
@@ -366,7 +366,7 @@ function! MySearchFunc(vimmode, searchType)
     else
         let l:alsoTrigger = 1
     endif
-        
+
     let l:commandPrefix    = s:getSearchCommandPrefix (l:searchTypeFinalized)
     let l:commandPostfix   = s:getSearchCommandPostfix(l:searchTypeFinalized, l:alsoTrigger)
 
@@ -429,7 +429,7 @@ endfunction
 function! s:parseSearchCommand(commstr)
 
     let l:stringlen = len(a:commstr)
-    
+
     if( l:stringlen == 0 )
         return g:searchTypePending
     elseif( l:stringlen == 1 && (a:commstr[0] == 'a') )
@@ -556,11 +556,11 @@ function! s:metaFSearchTree()
             echo 'len=' . len(l:string)
         elseif( l:searchType == g:searchTypePending )
         else
-            "echo 'Exiting with comm string=' . l:searchType 
+            "echo 'Exiting with comm string=' . l:searchType
             redraw
             return l:searchType
         endif
-    
+
         let l:number -= 1
     endwhile
 endfun

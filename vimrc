@@ -1,24 +1,24 @@
 "                                     ▒█
-"  ▒██   ██▒▓█████  ███▄    █  ▒█████    ██████ 
-"  ▒▒ █ █ ▒░▓█   ▀  ██ ▀█   █ ▒██▒  ██▒▒██    ▒ 
-"  ░░  █   ░▒███   ▓██  ▀█ ██▒▒██░  ██▒░ ▓██▄   
+"  ▒██   ██▒▓█████  ███▄    █  ▒█████    ██████
+"  ▒▒ █ █ ▒░▓█   ▀  ██ ▀█   █ ▒██▒  ██▒▒██    ▒
+"  ░░  █   ░▒███   ▓██  ▀█ ██▒▒██░  ██▒░ ▓██▄
 "   ░ █ █ ▒ ▒▓█  ▄ ▓██▒  ▐▌██▒▒██   ██░  ▒   ██▒
 "  ▒██▒ ▒██▒░▒████▒▒██░   ▓██░░ ████▓▒░▒██████▒▒
 "  ▒▒ ░ ░▓ ░░░ ▒░ ░░ ▒░   ▒ ▒ ░ ▒░▒░▒░ ▒ ▒▓▒ ▒ ░
 "  ░░   ░▒ ░ ░ ░  ░░ ░░   ░ ▒░  ░ ▒ ▒░ ░ ░▒  ░ ░
-"   ░    ░     ░      ░   ░ ░ ░ ░ ░ ▒  ░  ░  ░   
-"   ░    ░     ░  ░         ░     ░ ░        ░  
-"                                               
-"   ██▒   █▓ ██▓ ███▄ ▄███▓ ██▀███   ▄████▄     
-"  ▓██░   █▒▓██▒▓██▒▀█▀ ██▒▓██ ▒ ██▒▒██▀ ▀█     
-"   ▓██  █▒░▒██▒▓██    ▓██░▓██ ░▄█ ▒▒▓█    ▄    
-"    ▒██ █░░░██░▒██    ▒██ ▒██▀▀█▄  ▒▓▓▄ ▄██▒   
-"     ▒▀█░  ░██░▒██▒   ░██▒░██▓ ▒██▒▒ ▓███▀ ░   
-"     ░ ▐░  ░▓  ░ ▒░   ░  ░░ ▒▓ ░▒▓░░ ░▒ ▒  ░   
-"     ░ ░░   ▒ ░░  ░      ░  ░▒ ░ ▒░  ░  ▒      
-"       ░░   ▒ ░░      ░     ░░   ░ ░           
-"        ░   ░         ░      ░     ░ ░         
-"       ░                           ░           
+"   ░    ░     ░      ░   ░ ░ ░ ░ ░ ▒  ░  ░  ░
+"   ░    ░     ░  ░         ░     ░ ░        ░
+"
+"   ██▒   █▓ ██▓ ███▄ ▄███▓ ██▀███   ▄████▄
+"  ▓██░   █▒▓██▒▓██▒▀█▀ ██▒▓██ ▒ ██▒▒██▀ ▀█
+"   ▓██  █▒░▒██▒▓██    ▓██░▓██ ░▄█ ▒▒▓█    ▄
+"    ▒██ █░░░██░▒██    ▒██ ▒██▀▀█▄  ▒▓▓▄ ▄██▒
+"     ▒▀█░  ░██░▒██▒   ░██▒░██▓ ▒██▒▒ ▓███▀ ░
+"     ░ ▐░  ░▓  ░ ▒░   ░  ░░ ▒▓ ░▒▓░░ ░▒ ▒  ░
+"     ░ ░░   ▒ ░░  ░      ░  ░▒ ░ ▒░  ░  ▒
+"       ░░   ▒ ░░      ░     ░░   ░ ░
+"        ░   ░         ░      ░     ░ ░
+"       ░                           ░
 
 
 " What this?
@@ -31,7 +31,7 @@
 " I grew up in Windows 95, and there if you press ctrl+backspace => delete word
 "                              there if you press ctrl+arrow     => jump   word
 "                              there if you highlight and type   => overwrite
-" 
+"
 " It's not just me that grew up like this.
 " Every. Single. Text. Editor. Except for VIM follows those basic rules.
 " Any IDE
@@ -40,9 +40,9 @@
 " Any standard text editor (even GEdit)
 "
 " So this is my way to ruin VIM and make it into this Frankenstein modern-old
-" editor which's supposed to work everywhere the same way 
-" (Linux/OSX/Android/Windows/w/e) 
-" That way, as long as you have a keyboard in front of you, 
+" editor which's supposed to work everywhere the same way
+" (Linux/OSX/Android/Windows/w/e)
+" That way, as long as you have a keyboard in front of you,
 "      you're just 1 git pull away from your favorite text editor
 "
 " Why is it ruining VIM?
@@ -56,7 +56,7 @@
 "
 " So far tested on:
 "                   > Linux (Ubuntu VM)
-"                   > Android (termux) 
+"                   > Android (termux)
 "                   > OS X (vim8/vim9)
 "                   > Windows WSL
 "                   > More to come.
@@ -78,7 +78,7 @@ function! MyQuit()
     q
 endfunction
 
-" A bunch of function definitions here. 
+" A bunch of function definitions here.
 " If these files don't exist, then this vimrc's a no-go
 let g:preambleFname='~/.vim/preamble4vimrc.vim'
 if !filereadable(expand(g:preambleFname))
@@ -108,7 +108,7 @@ endif
 " Most important part
 " ======================================
 
-" Remap "H" to <insert> and use 'ijkl' for an inverted-T layout. 
+" Remap "H" to <insert> and use 'ijkl' for an inverted-T layout.
 "     Like wasd in FPS games
 "
 nnoremap h i
@@ -163,14 +163,14 @@ let g:pesteringMessages = 0
 if !executable('ag')
     :echom "Your vim is incomplete. Ag not installed."
     let g:pesteringMessages = 1
-endif 
+endif
 if !executable('fzf')
     :echom "Your vim is incomplete. FZF not installed."
     let g:pesteringMessages = 1
 else
     " add FZF to runtimepath
     set rtp+=~/fzf
-endif 
+endif
 
 if pesteringMessages
     :echom 'You can turn off these annoying messages by deleting

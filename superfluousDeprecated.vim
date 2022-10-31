@@ -17,8 +17,8 @@
 "     if has('unix')
 "         if executable('xmodmap')
 "             au VimEnter * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-"             "   (command says: When entering vim, use xmodmap to 
-"             "            clear caps & remap <CAPS> to <ESC>. Also use "silent!"  
+"             "   (command says: When entering vim, use xmodmap to
+"             "            clear caps & remap <CAPS> to <ESC>. Also use "silent!"
 "             "            to avoid the prompt when launching vim
 "             au VimLeave * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
 "         else

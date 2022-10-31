@@ -7,7 +7,7 @@
 
 " Open a new split horizontally with Control-4 as if opening a tab
 " The "4" hotkey is kinda wonky, but idk what I can set it to...
-" Yes... <C-\> actually means <C-4> .... 
+" Yes... <C-\> actually means <C-4> ....
 
 " "Normally Ctrl-Number produce a different key code. You can check like this"
 " "Open Vim and change to insert mode. Then hit Ctrl-V followed by Ctrl-4"
@@ -61,7 +61,7 @@ vnoremap <M-q> <Esc><C-o>zzi
 snoremap <M-q> <Esc><C-o>zzi
 
 
-" make marks jump to already open windows/tabs, 
+" make marks jump to already open windows/tabs,
 " what's the point of overwriting your current open buffers
 " !!! Overwriting smallcase marks as global marks
 "     since I've never used smallcase marks anyway

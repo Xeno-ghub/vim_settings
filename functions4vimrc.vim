@@ -20,7 +20,7 @@ endfunction
 function ToggleWrap()
   if &wrap
     echo "Wrap OFF"
-    set nowrap 
+    set nowrap
     :call WrapOffRemaps()
   else
     echo "Wrap ON"
@@ -172,7 +172,7 @@ function s:memorizeBufferName(markLetter)
 endfunction
 
 function s:rememberBufferName(markLetter)
-        
+
     if(a:markLetter == "Q")
          return g:Qbufname
     elseif(a:markLetter == "W")
@@ -208,13 +208,13 @@ endfunction
 function ToggleBlackHoleApparatus()
     if( g:BlackHoleOn != 1)
         " If all else fails (i.e. you don't have X server)
-        " just send c & d to black hole register    
+        " just send c & d to black hole register
         nnoremap c "_c
         nnoremap d "_d
         " for deleting words with Ctrl Backspace
         nnoremap <C-H> "_db
         inoremap <C-H> <Esc><Right>"_dbi
-        " Pasting without immediately overwriting clipboard before 
+        " Pasting without immediately overwriting clipboard before
             " getting a chance to paste
         vnoremap <C-V> "_d"+gP
         let g:BlackHoleOn = 1
@@ -230,6 +230,6 @@ function ToggleBlackHoleApparatus()
         echo "Black holes have been disabled! Tread carefully!"
     endif
 endfunction
-   
+
 
 

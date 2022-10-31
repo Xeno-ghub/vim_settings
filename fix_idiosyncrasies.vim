@@ -26,8 +26,8 @@ inoremap <silent> <C-@> <Esc>`^
 nnoremap $ $l
 nnoremap <End> $l
 
-" Fixing movements around newline. When moving between lines I want to be 
-" positioned after last character. Not on top of it... 
+" Fixing movements around newline. When moving between lines I want to be
+" positioned after last character. Not on top of it...
 "     (since whichwrap & virtualedit are not enough to fix this...)
 nnoremap <expr> j col('.')==1?'k$l':'h'
 nnoremap <expr> <Left> col('.')==1?'k$l':'h'
@@ -63,13 +63,13 @@ inoremap <C-i> <C-G>u<space><space><space><space>
 " Adding absolute search directions
 " idk about you, but to me relative search directions are extremely unintuitive
 " [1] [2]
-nnoremap <expr> ; ',;'[getcharsearch().forward] 
-nnoremap <expr> , ';,'[getcharsearch().forward] 
-vnoremap <expr> ; ',;'[getcharsearch().forward] 
-vnoremap <expr> , ';,'[getcharsearch().forward] 
+nnoremap <expr> ; ',;'[getcharsearch().forward]
+nnoremap <expr> , ';,'[getcharsearch().forward]
+vnoremap <expr> ; ',;'[getcharsearch().forward]
+vnoremap <expr> , ';,'[getcharsearch().forward]
     " equivalent to:
-    " nnoremap <expr> ; (getcharsearch().forward ? ';' : ',') 
-    " nnoremap <expr> , (getcharsearch().forward ? ',' : ';') 
+    " nnoremap <expr> ; (getcharsearch().forward ? ';' : ',')
+    " nnoremap <expr> , (getcharsearch().forward ? ',' : ';')
 
 
 " I would like Page Down & PageUp to always move the same nr of lines

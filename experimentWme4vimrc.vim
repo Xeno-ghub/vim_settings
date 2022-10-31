@@ -44,7 +44,7 @@ nnoremap <LeftMouse> <LeftMouse>i
 
 " hide split/window Ctrl+U Control+U
 " "Attention!" This hides the buffers, it does not close it
-" TODO - Find a better shortcut than control-u... 
+" TODO - Find a better shortcut than control-u...
 " / TODO: or remove this entirely
 vnoremap <C-u> <Esc>:q<Enter>
 nnoremap <C-u> <Esc>:q<Enter>
@@ -82,7 +82,7 @@ execute "set <M-v>=\ev"
 execute "set <M-x>=\ex"
 " execute "set <M-y>=\ey"
 " execute "set <M-z>=\ez"
-" 
+"
 " execute "set <M-A>=\eA"
 " execute "set <M-B>=\eB"
 " execute "set <M-C>=\eC"

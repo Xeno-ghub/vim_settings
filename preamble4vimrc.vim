@@ -14,31 +14,31 @@ function! TryToSourceFile(fname, DIE)
         else
             echo "File " a:fname "doesn't exist, but it's optional so ok."
         endif
-    else 
+    else
     execute "source " . a:fname
     endif
 endfunction
 
 " Global variables used
-let s:globalsFname="~/.vim/globals4vimrc.vim" 
+let s:globalsFname="~/.vim/globals4vimrc.vim"
 call TryToSourceFile(s:globalsFname, 1)
 
-" A bunch of function definitions here.  
-" If this file doesn't exist, then this vimrc's a no-go 
-let s:functionsFname="~/.vim/functions4vimrc.vim" 
+" A bunch of function definitions here.
+" If this file doesn't exist, then this vimrc's a no-go
+let s:functionsFname="~/.vim/functions4vimrc.vim"
 call TryToSourceFile(s:functionsFname, 1)
 
 " Vim normie customizations
-let s:subjectivePrefsFname="~/.vim/subjectivePreferences.vim" 
+let s:subjectivePrefsFname="~/.vim/subjectivePreferences.vim"
 call TryToSourceFile(s:subjectivePrefsFname, 1)
 
 
 " Dedicated file for search functions, cuz there's a lot of them
 " This file is optional
-let s:searchFname="~/.vim/searchStuff.vim" 
+let s:searchFname="~/.vim/searchStuff.vim"
 call TryToSourceFile(s:searchFname, 0)
 
-" Windowsify vim. 
+" Windowsify vim.
 " \"behave mswin"
 " and accompanying logic is in this file.
 let s:mswinFname="~/.vim/behaveMswinest.vim"
@@ -57,34 +57,34 @@ else
 endif
 
 " We kinda ruined vim with "Behave" so let's repair as much as needed atm
-let s:repairFname="~/.vim/repairProblemsFromBehaveMswinest.vim" 
+let s:repairFname="~/.vim/repairProblemsFromBehaveMswinest.vim"
 call TryToSourceFile(s:repairFname, 1)
 
 
 " This file contains vim particularities which I don't like
 " and will change
-let s:idioFname="~/.vim/fix_idiosyncrasies.vim" 
+let s:idioFname="~/.vim/fix_idiosyncrasies.vim"
 call TryToSourceFile(s:idioFname, 1)
 
 
 " Self explanatory - window & tab & stuff
-let s:splitsFname="~/.vim/splitstabswindows.vim" 
+let s:splitsFname="~/.vim/splitstabswindows.vim"
 call TryToSourceFile(s:splitsFname, 1)
 
 
 " Self explanatory
-let s:seldomFname="~/.vim/seldomusedmaps.vim" 
+let s:seldomFname="~/.vim/seldomusedmaps.vim"
 call TryToSourceFile(s:seldomFname, 1)
 
 
 " A bunch of legacy vim stuff here
 " This file is optional
-let s:superfluousFname="~/.vim/superfluousDeprecated.vim" 
+let s:superfluousFname="~/.vim/superfluousDeprecated.vim"
 call TryToSourceFile(s:superfluousFname, 0)
 
 
 " Stuff planned for the future? Idk
-let s:todoFname="~/.vim/todo4vimrc.vim" 
+let s:todoFname="~/.vim/todo4vimrc.vim"
 call TryToSourceFile(s:todoFname, 0)
 
 

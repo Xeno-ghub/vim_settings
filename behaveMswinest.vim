@@ -14,7 +14,7 @@ if exists("g:skip_loading_mswin") && g:skip_loading_mswin
 endif
 
 " set the 'cpoptions' to its Vim default
-if 1	" only do this when compiled with expression evaluation
+if 1    " only do this when compiled with expression evaluation
   let s:save_cpo = &cpoptions
 endif
 set cpo&vim
@@ -96,7 +96,7 @@ xnoremap <C-A> <C-C>gggh<C-O>G<C-O>$
 
 " backspace and cursor keys wrap to previous/next line
 " make the backspace work like in most other programs
-set backspace=indent,eol,start 
+set backspace=indent,eol,start
 set whichwrap+=<,>,[,]
 
 " I want newline & backspace to work in normal mode too
@@ -118,11 +118,11 @@ if 1
 endif
 
 " [1]
-" A lot of the clipboard settings in this .vim are serendipitously similar to 
+" A lot of the clipboard settings in this .vim are serendipitously similar to
     " the following website. It crystallizes things much better than I could
     " so I'll leave it here:
 " https://ezhik.me/blog/vim-clipboard/
 
 
 
- 
+

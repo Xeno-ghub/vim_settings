@@ -115,9 +115,9 @@
 
 
 " Make it so that current OS       keybindings that mess with my VIM are unbound
-" Make it so that current Terminal keybindings that mess with my VIM are unbound  
+" Make it so that current Terminal keybindings that mess with my VIM are unbound
 
-" Make it so that current keybindings you changed could be reverted, and 
+" Make it so that current keybindings you changed could be reverted, and
 "    even reverted to some "saved state". So, like an uninstaller
 
 
@@ -150,32 +150,32 @@
 " function! UnlistedBufs()
 "     " All 'possible' buffers that may exist
 "     let b_all = range(1, bufnr('$'))
-" 
+"
 "     " Unlisted ones
 "     let b_unl = filter(b_all, 'buflisted(v:val)')
-" 
+"
 "     " Number of unlisted ones
 "     let b_num = len(b_unl)
-" 
+"
 "     " Or... All at once
 "     let b_numall = len(filter(range(1, bufnr('$')), 'buflisted(v:val)'))
-" 
+"
 "     echom "All buffers=" . b_numall
 "     echom "Unlisted buffers=" . b_num
-" 
+"
 " endfunctio
 
 
-" How to programmatically change modes in vim? 
+" How to programmatically change modes in vim?
 " IDK, here's some jank hack way of doing it:
 " " Vim go into select-insert mode manually
 " " https://www.reddit.com/r/vim/comments/jeryf8/wtf_is_insert_select_mode/
-" 
+"
 " " inoremap <C-X>? <C-R>=<SID>insert_select_mode()<CR>
 " inoremap <C-P>? <C-R>=<SID>selectz()<CR
 " inoremap <C-P> <C-R>
-" 
-" 
+"
+"
 " fun! s:selectz()
 "   fun! s:select()
 "     "call search('\<', 'b')
@@ -183,13 +183,13 @@
 "     let g:mode = mode(1)
 "     "call search('\>')
 "   endfun
-" 
+"
 "     au CompleteDone <buffer> ++once call <SID>select()
 "     call complete(col('.'), ['foo', 'bar'])
 "     return ''
 " endfun
-" 
-" 
+"
+"
 " fun! s:insert_select_mode()
 "   fun! s:select()
 "     call search('\<', 'b')
@@ -197,7 +197,7 @@
 "     let g:mode = mode(1)
 "     call search('\>')
 "   endfun
-" 
+"
 "   au CompleteDone <buffer> ++once call <SID>select()
 "   call complete(col('.'), ['foo', 'bar'])
 "   return ''
@@ -209,59 +209,59 @@
 
 " https://vi.stackexchange.com/questions/10602/vim-jump-between-words-and-stop-at-end-of-line
 " Just overwrite ctrl+stuff
-" 
-" 
+"
+"
 " " Override w motion
 " function! MyWMotion()
 "     " Save the initial position
 "     let initialLine=line('.')
-" 
+"
 "     " Execute the builtin word motion and get the new position
 "     normal! w
 "     let newLine=line('.')
-" 
+"
 "     " If the line as changed go back to the previous line
 "     if initialLine != newLine
 "         normal k$
 "     endif
 " endfunction
-" 
+"
 " " Override b motion
 " function! MyBMotion()
 "     " Save the initial position
 "     let initialLine=line('.')
-" 
+"
 "     " Execute the builtin word motion and get the new position
 "     normal! b
 "     let newLine=line('.')
-" 
+"
 "     " If the line as changed go back to the previous line
 "     if initialLine != newLine
 "         normal j^
 "     endif
 " endfunction
-" 
+"
 " nnoremap <silent> w :call MyWMotion()<CR>
 " nnoremap <silent> b :call MyBMotion()<CR>
 
 
 " intended purpose for the code below:
-" 
+"
 " I'd like for <C-O> / <C-I> to work as they do when jumping in the same file,
 " but when jumping to another file, I'd like for vim to switch to that file's tab,
 " if it's open in some tab, and if not, maybe open a new tab and continue there to
 " the jumplist.
-" 
+"
 " The code works fine until you need to cycle back to some file you already visited,
 " where it completely breaks down.
-" 
+"
 " Jumplist example of breakdown:
-" 
+"
 " 3   file1
 " 2   file2
 " 1   file1
-" 0 > 
-" 
+" 0 >
+"
 " --------------|-------------------|-----------------------|--------------------------|------------------|
 " what should be|Cursor Position 3  |   Cursor Position 2   |    Cursor Position 1     | Cursor Position 0|
 " --------------|-------------------|-----------------------|--------------------------|------------------|
@@ -307,8 +307,8 @@
 "               |jumplist           |                       |                          |                  |
 "               |functionality      |                       |                          |                  |
 " ----------------------------------|-----------------------|--------------------------|------------------|
-" 
-" TODO: Find a way to jump to absolute jumplist positions without rewriting the whole jumplist 
+"
+" TODO: Find a way to jump to absolute jumplist positions without rewriting the whole jumplist
 "       It's not clear if vim keeps multiple jumplists, i have to look it up. If it's just one, it should be doable?
 "       I thought it's one but if I have multiple (vim)tabs open in the same (OS)window and check :jump for each
 "       you see a whole bunch of different jumplists in each one
@@ -319,7 +319,7 @@
 " TODO,Make C-O/C-I jump tabs__nnoremap <leader>k :call MyGoToNextJump()<CR>
 " TODO,Make C-O/C-I jump tabs__nnoremap <leader>j :call MyGoToPreviousJump()<CR>
 " TODO,Make C-O/C-I jump tabs__
-" TODO,Make C-O/C-I jump tabs__" Taken from [1] 
+" TODO,Make C-O/C-I jump tabs__" Taken from [1]
 " TODO,Make C-O/C-I jump tabs__function! s:getJumps( )
 " TODO,Make C-O/C-I jump tabs__    redir => l:jumpsOutput
 " TODO,Make C-O/C-I jump tabs__    silent! execute "jumps"
@@ -349,17 +349,17 @@
 " TODO,Make C-O/C-I jump tabs__endfunction
 " TODO,Make C-O/C-I jump tabs__
 " TODO,Make C-O/C-I jump tabs__" Taken from [1]
-" TODO,Make C-O/C-I jump tabs__" !!! This might not work correctly 
+" TODO,Make C-O/C-I jump tabs__" !!! This might not work correctly
 " TODO,Make C-O/C-I jump tabs__    " with different expandtab tabstop softtabstop shiftwidth settings
 " TODO,Make C-O/C-I jump tabs__function! s:parseJumpLine( jumpLine )
 " TODO,Make C-O/C-I jump tabs__    " Parse one line of output from :jumps into object with count, lnum, col, text.
 " TODO,Make C-O/C-I jump tabs__    let l:parseResult = matchlist(a:jumpLine, '^>\?\s*\(\d\+\)\s\+\(\d\+\)\s\+\(\d\+\)\s\+\(.*\)$')
 " TODO,Make C-O/C-I jump tabs__
 " TODO,Make C-O/C-I jump tabs__    return {
-" TODO,Make C-O/C-I jump tabs__    \	'count': get(l:parseResult, 1, 0),
-" TODO,Make C-O/C-I jump tabs__    \	'lnum' : get(l:parseResult, 2, 0),
-" TODO,Make C-O/C-I jump tabs__    \	'col'  : get(l:parseResult, 3, 0),
-" TODO,Make C-O/C-I jump tabs__    \	'text' : get(l:parseResult, 4, '')
+" TODO,Make C-O/C-I jump tabs__    \    'count': get(l:parseResult, 1, 0),
+" TODO,Make C-O/C-I jump tabs__    \    'lnum' : get(l:parseResult, 2, 0),
+" TODO,Make C-O/C-I jump tabs__    \    'col'  : get(l:parseResult, 3, 0),
+" TODO,Make C-O/C-I jump tabs__    \    'text' : get(l:parseResult, 4, '')
 " TODO,Make C-O/C-I jump tabs__    \}
 " TODO,Make C-O/C-I jump tabs__endfunction
 " TODO,Make C-O/C-I jump tabs__
@@ -392,7 +392,7 @@
 " TODO,Make C-O/C-I jump tabs__    let l:prevJump   = s:getJumpAt    (l:jumps, l:index-1)
 " TODO,Make C-O/C-I jump tabs__    let l:prev       = s:parseJumpLine(l:prevJump).text
 " TODO,Make C-O/C-I jump tabs__
-" TODO,Make C-O/C-I jump tabs__    " If we're jumping to a file, 
+" TODO,Make C-O/C-I jump tabs__    " If we're jumping to a file,
 " TODO,Make C-O/C-I jump tabs__    if filereadable(expand(l:prev))
 " TODO,Make C-O/C-I jump tabs__        " first check if it's already in the buffer list [2]
 " TODO,Make C-O/C-I jump tabs__        if( bufexists(l:prev) == 1 )
@@ -401,12 +401,12 @@
 " TODO,Make C-O/C-I jump tabs__                :call feedkeys(":keepjumps tab sb " . l:prev . "\<CR>" . l:jumpAndRecenter , 'n')
 " TODO,Make C-O/C-I jump tabs__            " Or maybe hidden
 " TODO,Make C-O/C-I jump tabs__            elseif( getbufinfo(l:prev)[0].hidden == 0 )
-" TODO,Make C-O/C-I jump tabs__           "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  
-" TODO,Make C-O/C-I jump tabs__           "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  
-" TODO,Make C-O/C-I jump tabs__           "  "  " i cannot use c-o / c-i as this breaks coherence of jumplist amongst tabs "  "  "  "  
-" TODO,Make C-O/C-I jump tabs__           "  "  "  ergo i will always jump to absolute paths in jumplist. maybe this works "  "  "  "  
-" TODO,Make C-O/C-I jump tabs__           "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  
-" TODO,Make C-O/C-I jump tabs__           "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  
+" TODO,Make C-O/C-I jump tabs__           "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "
+" TODO,Make C-O/C-I jump tabs__           "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "
+" TODO,Make C-O/C-I jump tabs__           "  "  " i cannot use c-o / c-i as this breaks coherence of jumplist amongst tabs "  "  "  "
+" TODO,Make C-O/C-I jump tabs__           "  "  "  ergo i will always jump to absolute paths in jumplist. maybe this works "  "  "  "
+" TODO,Make C-O/C-I jump tabs__           "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "
+" TODO,Make C-O/C-I jump tabs__           "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "  "
 " TODO,Make C-O/C-I jump tabs__           """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TODO,Make C-O/C-I jump tabs__           ""                                                                                                ""
 " TODO,Make C-O/C-I jump tabs__           ""             TODO: Example of breaking coherence: Your jumplist is:                             ""
@@ -446,7 +446,7 @@
 " TODO,Make C-O/C-I jump tabs__
 " TODO,Make C-O/C-I jump tabs__endfunction
 " TODO,Make C-O/C-I jump tabs__
-" TODO,Make C-O/C-I jump tabs__" Refs: 
+" TODO,Make C-O/C-I jump tabs__" Refs:
 " TODO,Make C-O/C-I jump tabs__" [1] https://github.com/vim-scripts/EnhancedJumps
 " TODO,Make C-O/C-I jump tabs__" [2] https://vi.stackexchange.com/questions/36458/how-to-check-if-a-buffer-hidden-in-all-tabs
 " TODO,Make C-O/C-I jump tabs__    " OR this could also work: bufloaded(N) && win_findbuf(N)->empty()

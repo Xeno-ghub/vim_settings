@@ -14,7 +14,7 @@ let g:vimmodeInvalid                     = 0x3449
 
 " A change to searchType would affect
 " getRegexType, prefix, postfix, remaps, parseSearchCommand, spliceregex, Searchfunc
-  
+
 let g:searchTypeVimNotVisual             = 0x513370
 let g:searchTypeVimVisual                = 0x513371
 let g:searchTypeVimAllBuffers            = 0x513372

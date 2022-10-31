@@ -6,7 +6,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-" add "_" to the set of word delimiters. This is the single most important 
+" add "_" to the set of word delimiters. This is the single most important
 " reason I switched to Vim for. This sort of customizability 🥲
 set iskeyword-=_
 
@@ -37,10 +37,10 @@ set softtabstop=0 " Sets the number of columns for a TAB.
                   " VERY IMPORTANT. USE THIS TO DELETE 1 SPACE @ A TIME WITH BS
 set shiftwidth=4  " Indents will have a width of 4.
 
-                  " Remaping tab once and for all i want 4 spaces 
+                  " Remaping tab once and for all i want 4 spaces
                   " no tabstops no stupid columns no nothing. just tab
 
-" Remaping tab once and for all i want 4 spaces 
+" Remaping tab once and for all i want 4 spaces
 " no tabstops no stupid columns no nothing. just tab=4spaces
 " inoremap <C-i> <space><space><space><space> also adding undo jump. Check:hznrd
 " I'd like tab to work in normal mode as well, and put me in insert mode
@@ -50,7 +50,7 @@ nnoremap <C-i> i<space><space><space><space>
 " --------------------
 
 " Make vim smoother in modern consoles/terminals
-set ttyfast      " I have no idea if this thing does anything 
+set ttyfast      " I have no idea if this thing does anything
                  " or why it's not on by default
                  " I just copypaste
 
