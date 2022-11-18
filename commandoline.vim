@@ -11,6 +11,12 @@
 "                                                                             "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" It's nice to cycle through search queries for instance.
+" How the hell do you do that in VIM? I don't wanna reach for the arrow keys
+cnoremap <M-i> <Up>
+cnoremap <M-k> <Down>
+
+
 " Left/Right 1 character
 cnoremap <M-j> <Left>
 cnoremap <expr> <M-l> getcmdpos()>strlen(getcmdline())?&cedit:"\<Lt>Right>"
