@@ -51,6 +51,12 @@ nnoremap <C-u> <Esc>:q<Enter>
 inoremap <C-u> <Esc>:q<Enter>
 
 
+" Try out changing background color when switching modes. This should be fun...
+:autocmd InsertEnter * highlight Normal ctermfg=white ctermbg=17
+:autocmd InsertLeave * highlight Normal ctermfg=white ctermbg=Black
+
+
+
 " Enable meta key shortcuts. This would open a new bunch of hotkeys for me
 " which would be very important, cuz rn I only have the ctrl ones active
 " Careful! Apparently some of these meta-keys kind of break vim for some reason
