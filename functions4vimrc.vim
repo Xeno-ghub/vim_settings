@@ -98,7 +98,7 @@ function! CycleListChars()
      elseif g:ListCharsLevel==0
          :set listchars=tab:⬅️⬅️,trail:✴️,extends:➡️,precedes:➡️
          let g:ListCharsLevel = 1
-         echo "Listchars now cycled to level 1"
+         echo "Listchars now cycled to level 1 (default)"
      elseif g:ListCharsLevel==1
          :set listchars=eol:☨,tab:⬅️⬅️,trail:✴️,extends:➡️,precedes:➡️
          let g:ListCharsLevel = 2
