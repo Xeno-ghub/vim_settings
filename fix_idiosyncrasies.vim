@@ -88,6 +88,11 @@ snoremap <expr> <S-PageDown> "<C-o>" . winheight(0) . "j"
 inoremap <expr> <S-PageUp> "<C-o>v" . winheight(0) . "k<C-g>"
 inoremap <expr> <S-PageDown> "<C-o>v" . winheight(0) . "j<C-g>"
 
+" Don't want mistypes on caps versions of ijkl to do something else
+nmap I i
+nmap J j
+nmap K k
+" nmap L l -> Meh... Maybe i'll use this in conjunction with M,H
 
 
 " [1] : https://vi.stackexchange.com/questions/2365/how-can-i-get-n-to-go-forward-even-if-i-started-searching-with-or/2366#2366
