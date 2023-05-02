@@ -25,5 +25,6 @@ nnoremap <Leader>spaces :call feedkeys(':%s/\s\+$//g', 'i')<CR><CR>
 " Forfeit all tabs in lieu of spaces
 nnoremap <Leader>tabs :call feedkeys(':%s/\t/    /g', 'i')<CR><CR>
 
+nnoremap <Leader>spell :call ToggleSpellCheck()<CR>
 
 

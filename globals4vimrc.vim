@@ -88,3 +88,6 @@ let g:BlackHoleOn=0
 
 " List chars cycle counter
 let g:ListCharsLevel=0
+
+" Spellcheck
+let g:spellCheckOn=0

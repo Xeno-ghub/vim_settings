@@ -29,6 +29,18 @@ function ToggleWrap()
   endif
 endfunction
 
+function ToggleSpellCheck()
+  if g:spellCheckOn == 1
+    echo "Spellcheck OFF"
+    set nospell
+    let g:spellCheckOn = 0
+  else
+    echo "Spellcheck ON"
+    set spell spelllang=en_us
+    let g:spellCheckOn = 1
+  endif
+endfunction
+
 " Because I'm using "behave mswin" I have to make sure to get these remaps right
 function! WrapOffRemaps()
 
