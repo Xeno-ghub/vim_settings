@@ -56,6 +56,58 @@ inoremap <C-u> <Esc>:q<Enter>
 :autocmd InsertLeave * highlight Normal ctermfg=white ctermbg=Black
 
 
+" windows <-> wsl (meaning C:\blabla1\blabla2  -> /mnt/c/blabla1/blabla2)
+"    if it's a partial path ( blabla1\blabla2 -> blabla1/blabla2 )
+function! ToggleSlash(independent) range
+  let from = ''
+  for lnum in range(a:firstline, a:lastline)
+    let line = getline(lnum)
+    let first = matchstr(line, '[/\\]')
+
+    let iswin = matchlist(line, '\v^ *([a-zA-Z]):')
+    let iswsl = matchlist(line, '\v^ */mnt/([a-zA-Z])/')
+    let preamb = ""
+    let preamlen = 0
+
+    if len(iswin) >= 1
+        if !empty(iswin[1])
+            let preamb = "/mnt/" . tolower(iswin[1])
+            let preamlen = len(iswin[0])
+        else
+            echom "Error: Shouldn't get here!"
+        endif
+    elseif len(iswsl) >= 1
+        if !empty(iswsl[1])
+            let preamb = toupper(iswsl[1]) . ":\\"
+        else
+            echom "Error: Shouldn't get here!"
+        endif
+        let preamlen = len(iswsl[0])
+    else
+        echom "Error: Only works with Windows/WSL paths!"
+        echom "     : Or maybe your regex mismatched"
+        echom "     : len(iswin) = " . len(iswin)
+        echom "     : len(iswsl) = " . len(iswsl)
+    endif
+
+    echom "Preamb is " . preamb . "and the len=" . preamlen
+
+    if !empty(first)
+      if a:independent || empty(from)
+        let from = first
+      endif
+      let opposite = (from == '/' ? '\' : '/')
+      call setline(lnum, substitute(preamb . line[preamlen:], from, opposite, 'g'))
+    endif
+  endfor
+endfunction
+
+" Prime the command for visual selection:
+command! -bang -range ToggleSlash <line1>,<line2>call ToggleSlash(<bang>1)
+noremap <silent> <Leader>c :ToggleSlash<CR>"*yy
+
+
+
 
 " Enable meta key shortcuts. This would open a new bunch of hotkeys for me
 " which would be very important, cuz rn I only have the ctrl ones active
