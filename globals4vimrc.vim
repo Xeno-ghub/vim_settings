@@ -61,9 +61,10 @@ let g:ProjectDir9  = ""
 " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
 " - https://github.com/Valloric/YouCompleteMe
 " - https://github.com/nvim-lua/completion-nvim
-let g:UltiSnipsExpandTrigger="<M-s>"
-let g:UltiSnipsJumpForwardTrigger="<M-s>"
-let g:UltiSnipsJumpBackwardTrigger="<M-S>"
+let g:UltiSnipsExpandTrigger="<Space>"
+let g:UltiSnipsJumpForwardTrigger="<Space>"
+" Map expand backwards to tab?
+let g:UltiSnipsJumpBackwardTrigger="<C-i>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
